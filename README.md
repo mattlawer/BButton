@@ -17,7 +17,6 @@ Start by importing <code>BButton.m</code> and <code>BButton.h</code> to your Xco
 ### Use it with Interface Builder : ###
 
 1. Create an UIButton in Interface Builder and change the class to BButton :<br />
-
 <img width=261 src="http://img827.imageshack.us/img827/6596/ibbbutton.png"/>
 
 2. You can set the target and selector with Interface Builder just like you do with an UIButton.
