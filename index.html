@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>BButton by mattlawer</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>BButton</h1>
+        <p>BButton is a subclass of UIButton that looks like the bootstrap buttons.</p>
+        <p class="view"><a href="https://github.com/mattlawer/BButton">View the Project on GitHub <small>mattlawer/BButton</small></a></p>
+        <ul>
+          <li><a href="https://github.com/mattlawer/BButton/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/mattlawer/BButton/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/mattlawer/BButton">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>BButton</h1>
+
+<p>BButton is a subclass of UIButton that looks like the <a href="http://twitter.github.com/bootstrap/" title="Twitter Bootstrap">bootstrap</a> buttons.<br>
+It's really easy to use even if you're a beginner in Objective-C.<br>
+It has beautiful graphics for retina display.<br>
+You can customize it to the color you want in just one line of code.<br></p>
+
+<p><img width="267" src="http://img13.imageshack.us/img13/5408/capturedcran20120731113.png"></p>
+
+<h2>Usage</h2>
+
+<p>Start by importing <code>BButton.m</code> and <code>BButton.h</code> to your Xcode project.</p>
+
+<h3>Use it with Interface Builder :</h3>
+
+<ol>
+<li><p>Create an UIButton in Interface Builder and change the class to BButton :<br><img width="261" src="http://img827.imageshack.us/img827/6596/ibbbutton.png"></p></li>
+<li><p>You can set the target and selector with Interface Builder just like you do with an UIButton.</p></li>
+</ol><h3>Use it without Interface Builder :</h3>
+
+<ol>
+<li>
+<p>Import the BButton class header :</p>
+
+<pre><code>#import "BButton.h"
+</code></pre>
+</li>
+<li>
+<p>Create the BButton and add it to a visible view :</p>
+
+<pre><code>BButton *btn = [[BButton alloc] initWithFrame:CGRectMake(32.0, 20.0, 112.0, 40.0)];
+[btn setTitle:@"Login" forState:UIControlStateNormal]; // Set the button title
+[btn addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+btn.color = [UIColor purpleColor]; // Set purple color
+[self.view addSubview:btn];
+[btn release];
+</code></pre>
+</li>
+</ol><h2>Example</h2>
+
+<p>With some random colors</p>
+
+<p><img width="396" src="http://img703.imageshack.us/img703/7316/20120731114603.png"></p>
+
+<h2>License</h2>
+
+<p>Copyright (c) 2012, Mathieu Bolard
+All rights reserved.</p>
+
+<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+
+<ul>
+<li><p>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</p></li>
+<li><p>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</p></li>
+<li><p>Neither the name of Mathieu Bolard, mattlawer nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</p></li>
+</ul><p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL Mathieu Bolard BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+
+<h2>Contact</h2>
+
+<p><a href="mailto:mattlawer08@gmail.com">mattlawer08@gmail.com</a><br><a href="http://mathieubolard.com">http://mathieubolard.com</a><br><a href="http://twitter.com/mattlawer">http://twitter.com/mattlawer</a></p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/mattlawer">mattlawer</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+  </body>
+</html>
