@@ -8,11 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    BButtonTypePrimary = 0,
+    BButtonTypeWarning,
+    BButtonTypeDanger,
+    BButtonTypeSuccess,
+    BButtonTypeInfo,
+    BButtonTypeWhite,
+    BButtonTypeInverse,
+} BButtonType;
+
 @interface BButton : UIButton {
     UIColor *_color;
     CGGradientRef _gradient;
 }
 
 @property (nonatomic, assign) UIColor *color;
+
+- (void)setType:(BButtonType)type;
 
 @end
