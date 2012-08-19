@@ -54,8 +54,7 @@
 }
 
 - (void) setColor:(UIColor *)color {
-    [_color release]; _color = nil;
-    _color = [color retain];
+    _color = color;
     
     if ([self isLightColor:color]) {
         [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -74,7 +73,7 @@
     CGFloat newGradientLocations[] = {0.0, 1.0};
     
     CGGradientRelease(_gradient);
-    _gradient = CGGradientCreateWithColors(colorSpace, (CFArrayRef)newGradientColors, newGradientLocations);
+    _gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)newGradientColors, newGradientLocations);
     CGColorSpaceRelease(colorSpace);
     
     [self setNeedsDisplay];
@@ -83,6 +82,34 @@
 - (UIColor *) color {
     return _color;
 }
+
+- (void)setType:(BButtonType)type {
+    UIColor *color = [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f];
+    switch (type) {
+        case BButtonTypePrimary:
+            color = [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f];
+            break;
+        case BButtonTypeWarning:
+            color = [UIColor colorWithRed:0.97f green:0.58f blue:0.02f alpha:1.00f];
+            break;
+        case BButtonTypeDanger:
+            color = [UIColor colorWithRed:0.74f green:0.21f blue:0.18f alpha:1.00f];
+            break;
+        case BButtonTypeSuccess:
+            color = [UIColor colorWithRed:0.32f green:0.64f blue:0.32f alpha:1.00f];
+            break;
+        case BButtonTypeInfo:
+            color = [UIColor colorWithRed:0.18f green:0.59f blue:0.71f alpha:1.00f];
+            break;
+        case BButtonTypeWhite:
+            color = [UIColor colorWithRed:0.90f green:0.90f blue:0.90f alpha:1.00f];
+            break;
+        case BButtonTypeInverse:
+            color = [UIColor colorWithRed:0.13f green:0.13f blue:0.13f alpha:1.00f];
+    }
+    [self setColor:color];
+}
+
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -210,12 +237,6 @@
     }
     
     return (sum > 0.8);
-}
-
-- (void) dealloc {
-    [_color release];
-    CGGradientRelease(_gradient);
-    [super dealloc];
 }
 
 @end
