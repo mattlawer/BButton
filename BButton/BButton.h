@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 
 typedef enum {
-    BButtonTypePrimary = 0,
+    BButtonTypeDefault = 0,
+    BButtonTypePrimary,
+    BButtonTypeInfo,
+    BButtonTypeSuccess,
     BButtonTypeWarning,
     BButtonTypeDanger,
-    BButtonTypeSuccess,
-    BButtonTypeInfo,
-    BButtonTypeWhite,
     BButtonTypeInverse,
 } BButtonType;
 
