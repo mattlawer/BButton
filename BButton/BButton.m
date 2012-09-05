@@ -49,18 +49,46 @@
 }
 
 - (void) setHighlighted:(BOOL)highlighted {
-    [super setHighlighted:highlighted];
-    [self setNeedsDisplay];
+    // Avoid unncessary redraw
+    if (self.highlighted != highlighted)
+    {
+        [super setHighlighted:highlighted];
+        [self setNeedsDisplay];
+    }
+}
+
+- (void) setEnabled:(BOOL)enabled
+{
+    if (self.enabled != enabled) {
+        [super setEnabled:enabled];
+        if (!enabled) {
+            _savedColor = _color;
+            [self setColor:[UIColor colorWithWhite:0.15 alpha:1.0]];
+        }
+        else
+        {
+            if (_savedColor)
+                [self setColor:_savedColor];
+        }
+        [self setNeedsDisplay];
+    }
 }
 
 - (void) setColor:(UIColor *)color {
     _color = color;
     
-    if ([self isLightColor:color]) {
-        [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [self setTitleShadowColor:[[UIColor whiteColor] colorWithAlphaComponent:0.6] forState:UIControlStateNormal];
-    }else {
-        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    if (self.enabled) {
+        if ([self isLightColor:color]) {
+            [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [self setTitleShadowColor:[[UIColor whiteColor] colorWithAlphaComponent:0.6] forState:UIControlStateNormal];
+        }else {
+            [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [self setTitleShadowColor:[[UIColor blackColor] colorWithAlphaComponent:0.6] forState:UIControlStateNormal];
+        }
+    }
+    else
+    {
+        [self setTitleColor:[UIColor colorWithWhite:0.6 alpha:0.8] forState:UIControlStateNormal];
         [self setTitleShadowColor:[[UIColor blackColor] colorWithAlphaComponent:0.6] forState:UIControlStateNormal];
     }
     

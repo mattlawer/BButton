@@ -20,6 +20,7 @@ typedef enum {
 
 @interface BButton : UIButton {
     UIColor *_color;
+    UIColor *_savedColor;
     CGGradientRef _gradient;
 }
 
