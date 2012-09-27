@@ -59,8 +59,8 @@ The icon names also get autocompleted in Xcode.
 <img width=100 src="http://imageshack.us/a/img11/74/bbuttonfontawesome.png"/>
 
 ####Requirement:####
-You need the FontAwesome font, which you can get here: https://github.com/FortAwesome/Font-Awesome/blob/master/font/fontawesome-webfont.ttf
-Rename it to FontAwesome.ttf and add it to your project. Make sure it gets copied in the 'Copy Bundle Resources' build phase.
+ * You need the FontAwesome font, which you can get here: https://github.com/leberwurstsaft/FontAwesome-for-iOS (I had to fix the font to correctly align vertically)
+ * Add it to your project and make sure it gets copied in the 'Copy Bundle Resources' build phase.
 
 License
 -------
