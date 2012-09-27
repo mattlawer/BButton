@@ -48,7 +48,7 @@ With some random colors
 Use with FontAwesome icons
 --------------------------
 
-If you import the BButton+FontAwesome category, you get to style your BButtons with FontAwesome icons.
+With the BButton+FontAwesome category, you get to style your BButtons with FontAwesome icons.
 There are convenience class methods to setup new BButtons and instance methods to apply FontAwesomeness to existing BButtons.
 Use the instance methods on BButtons that you created in Interface Builder, it keeps the button's frame as well as color and font size if you don't specify those.
 
@@ -57,7 +57,11 @@ To find the right icon name, you can refer to the FontAwesomeIcons.html in this 
 The icon names also get autocompleted in Xcode.
 
 <img width=100 src="http://imageshack.us/a/img11/74/bbuttonfontawesome.png"/>
-    
+
+####Requirement:####
+You need the FontAwesome font, which you can get here: https://github.com/FortAwesome/Font-Awesome/blob/master/font/fontawesome-webfont.ttf
+Rename it to FontAwesome.ttf and add it to your project. Make sure it gets copied in the 'Copy Bundle Resources' build phase.
+
 License
 -------
 
