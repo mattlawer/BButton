@@ -84,7 +84,7 @@
 }
 
 - (void)setType:(BButtonType)type {
-    UIColor *color = [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f];
+    UIColor *color;
     switch (type) {
         case BButtonTypeDefault:
             color = [UIColor colorWithRed:0.85f green:0.85f blue:0.85f alpha:1.00f];
@@ -106,6 +106,8 @@
             break;
         case BButtonTypeInverse:
             color = [UIColor colorWithRed:0.13f green:0.13f blue:0.13f alpha:1.00f];
+        default:
+            color = [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f];
     }
     [self setColor:color];
 }
