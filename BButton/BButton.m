@@ -29,7 +29,6 @@
     if (_gradient != NULL) {
         CGGradientRelease(_gradient);
     }
-    [super dealloc];
 }
 
 - (id) initWithFrame:(CGRect)frame {
