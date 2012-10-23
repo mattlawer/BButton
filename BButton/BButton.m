@@ -25,6 +25,13 @@
     return self;
 }
 
+- (void)dealloc {
+    if (_gradient != NULL) {
+        CGGradientRelease(_gradient);
+    }
+    [super dealloc];
+}
+
 - (id) initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
