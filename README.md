@@ -45,7 +45,26 @@ With some random colors
 
 <img width=396 src="http://img703.imageshack.us/img703/7316/20120731114603.png"/>
 
-    
+Use with FontAwesome icons
+--------------------------
+
+With the BButton+FontAwesome category, you get to style your BButtons with FontAwesome icons.
+There are convenience class methods to setup new BButtons and instance methods to apply FontAwesomeness to existing BButtons.
+Use the instance methods on BButtons that you created in Interface Builder, it keeps the button's frame as well as color and font size if you don't specify those.
+
+You can specify the icon by name, a color and a font size. Only the icon name is mandatory.
+To find the right icon name, you can refer to the FontAwesomeIcons.html in this repository.
+The icon names also get autocompleted in Xcode.
+
+<img width=100 src="http://imageshack.us/a/img11/74/bbuttonfontawesome.png"/>
+
+####Requirement:####
+ * You need the FontAwesome font, which you can get here: https://github.com/leberwurstsaft/FontAwesome-for-iOS (I had to fix the font to correctly align vertically)
+ * Add it to your project and make sure it gets copied in the 'Copy Bundle Resources' build phase.
+ * Edit Info.plist to include the provided font like so:
+
+<img src="http://imageshack.us/a/img339/9596/bbuttonfontawesomexcode.png">
+
 License
 -------
 
