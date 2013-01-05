@@ -53,13 +53,13 @@ There are convenience class methods to setup new BButtons and instance methods t
 Use the instance methods on BButtons that you created in Interface Builder, it keeps the button's frame as well as color and font size if you don't specify those.
 
 You can specify the icon by name, a color and a font size. Only the icon name is mandatory.
-To find the right icon name, you can refer to the FontAwesomeIcons.html in this repository.
+To find the right icon name, you can refer to the FontAwesomeIcons.html in this repository. (or just click http://htmlpreview.github.com/?https://github.com/leberwurstsaft/BButton/blob/master/FontAwesomeIcons.html)
 The icon names also get autocompleted in Xcode.
 
 <img width=100 src="http://imageshack.us/a/img11/74/bbuttonfontawesome.png"/>
 
 ####Requirement:####
- * You need the FontAwesome font, which you can get here: https://github.com/leberwurstsaft/FontAwesome-for-iOS (I had to fix the font to correctly align vertically)
+ * You need the FontAwesome font, which you can get here: https://github.com/leberwurstsaft/FontAwesome-for-iOS (I had to fix the font to correctly align vertically) **Now updated to FontAwesome 3.0**
  * Add it to your project and make sure it gets copied in the 'Copy Bundle Resources' build phase.
  * Edit Info.plist to include the provided font like so:
 
