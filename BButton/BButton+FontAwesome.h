@@ -223,9 +223,11 @@ typedef NS_ENUM(NSInteger, FAIcon) {
 
 @interface BButton (FontAwesome)
 
-+ (BButton *)awesomeButtonWithIcon:(FAIcon)icon;
-+ (BButton *)awesomeButtonWithIcon:(FAIcon)icon color:(UIColor *)color;
-+ (BButton *)awesomeButtonWithIcon:(FAIcon)icon color:(UIColor *)color fontSize:(CGFloat)fontSize;
++ (NSString *)stringFromAwesomeIcon:(FAIcon)icon;
+
++ (instancetype)awesomeButtonWithIcon:(FAIcon)icon;
++ (instancetype)awesomeButtonWithIcon:(FAIcon)icon color:(UIColor *)color;
++ (instancetype)awesomeButtonWithIcon:(FAIcon)icon color:(UIColor *)color fontSize:(CGFloat)fontSize;
 
 - (void)makeAwesomeWithIcon:(FAIcon)icon;
 - (void)makeAwesomeWithIcon:(FAIcon)icon color:(UIColor *)color;
