@@ -37,7 +37,13 @@ Start by importing <code>BButton.m</code> and <code>BButton.h</code> to your Xco
         [self.view addSubview:btn];
         [btn release];
     
-    
+### Use it with [ios-fontawesome](https://github.com/alexdrone/ios-fontawesome) and a patched font from [FontAwesome-for-iOS](https://github.com/leberwurstsaft/FontAwesome-for-iOS) :
+
+```
+[btn setTitle:[NSString fontAwesomeIconStringForEnum:FAIconCameraRetro] forState:UIControlStateNormal];
+[btn setFont:[UIFont fontWithName:@"FontAwesome" size:18]];
+```
+
 Example
 -------
 
