@@ -12,6 +12,8 @@
 
 @interface ViewController ()
 
+- (NSString *)titleForType:(BButtonType)type;
+
 @end
 
 
@@ -28,11 +30,23 @@
     for(int i = 0; i < 2; i++) {
         
         for(int j = 0; j < 7; j++) {
-            BButton *btn = [[BButton alloc] initWithFrame:CGRectMake(32.0f + (i * 144.0f), 20.0f + (j * 60.0f), 112.0f, 40.0f)];
-            [btn setTitle:@"Button" forState:UIControlStateNormal];
+            CGRect frame = CGRectMake(32.0f + (i * 144.0f), 20.0f + (j * 60.0f), 112.0f, 40.0f);
+            BButton *btn = [[BButton alloc] initWithFrame:frame];
             [btn setType:type];
+            [btn setTitle:[self titleForType:type] forState:UIControlStateNormal];
+            
+            if(type == BButtonTypeFacebook)
+                [btn makeAwesomeWithIcon:FAIconFacebook];
+            else if(type == BButtonTypeTwitter)
+                [btn makeAwesomeWithIcon:FAIconTwitter];
+            
             type++;
-            type = (type > BButtonTypeGray) ? 0 : type++;
+            if(type > BButtonTypeGray) {
+                btn = [BButton awesomeButtonWithIcon:arc4random() % 209];
+                btn.type = (type % 2) ? BButtonTypeInverse : BButtonTypeDefault;
+                btn.frame = CGRectMake(frame.origin.x, frame.origin.y, btn.frame.size.width, btn.frame.size.width);
+            }
+            
             [self.view addSubview:btn];
         }
     }
@@ -41,6 +55,51 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Utilities
+- (NSString *)titleForType:(BButtonType)type
+{
+    NSString *title = nil;
+    
+    switch (type) {
+        case BButtonTypePrimary:
+            title = @"Primary";
+            break;
+        case BButtonTypeInfo:
+            title = @"Info";
+            break;
+        case BButtonTypeSuccess:
+            title = @"Success";
+            break;
+        case BButtonTypeWarning:
+            title = @"Warning";
+            break;
+        case BButtonTypeDanger:
+            title = @"Danger";
+            break;
+        case BButtonTypeInverse:
+            title = @"Inverse";
+            break;
+        case BButtonTypeTwitter:
+            title = @"Twitter";
+            break;
+        case BButtonTypeFacebook:
+            title = @"Facebook";
+            break;
+        case BButtonTypePurple:
+            title = @"Purple";
+            break;
+        case BButtonTypeGray:
+            title = @"Gray";
+            break;
+        case BButtonTypeDefault:
+        default:
+            title = @"Default";
+            break;
+    }
+    
+    return title;
 }
 
 @end
