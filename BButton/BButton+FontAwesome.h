@@ -9,7 +9,7 @@
 
 #import "BButton.h"
 
-typedef NS_ENUM(NSInteger, FAIcon) {
+typedef enum {
     FAIconGlass = 0,
     FAIconMusic,
     FAIconSearch,
@@ -220,18 +220,22 @@ typedef NS_ENUM(NSInteger, FAIcon) {
     FAIconUmbrella,
     FAIconPaste,
     FAIconUserMd
-};
+} FAIcon;
 
 @interface BButton (FontAwesome)
 
-+ (NSString *)stringFromAwesomeIcon:(FAIcon)icon;
+#pragma mark - Class 
++ (BButton *)awesomeButtonWithIcon:(FAIcon)icon;
++ (BButton *)awesomeButtonWithIcon:(FAIcon)icon color:(UIColor *)color;
++ (BButton *)awesomeButtonWithIcon:(FAIcon)icon color:(UIColor *)color fontSize:(CGFloat)fontSize;
 
-+ (instancetype)awesomeButtonWithIcon:(FAIcon)icon;
-+ (instancetype)awesomeButtonWithIcon:(FAIcon)icon color:(UIColor *)color;
-+ (instancetype)awesomeButtonWithIcon:(FAIcon)icon color:(UIColor *)color fontSize:(CGFloat)fontSize;
-
+#pragma mark - Instance 
 - (void)makeAwesomeWithIcon:(FAIcon)icon;
 - (void)makeAwesomeWithIcon:(FAIcon)icon color:(UIColor *)color;
 - (void)makeAwesomeWithIcon:(FAIcon)icon color:(UIColor *)color fontSize:(CGFloat)fontSize;
+
+#pragma mark - Utilities
++ (NSString *)stringFromAwesomeIcon:(FAIcon)icon;
+- (void)constrainFontToButtonSize;
 
 @end
