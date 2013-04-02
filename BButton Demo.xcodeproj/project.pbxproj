@@ -17,6 +17,11 @@
 		4EA2644215C73DA600F375FA /* MBViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA2644015C73DA600F375FA /* MBViewController_iPhone.xib */; };
 		4EA2644515C73DA700F375FA /* MBViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA2644315C73DA700F375FA /* MBViewController_iPad.xib */; };
 		4EA2644D15C73DE600F375FA /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA2644C15C73DE600F375FA /* BButton.m */; };
+		880EED1E170B315F00462214 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 880EED1B170B315F00462214 /* Default-568h@2x.png */; };
+		880EED1F170B315F00462214 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 880EED1C170B315F00462214 /* Default.png */; };
+		880EED20170B315F00462214 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 880EED1D170B315F00462214 /* Default@2x.png */; };
+		880EED23170B31C000462214 /* BButton+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EED22170B31C000462214 /* BButton+FontAwesome.m */; };
+		880EED26170B323500462214 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 880EED25170B323500462214 /* FontAwesome.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,12 @@
 		4EA2644415C73DA700F375FA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MBViewController_iPad.xib; sourceTree = "<group>"; };
 		4EA2644B15C73DE600F375FA /* BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BButton.h; path = BButton/BButton.h; sourceTree = SOURCE_ROOT; };
 		4EA2644C15C73DE600F375FA /* BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BButton.m; path = BButton/BButton.m; sourceTree = SOURCE_ROOT; };
+		880EED1B170B315F00462214 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		880EED1C170B315F00462214 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		880EED1D170B315F00462214 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		880EED21170B31C000462214 /* BButton+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BButton+FontAwesome.h"; path = "BButton/BButton+FontAwesome.h"; sourceTree = SOURCE_ROOT; };
+		880EED22170B31C000462214 /* BButton+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BButton+FontAwesome.m"; path = "BButton/BButton+FontAwesome.m"; sourceTree = SOURCE_ROOT; };
+		880EED25170B323500462214 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +109,12 @@
 			isa = PBXGroup;
 			children = (
 				4EA2643315C73DA600F375FA /* BButton Demo-Info.plist */,
+				4EA2643915C73DA600F375FA /* BButton Demo-Prefix.pch */,
+				880EED1B170B315F00462214 /* Default-568h@2x.png */,
+				880EED1C170B315F00462214 /* Default.png */,
+				880EED1D170B315F00462214 /* Default@2x.png */,
 				4EA2643415C73DA600F375FA /* InfoPlist.strings */,
 				4EA2643715C73DA600F375FA /* main.m */,
-				4EA2643915C73DA600F375FA /* BButton Demo-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -110,10 +124,22 @@
 			children = (
 				4EA2644B15C73DE600F375FA /* BButton.h */,
 				4EA2644C15C73DE600F375FA /* BButton.m */,
+				880EED21170B31C000462214 /* BButton+FontAwesome.h */,
+				880EED22170B31C000462214 /* BButton+FontAwesome.m */,
+				880EED24170B323500462214 /* resources */,
 			);
 			name = BButton;
 			path = "BButton Demo";
 			sourceTree = "<group>";
+		};
+		880EED24170B323500462214 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				880EED25170B323500462214 /* FontAwesome.ttf */,
+			);
+			name = resources;
+			path = BButton/resources;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -170,6 +196,10 @@
 				4EA2643615C73DA600F375FA /* InfoPlist.strings in Resources */,
 				4EA2644215C73DA600F375FA /* MBViewController_iPhone.xib in Resources */,
 				4EA2644515C73DA700F375FA /* MBViewController_iPad.xib in Resources */,
+				880EED1E170B315F00462214 /* Default-568h@2x.png in Resources */,
+				880EED1F170B315F00462214 /* Default.png in Resources */,
+				880EED20170B315F00462214 /* Default@2x.png in Resources */,
+				880EED26170B323500462214 /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +214,7 @@
 				4EA2643C15C73DA600F375FA /* MBAppDelegate.m in Sources */,
 				4EA2643F15C73DA600F375FA /* MBViewController.m in Sources */,
 				4EA2644D15C73DE600F375FA /* BButton.m in Sources */,
+				880EED23170B31C000462214 /* BButton+FontAwesome.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +301,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BButton Demo/BButton Demo-Prefix.pch";
 				INFOPLIST_FILE = "BButton Demo/BButton Demo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -281,6 +313,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BButton Demo/BButton Demo-Prefix.pch";
 				INFOPLIST_FILE = "BButton Demo/BButton Demo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
