@@ -22,12 +22,15 @@ static const NSArray *awesomeStrings;
 
 + (BButton *)awesomeButtonWithIcon:(FAIcon)icon color:(UIColor *)color
 {
-    return [BButton awesomeButtonWithIcon:icon color:color fontSize:17.0f];
+    return [BButton awesomeButtonWithIcon:icon color:color fontSize:17.0f frame:CGRectMake(0.0f, 0.0f, 40.0f, 40.0f)];
 }
 
-+ (BButton *)awesomeButtonWithIcon:(FAIcon)icon color:(UIColor *)color fontSize:(CGFloat)fontSize
++ (BButton *)awesomeButtonWithIcon:(FAIcon)icon
+                             color:(UIColor *)color
+                          fontSize:(CGFloat)fontSize
+                             frame:(CGRect)frame
 {
-    BButton *awesomeButton = [[BButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 40.0f, 40.0f)];
+    BButton *awesomeButton = [[BButton alloc] initWithFrame:frame];
     
     if(color) {
         awesomeButton.color = color;
@@ -37,7 +40,7 @@ static const NSArray *awesomeStrings;
     awesomeButton.titleLabel.textAlignment = NSTextAlignmentCenter;
     [awesomeButton setTitle:[BButton stringFromAwesomeIcon:icon] forState:UIControlStateNormal];
     
-    [awesomeButton performSelector:@selector(constrainFontToButtonSize) withObject:nil afterDelay:0];
+    [awesomeButton performSelector:@selector(constrainFontToButtonSize)];
     
     return awesomeButton;
 }

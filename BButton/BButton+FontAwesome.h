@@ -227,7 +227,10 @@ typedef enum {
 #pragma mark - Class 
 + (BButton *)awesomeButtonWithIcon:(FAIcon)icon;
 + (BButton *)awesomeButtonWithIcon:(FAIcon)icon color:(UIColor *)color;
-+ (BButton *)awesomeButtonWithIcon:(FAIcon)icon color:(UIColor *)color fontSize:(CGFloat)fontSize;
++ (BButton *)awesomeButtonWithIcon:(FAIcon)icon
+                             color:(UIColor *)color
+                          fontSize:(CGFloat)fontSize
+                             frame:(CGRect)frame;
 
 #pragma mark - Instance 
 - (void)makeAwesomeWithIcon:(FAIcon)icon;
