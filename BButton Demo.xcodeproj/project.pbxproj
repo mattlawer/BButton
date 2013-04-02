@@ -305,6 +305,7 @@
 				4EA2644A15C73DA700F375FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
