@@ -1,13 +1,21 @@
 //
-//  BButton+FontAwesome.h
+//  NSString+FontAwesome.h
 //
 //  Created by Pit Garbe on 27.09.12.
 //  Copyright (c) 2012 Pit Garbe. All rights reserved.
 //
 //  https://github.com/leberwurstsaft/FontAwesome-for-iOS
 //
+//
+//  -----------------------------------------
+//  Edited by Jesse Squires on 2 April, 2013.
+//
+//  http://github.com/jessesquires/BButton
+//
+//  http://hexedbits.com
+//
 
-#import "BButton.h"
+#import <Foundation/Foundation.h>
 
 typedef enum {
     FAIconGlass = 0,
@@ -222,23 +230,11 @@ typedef enum {
     FAIconUserMd
 } FAIcon;
 
-@interface BButton (FontAwesome)
 
-#pragma mark - Class 
-+ (BButton *)awesomeButtonWithIcon:(FAIcon)icon;
-+ (BButton *)awesomeButtonWithIcon:(FAIcon)icon color:(UIColor *)color;
-+ (BButton *)awesomeButtonWithIcon:(FAIcon)icon
-                             color:(UIColor *)color
-                          fontSize:(CGFloat)fontSize
-                             frame:(CGRect)frame;
+@interface NSString (FontAwesome)
 
-#pragma mark - Instance 
-- (void)makeAwesomeWithIcon:(FAIcon)icon;
-- (void)makeAwesomeWithIcon:(FAIcon)icon color:(UIColor *)color;
-- (void)makeAwesomeWithIcon:(FAIcon)icon color:(UIColor *)color fontSize:(CGFloat)fontSize;
-
-#pragma mark - Utilities
 + (NSString *)stringFromAwesomeIcon:(FAIcon)icon;
-- (void)constrainFontToButtonSize;
+- (NSString *)trimWhitespace;
+- (BOOL)isEmpty;
 
 @end
