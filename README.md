@@ -36,10 +36,8 @@ Initialize with any of the following methods
 
 * `- (id)initWithFrame:(CGRect)frame type:(BButtonType)type`
 * `- (id)initWithFrame:(CGRect)frame type:(BButtonType)type icon:(FAIcon)icon fontSize:(CGFloat)fontSize`
-
 * `- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor`
 * `- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor icon:(FAIcon)icon fontSize:(CGFloat)fontSize`
-
 * `+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon type:(BButtonType)type`
 * `+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon color:(UIColor *)color`
 
@@ -67,7 +65,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 * The Font Awesome font is licensed under the [SIL Open Font License](http://scripts.sil.org/OFL)
 * Font Awesome CSS, LESS, and SASS files are licensed under the [MIT License](http://opensource.org/licenses/mit-license.html)
 * The Font Awesome pictograms are licensed under the [CC BY 3.0 License](http://creativecommons.org/licenses/by/3.0)
-* Attribution is no longer required in Font Awesome 3.0, but much appreciated: "Font Awesome by Dave Gandy - http://fortawesome.github.com/Font-Awesome"
+* Attribution is no longer required in Font Awesome 3.0, but much appreciated:
+	* *"Font Awesome by Dave Gandy - http://fortawesome.github.com/Font-Awesome"*
 
 [img1]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-1.png
 [img2]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-2.png
