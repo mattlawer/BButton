@@ -32,6 +32,8 @@
 @implementation BButton
 
 @synthesize color;
+@synthesize gradient;
+@synthesize shouldShowDisabled;
 
 #pragma mark - Initialization
 - (void)setup
@@ -160,6 +162,24 @@
         [self setGradientEnabled:YES];
     
     [self setNeedsDisplay];
+}
+
+- (void)setShouldShowDisabled:(BOOL)show
+{
+    shouldShowDisabled = show;
+    
+    if(show) {
+        if([self.color isLightColor])
+            [self setTitleColor:[UIColor colorWithWhite:0.4f alpha:0.5f] forState:UIControlStateDisabled];
+        else
+            [self setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.5f] forState:UIControlStateDisabled];
+    }
+    else {
+        if([self.color isLightColor])
+            [self setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
+        else
+            [self setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
+    }
 }
 
 #pragma mark - BButton
@@ -294,16 +314,12 @@
 - (void)setGradientEnabled:(BOOL)enabled
 {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    UIColor *topColor = [self.color lightenColorWithValue:0.12f];
-    
-    if(!enabled) {
-        topColor = [self.color darkenColorWithValue:0.12f];
-    }
+    UIColor *topColor = enabled ? [self.color lightenColorWithValue:0.12f] : [self.color darkenColorWithValue:0.12f];
     
     NSArray *newGradientColors = [NSArray arrayWithObjects:(id)topColor.CGColor, (id)self.color.CGColor, nil];
     CGFloat newGradientLocations[] = {0.0f, 1.0f};
     
-    self.gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)newGradientColors, newGradientLocations);
+    gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)newGradientColors, newGradientLocations);
     CGColorSpaceRelease(colorSpace);
 }
 
