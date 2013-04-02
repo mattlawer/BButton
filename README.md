@@ -8,11 +8,19 @@ Includes [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsa
 
 ![BButton Screenshot 1][img1] &nbsp;&nbsp;&nbsp;&nbsp; ![BButton Screenshot 2][img2]
 
+### Notable changes
+
+* Up-to-date for iOS 5.0+, ARC, Storyboards
+* Custom initialization methods for easier creation
+* Option to show button 'disabled' state
+* FontAwesome already included
+* Refactored to be much cleaner, better organized
+
 ## Installation
 
 * Drag the `BButton/` folder to your project (make sure you copy all files/folders)
 * `#import "BButton.h"`
-* Edit `Info.plist` to include `FontAwesome.ttf`
+* Add `Fonts provided by application` key to `Info.plist` and include `FontAwesome.ttf`
 
 <img src="http://imageshack.us/a/img339/9596/bbuttonfontawesomexcode.png">
 
