@@ -1,72 +1,45 @@
-BButton
-========
+#BButton
 
-BButton is a subclass of UIButton that looks like the [bootstrap](http://twitter.github.com/bootstrap/ "Twitter Bootstrap") buttons.<br />
-It's really easy to use even if you're a beginner in Objective-C.<br />
-It has beautiful graphics for retina display.<br />
-You can customize it to the color you want in just one line of code.<br />
+BButton is a subclass of UIButton that looks like the [Twitter Bootstrap 2.3.1](http://twitter.github.com/bootstrap) buttons.
 
-<img width=267 src="http://img13.imageshack.us/img13/5408/capturedcran20120731113.png"/>
+Forked from [@mattlawer / BButton](https://github.com/mattlawer/BButton).
 
+Includes [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsaft/FontAwesome-for-iOS), fixed for iOS from the original [FontAwesome](http://fortawesome.github.com/Font-Awesome/).
 
-Usage
------
+![BButton Screenshot 1][img1] &nbsp;&nbsp;&nbsp;&nbsp; ![BButton Screenshot 2][img2]
 
-Start by importing <code>BButton.m</code> and <code>BButton.h</code> to your Xcode project.
+## Installation
 
-### Use it with Interface Builder : ###
-
-1. Create an UIButton in Interface Builder and change the class to BButton :<br />
-<img width=261 src="http://img827.imageshack.us/img827/6596/ibbbutton.png"/>
-
-2. You can set the target and selector with Interface Builder just like you do with an UIButton.
-
-
-### Use it without Interface Builder : ###
-
-1. Import the BButton class header :
-
-		#import "BButton.h"
-		
-2. Create the BButton and add it to a visible view :
-
-		BButton *btn = [[BButton alloc] initWithFrame:CGRectMake(32.0, 20.0, 112.0, 40.0)];
-        [btn setTitle:@"Login" forState:UIControlStateNormal]; // Set the button title
-        [btn addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
-        btn.color = [UIColor purpleColor]; // Set purple color
-        [self.view addSubview:btn];
-        [btn release];
-    
-    
-Example
--------
-
-With some random colors
-
-<img width=396 src="http://img703.imageshack.us/img703/7316/20120731114603.png"/>
-
-Use with FontAwesome icons
---------------------------
-
-With the BButton+FontAwesome category, you get to style your BButtons with FontAwesome icons.
-There are convenience class methods to setup new BButtons and instance methods to apply FontAwesomeness to existing BButtons.
-Use the instance methods on BButtons that you created in Interface Builder, it keeps the button's frame as well as color and font size if you don't specify those.
-
-You can specify the icon by name, a color and a font size. Only the icon name is mandatory.
-To find the right icon name, you can refer to the FontAwesomeIcons.html in this repository.
-The icon names also get autocompleted in Xcode.
-
-<img width=100 src="http://imageshack.us/a/img11/74/bbuttonfontawesome.png"/>
-
-####Requirement:####
- * You need the FontAwesome font, which you can get here: https://github.com/leberwurstsaft/FontAwesome-for-iOS (I had to fix the font to correctly align vertically)
- * Add it to your project and make sure it gets copied in the 'Copy Bundle Resources' build phase.
- * Edit Info.plist to include the provided font like so:
+* Drag the `BButton/` folder to your project (make sure you copy all files/folders)
+* `#import "BButton.h"`
+* Edit `Info.plist` to include `FontAwesome.ttf`
 
 <img src="http://imageshack.us/a/img339/9596/bbuttonfontawesomexcode.png">
 
-License
--------
+### With Storyboards
+
+Create a `UIButton` and change its class to `BButton`
+
+<img width=261 src="http://img827.imageshack.us/img827/6596/ibbbutton.png"/>
+
+### Create programmatically
+
+Initialize with any of the following methods
+
+* `- (id)initWithFrame:(CGRect)frame type:(BButtonType)type`
+* `- (id)initWithFrame:(CGRect)frame type:(BButtonType)type icon:(FAIcon)icon fontSize:(CGFloat)fontSize`
+
+* `- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor`
+* `- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor icon:(FAIcon)icon fontSize:(CGFloat)fontSize`
+
+* `+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon type:(BButtonType)type`
+* `+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon color:(UIColor *)color`
+
+**See the included demo project `BButtonDemo.xcodeproj`**
+
+**See `FontAwesomeIcons.html` for list of icons**
+
+##[BButton](https://github.com/mattlawer/BButton) License
 
 Copyright (c) 2012, Mathieu Bolard
 All rights reserved.
@@ -81,9 +54,12 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL Mathieu Bolard BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-Contact
--------
+##[FontAwesome](https://github.com/FortAwesome/Font-Awesome) License
 
-mattlawer08@gmail.com<br />
-http://mathieubolard.com<br />
-http://twitter.com/mattlawer
+* The Font Awesome font is licensed under the [SIL Open Font License](http://scripts.sil.org/OFL)
+* Font Awesome CSS, LESS, and SASS files are licensed under the [MIT License](http://opensource.org/licenses/mit-license.html)
+* The Font Awesome pictograms are licensed under the [CC BY 3.0 License](http://creativecommons.org/licenses/by/3.0)
+* Attribution is no longer required in Font Awesome 3.0, but much appreciated: "Font Awesome by Dave Gandy - http://fortawesome.github.com/Font-Awesome"
+
+[img1]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-1.png
+[img2]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-2.png
