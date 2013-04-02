@@ -6,6 +6,12 @@
 //
 //  https://github.com/mattlawer/BButton
 //
+//
+//  -----------------------------------------
+//  Edited by Jesse Squires on 2 April, 2013.
+//
+//  http://github.com/jessesquires/BButton
+//
 //  http://hexedbits.com
 //
 
