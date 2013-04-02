@@ -32,6 +32,7 @@
             [btn setTitle:@"Button" forState:UIControlStateNormal];
             [btn setType:type];
             type++;
+            type = (type > BButtonTypeGray) ? 0 : type++;
             [self.view addSubview:btn];
         }
     }

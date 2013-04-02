@@ -21,6 +21,7 @@
 		880EED9D170B357400462214 /* BButton+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EED98170B357400462214 /* BButton+FontAwesome.m */; };
 		880EED9E170B357400462214 /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EED9A170B357400462214 /* BButton.m */; };
 		880EED9F170B357400462214 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 880EED9C170B357400462214 /* FontAwesome.ttf */; };
+		880EEDA2170B3EDB00462214 /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EEDA1170B3EDB00462214 /* UIColor+BButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		880EED99170B357400462214 /* BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BButton.h; sourceTree = "<group>"; };
 		880EED9A170B357400462214 /* BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BButton.m; sourceTree = "<group>"; };
 		880EED9C170B357400462214 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		880EEDA0170B3EDB00462214 /* UIColor+BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BButton.h"; sourceTree = "<group>"; };
+		880EEDA1170B3EDB00462214 /* UIColor+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BButton.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				880EED9A170B357400462214 /* BButton.m */,
 				880EED97170B357400462214 /* BButton+FontAwesome.h */,
 				880EED98170B357400462214 /* BButton+FontAwesome.m */,
+				880EEDA0170B3EDB00462214 /* UIColor+BButton.h */,
+				880EEDA1170B3EDB00462214 /* UIColor+BButton.m */,
 				880EED9B170B357400462214 /* resources */,
 			);
 			path = BButton;
@@ -208,6 +213,7 @@
 				880EED53170B33B000462214 /* ViewController.m in Sources */,
 				880EED9D170B357400462214 /* BButton+FontAwesome.m in Sources */,
 				880EED9E170B357400462214 /* BButton.m in Sources */,
+				880EEDA2170B3EDB00462214 /* UIColor+BButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

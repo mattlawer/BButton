@@ -8,6 +8,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIColor+BButton.h"
 
 typedef enum {
     BButtonTypeDefault = 0,
@@ -17,17 +18,16 @@ typedef enum {
     BButtonTypeWarning,
     BButtonTypeDanger,
     BButtonTypeInverse,
-    BSButtonTypeTwitter,
-    BSButtonTypeFacebook,
-    BSButtonTypePurple,
-    BSButtonTypeGray
+    BButtonTypeTwitter,
+    BButtonTypeFacebook,
+    BButtonTypePurple,
+    BButtonTypeGray
 } BButtonType;
 
 
 @interface BButton : UIButton
 
 @property (strong, nonatomic) UIColor *color;
-@property (assign, nonatomic) CGGradientRef gradient;
 @property (assign, nonatomic) BButtonType type;
 @property (assign, nonatomic) BOOL shouldShowDisabled;
 
