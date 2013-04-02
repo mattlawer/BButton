@@ -13,6 +13,7 @@ Includes [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsa
 * Up-to-date for iOS 5.0+, ARC, Storyboards
 * Custom initialization methods for easier creation
 * Option to show button 'disabled' state
+* New button type options
 * FontAwesome already included
 * Refactored to be much cleaner, better organized
 
