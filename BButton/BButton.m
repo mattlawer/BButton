@@ -6,6 +6,14 @@
 //
 //  https://github.com/mattlawer/BButton
 //
+//
+//  -----------------------------------------
+//  Edited by Jesse Squires on 2 April, 2013.
+//
+//  http://github.com/jessesquires/BButton
+//
+//  http://hexedbits.com
+//
 
 #import "BButton.h"
 
@@ -13,6 +21,8 @@
 
 @property (assign, nonatomic) CGGradientRef gradient;
 
+- (void)setup;
++ (UIColor *)colorForButtonType:(BButtonType)type;
 - (void)setGradientEnabled:(BOOL)enabled;
 
 @end
@@ -22,26 +32,46 @@
 @implementation BButton
 
 @synthesize color;
-@synthesize gradient;
-@synthesize type;
 
 #pragma mark - Initialization
-- (id)initWithFrame:(CGRect)frame type:(BButtonType)pType
+- (void)setup
 {
-    self = [super initWithFrame:frame];
+    self.backgroundColor = [UIColor clearColor];
+    self.titleLabel.shadowOffset = CGSizeMake(0.0f, -1.0f);
+    self.titleLabel.font = [UIFont boldSystemFontOfSize:17.0f];
+    self.shouldShowDisabled = NO;
+    [self setType:BButtonTypeDefault];
+}
+
+- (id)initWithFrame:(CGRect)frame type:(BButtonType)type
+{
+    return [self initWithFrame:frame color:[BButton colorForButtonType:type]];
+}
+
+- (id)initWithFrame:(CGRect)frame type:(BButtonType)type icon:(FAIcon)icon fontSize:(CGFloat)fontSize
+{
+    return [self initWithFrame:frame
+                         color:[BButton colorForButtonType:type]
+                          icon:icon
+                      fontSize:fontSize];
+}
+
+- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor
+{
+    self = [self initWithFrame:frame];
     if(self) {
-        [self setup];
-        [self setType:pType];
+        self.color = aColor;
     }
     return self;
 }
 
-- (id)init
+- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor icon:(FAIcon)icon fontSize:(CGFloat)fontSize
 {
-    self = [super init];
+    self = [self initWithFrame:frame color:aColor];
     if(self) {
-        [self setup];
-        [self setType:BButtonTypeDefault];
+        self.titleLabel.font = [UIFont fontWithName:@"FontAwesome" size:fontSize];
+        self.titleLabel.textAlignment = NSTextAlignmentCenter;
+        [self setTitle:[NSString stringFromAwesomeIcon:icon] forState:UIControlStateNormal];
     }
     return self;
 }
@@ -51,7 +81,6 @@
     self = [super initWithFrame:frame];
     if(self) {
         [self setup];
-        [self setType:BButtonTypeDefault];
     }
     return self;
 }
@@ -61,17 +90,31 @@
     self = [super initWithCoder:aDecoder];
     if(self) {
         [self setup];
-        [self setType:BButtonTypeDefault];
     }
     return self;
 }
 
-- (void)setup
+- (id)init
 {
-    self.backgroundColor = [UIColor clearColor];
-    self.titleLabel.shadowOffset = CGSizeMake(0.0f, -1.0f);
-    self.titleLabel.font = [UIFont boldSystemFontOfSize:17.0f];
-    self.shouldShowDisabled = NO;
+    self = [super init];
+    if(self) {
+        [self setup];
+    }
+    return self;
+}
+
++ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon type:(BButtonType)type
+{
+    return [BButton awesomeButtonWithOnlyIcon:icon
+                                        color:[BButton colorForButtonType:type]];
+}
+
++ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon color:(UIColor *)color
+{
+    return [[BButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 40.0f, 40.0f)
+                                    color:color
+                                     icon:icon
+                                 fontSize:20.0f];
 }
 
 #pragma mark - Parent overrides
@@ -119,12 +162,35 @@
     [self setNeedsDisplay];
 }
 
-- (void)setType:(BButtonType)newType
+#pragma mark - BButton
+- (void)setType:(BButtonType)type
 {
-    type = newType;
+    self.color = [BButton colorForButtonType:type];
+}
+
+- (void)addAwesomeIcon:(FAIcon)icon beforeTitle:(BOOL)before
+{
+    NSString *iconString = [NSString stringFromAwesomeIcon:icon];
+    self.titleLabel.font = [UIFont fontWithName:@"FontAwesome"
+                                           size:self.titleLabel.font.pointSize];
+    
+    NSString *title = [NSString stringWithFormat:@"%@", iconString];
+    
+    if(![self.titleLabel.text isEmpty]) {
+        if(before)
+            title = [title stringByAppendingFormat:@" %@", self.titleLabel.text];
+        else
+            title = [NSString stringWithFormat:@"%@  %@", self.titleLabel.text, iconString];
+    }
+    
+    [self setTitle:title forState:UIControlStateNormal];
+}
+
++ (UIColor *)colorForButtonType:(BButtonType)type
+{
     UIColor *newColor = nil;
     
-    switch (newType) {
+    switch (type) {
         case BButtonTypePrimary:
             newColor = [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f];
             break;
@@ -161,7 +227,7 @@
             break;
     }
     
-    [self setColor:newColor];
+    return newColor;
 }
 
 #pragma mark - Drawing
@@ -170,15 +236,15 @@
     [super drawRect:rect];
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    UIColor* border = [self.color darkenColorWithValue:0.06f];
+    UIColor *border = [self.color darkenColorWithValue:0.06f];
     
     // Shadow Declarations
-    UIColor* shadow = [self.color lightenColorWithValue:0.50f];
+    UIColor *shadow = [self.color lightenColorWithValue:0.50f];
     CGSize shadowOffset = CGSizeMake(0.0f, 1.0f);
     CGFloat shadowBlurRadius = 2.0f;
     
     // Rounded Rectangle Drawing
-    UIBezierPath* roundedRectanglePath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0.5f, 0.5f, rect.size.width-1.0f, rect.size.height-1.0f)
+    UIBezierPath *roundedRectanglePath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0.5f, 0.5f, rect.size.width-1.0f, rect.size.height-1.0f)
                                                                     cornerRadius:6.0f];
     
     CGContextSaveGState(context);
@@ -198,7 +264,7 @@
         roundedRectangleBorderRect = CGRectOffset(roundedRectangleBorderRect, -shadowOffset.width, -shadowOffset.height);
         roundedRectangleBorderRect = CGRectInset(CGRectUnion(roundedRectangleBorderRect, [roundedRectanglePath bounds]), -1.0f, -1.0f);
         
-        UIBezierPath* roundedRectangleNegativePath = [UIBezierPath bezierPathWithRect: roundedRectangleBorderRect];
+        UIBezierPath *roundedRectangleNegativePath = [UIBezierPath bezierPathWithRect: roundedRectangleBorderRect];
         [roundedRectangleNegativePath appendPath: roundedRectanglePath];
         roundedRectangleNegativePath.usesEvenOddFillRule = YES;
         
@@ -228,13 +294,13 @@
 - (void)setGradientEnabled:(BOOL)enabled
 {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    UIColor* topColor = [self.color lightenColorWithValue:0.12f];
+    UIColor *topColor = [self.color lightenColorWithValue:0.12f];
     
     if(!enabled) {
         topColor = [self.color darkenColorWithValue:0.12f];
     }
     
-    NSArray* newGradientColors = [NSArray arrayWithObjects:(id)topColor.CGColor, (id)self.color.CGColor, nil];
+    NSArray *newGradientColors = [NSArray arrayWithObjects:(id)topColor.CGColor, (id)self.color.CGColor, nil];
     CGFloat newGradientLocations[] = {0.0f, 1.0f};
     
     self.gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)newGradientColors, newGradientLocations);

@@ -18,10 +18,10 @@
 		880EED4A170B33B000462214 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 880EED49170B33B000462214 /* Default-568h@2x.png */; };
 		880EED4D170B33B000462214 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880EED4B170B33B000462214 /* MainStoryboard.storyboard */; };
 		880EED53170B33B000462214 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EED52170B33B000462214 /* ViewController.m */; };
-		880EED9D170B357400462214 /* BButton+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EED98170B357400462214 /* BButton+FontAwesome.m */; };
 		880EED9E170B357400462214 /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EED9A170B357400462214 /* BButton.m */; };
 		880EED9F170B357400462214 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 880EED9C170B357400462214 /* FontAwesome.ttf */; };
 		880EEDA2170B3EDB00462214 /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EEDA1170B3EDB00462214 /* UIColor+BButton.m */; };
+		880EEDA5170B6D2600462214 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EEDA4170B6D2600462214 /* NSString+FontAwesome.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,13 +41,13 @@
 		880EED4C170B33B000462214 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		880EED51170B33B000462214 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		880EED52170B33B000462214 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		880EED97170B357400462214 /* BButton+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BButton+FontAwesome.h"; sourceTree = "<group>"; };
-		880EED98170B357400462214 /* BButton+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BButton+FontAwesome.m"; sourceTree = "<group>"; };
 		880EED99170B357400462214 /* BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BButton.h; sourceTree = "<group>"; };
 		880EED9A170B357400462214 /* BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BButton.m; sourceTree = "<group>"; };
 		880EED9C170B357400462214 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		880EEDA0170B3EDB00462214 /* UIColor+BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BButton.h"; sourceTree = "<group>"; };
 		880EEDA1170B3EDB00462214 /* UIColor+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BButton.m"; sourceTree = "<group>"; };
+		880EEDA3170B6D2600462214 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		880EEDA4170B6D2600462214 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,8 +124,8 @@
 			children = (
 				880EED99170B357400462214 /* BButton.h */,
 				880EED9A170B357400462214 /* BButton.m */,
-				880EED97170B357400462214 /* BButton+FontAwesome.h */,
-				880EED98170B357400462214 /* BButton+FontAwesome.m */,
+				880EEDA3170B6D2600462214 /* NSString+FontAwesome.h */,
+				880EEDA4170B6D2600462214 /* NSString+FontAwesome.m */,
 				880EEDA0170B3EDB00462214 /* UIColor+BButton.h */,
 				880EEDA1170B3EDB00462214 /* UIColor+BButton.m */,
 				880EED9B170B357400462214 /* resources */,
@@ -211,9 +211,9 @@
 				880EED40170B33B000462214 /* main.m in Sources */,
 				880EED44170B33B000462214 /* AppDelegate.m in Sources */,
 				880EED53170B33B000462214 /* ViewController.m in Sources */,
-				880EED9D170B357400462214 /* BButton+FontAwesome.m in Sources */,
 				880EED9E170B357400462214 /* BButton.m in Sources */,
 				880EEDA2170B3EDB00462214 /* UIColor+BButton.m in Sources */,
+				880EEDA5170B6D2600462214 /* NSString+FontAwesome.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

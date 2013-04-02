@@ -31,30 +31,25 @@
         
         for(int j = 0; j < 7; j++) {
             CGRect frame = CGRectMake(32.0f + (i * 144.0f), 20.0f + (j * 60.0f), 112.0f, 40.0f);
-            BButton *btn = [[BButton alloc] initWithFrame:frame];
-            [btn setType:type];
+            BButton *btn = [[BButton alloc] initWithFrame:frame type:type];
             [btn setTitle:[self titleForType:type] forState:UIControlStateNormal];
             
             if(type == BButtonTypeFacebook)
-                [btn makeAwesomeWithIcon:FAIconFacebook];
+                [btn addAwesomeIcon:FAIconFacebook beforeTitle:YES];
             else if(type == BButtonTypeTwitter)
-                [btn makeAwesomeWithIcon:FAIconTwitter];
+                [btn addAwesomeIcon:FAIconTwitter beforeTitle:NO];
             
             type++;
             if(type > BButtonTypeGray) {
-                btn = [BButton awesomeButtonWithIcon:arc4random() % 209];
-                btn.type = (type % 2) ? BButtonTypeInverse : BButtonTypeDefault;
+                btn = [BButton awesomeButtonWithOnlyIcon:arc4random() % 209
+                                                    type:(type % 2) ? BButtonTypeInverse : BButtonTypeDefault];
+                
                 btn.frame = CGRectMake(frame.origin.x, frame.origin.y, btn.frame.size.width, btn.frame.size.width);
             }
             
             [self.view addSubview:btn];
         }
     }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 }
 
 #pragma mark - Utilities
