@@ -1,9 +1,10 @@
 //
 //  BButton+FontAwesome.m
-//  ReportApp
 //
 //  Created by Pit Garbe on 27.09.12.
 //  Copyright (c) 2012 Pit Garbe. All rights reserved.
+//
+//  https://github.com/leberwurstsaft/FontAwesome-for-iOS
 //
 
 #import "BButton+FontAwesome.h"
