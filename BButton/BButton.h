@@ -17,6 +17,10 @@ typedef enum {
     BButtonTypeWarning,
     BButtonTypeDanger,
     BButtonTypeInverse,
+    BSButtonTypeTwitter,
+    BSButtonTypeFacebook,
+    BSButtonTypePurple,
+    BSButtonTypeGray
 } BButtonType;
 
 @interface BButton : UIButton {
