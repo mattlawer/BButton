@@ -11,90 +11,118 @@
 
 @interface BButton ()
 
+- (void)setGradientEnabled:(BOOL)enabled;
 - (UIColor *)lightenColor:(UIColor *)oldColor value:(float)value;
 - (UIColor *)darkenColor:(UIColor *)oldColor value:(float)value;
 - (BOOL)isLightColor:(UIColor *)color;
+
 @end
+
+
 
 @implementation BButton
 
-- (id) init {
-    self = [super init];
-    if (self) {
-        [self setup];
-    }
-    return self;
-}
+@synthesize color;
+@synthesize gradient;
+@synthesize type;
 
-- (void)dealloc {
-    if (_gradient != NULL) {
-        CGGradientRelease(_gradient);
-    }
-}
-
-- (id) initWithFrame:(CGRect)frame {
+#pragma mark - Initialization
+- (id)initWithFrame:(CGRect)frame type:(BButtonType)pType
+{
     self = [super initWithFrame:frame];
-    if (self) {
+    if(self) {
+        [self setup];
+        [self setType:pType];
+    }
+    return self;
+}
+
+- (id)init
+{
+    self = [super init];
+    if(self) {
         [self setup];
     }
     return self;
 }
 
-- (id) initWithCoder:(NSCoder *)aDecoder {
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if(self) {
+        [self setup];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
     self = [super initWithCoder:aDecoder];
-    if (self) {
+    if(self) {
         [self setup];
     }
     return self;
 }
 
-- (void) setup {
-    // Initialization code
+- (void)setup
+{
     self.backgroundColor = [UIColor clearColor];
-    self.color = [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f];
-    self.titleLabel.shadowOffset = CGSizeMake(0.0, -1.0);
+    [self setType:BButtonTypeDefault];
+    self.titleLabel.shadowOffset = CGSizeMake(0.0f, -1.0f);
+    self.titleLabel.font = [UIFont boldSystemFontOfSize:17.0f];
+    self.shouldShowDisabled = NO;
 }
 
-- (void) setHighlighted:(BOOL)highlighted {
+#pragma mark - Parent overrides
+- (void)setHighlighted:(BOOL)highlighted
+{
     [super setHighlighted:highlighted];
     [self setNeedsDisplay];
 }
 
-- (void) setColor:(UIColor *)color {
-    _color = color;
+- (void)setEnabled:(BOOL)enabled
+{
+    [super setEnabled:enabled];
     
-    if ([self isLightColor:color]) {
-        [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [self setTitleShadowColor:[[UIColor whiteColor] colorWithAlphaComponent:0.6] forState:UIControlStateNormal];
-    }else {
-        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [self setTitleShadowColor:[[UIColor blackColor] colorWithAlphaComponent:0.6] forState:UIControlStateNormal];
-    }
-    
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    UIColor* topColor = [self lightenColor:_color value:0.12];
-    
-    NSArray* newGradientColors = [NSArray arrayWithObjects:
-                                  (id)topColor.CGColor,
-                                  (id)_color.CGColor, nil];
-    CGFloat newGradientLocations[] = {0.0, 1.0};
-    
-    CGGradientRelease(_gradient);
-    _gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)newGradientColors, newGradientLocations);
-    CGColorSpaceRelease(colorSpace);
+    if(self.shouldShowDisabled)
+        [self setGradientEnabled:enabled];
     
     [self setNeedsDisplay];
 }
 
-- (UIColor *) color {
-    return _color;
+#pragma mark - Setters
+- (void)setColor:(UIColor *)newColor
+{
+    color = newColor;
+    
+    if([self isLightColor:color]) {
+        [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self setTitleShadowColor:[[UIColor whiteColor] colorWithAlphaComponent:0.6f] forState:UIControlStateNormal];
+        
+        if(self.shouldShowDisabled)
+            [self setTitleColor:[UIColor darkGrayColor] forState:UIControlStateDisabled];
+    }
+    else {
+        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self setTitleShadowColor:[[UIColor blackColor] colorWithAlphaComponent:0.6f] forState:UIControlStateNormal];
+        
+        if(self.shouldShowDisabled)
+            [self setTitleColor:[UIColor lightTextColor] forState:UIControlStateDisabled];
+    }
+    
+    if(self.shouldShowDisabled)
+        [self setGradientEnabled:self.enabled];
+    else
+        [self setGradientEnabled:YES];
+    
+    [self setNeedsDisplay];
 }
 
-- (void)setType:(BButtonType)type
+- (void)setType:(BButtonType)newType
 {
     UIColor *newColor = nil;
     
-    switch (type) {
+    switch (newType) {
         case BButtonTypePrimary:
             newColor = [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f];
             break;
@@ -134,33 +162,39 @@
     [self setColor:newColor];
 }
 
-
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
+#pragma mark - Drawing
 - (void)drawRect:(CGRect)rect
 {
-    // Drawing code
+    [super drawRect:rect];
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    UIColor* border = [self darkenColor:_color value:0.06];
+    UIColor* border = [self darkenColor:self.color value:0.06f];
     
-    //// Shadow Declarations
-    UIColor* shadow = [self lightenColor:border value:0.50];
-    CGSize shadowOffset = CGSizeMake(0, 1);
-    CGFloat shadowBlurRadius = 2;
+    // Shadow Declarations
+    UIColor* shadow = [self lightenColor:border value:0.50f];
+    CGSize shadowOffset = CGSizeMake(0.0f, 1.0f);
+    CGFloat shadowBlurRadius = 2.0f;
     
-    //// Rounded Rectangle Drawing
-    UIBezierPath* roundedRectanglePath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(0.5, 0.5, rect.size.width-1.0, rect.size.height-1.0) cornerRadius: 6];
+    // Rounded Rectangle Drawing
+    UIBezierPath* roundedRectanglePath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0.5f, 0.5, rect.size.width-1.0f, rect.size.height-1.0f)
+                                                                    cornerRadius:6.0f];
+    
     CGContextSaveGState(context);
+    
     [roundedRectanglePath addClip];
-    CGContextDrawLinearGradient(context, _gradient, CGPointMake(0.0, self.highlighted ? rect.size.height-0.5 : 0.5), CGPointMake(0.0, self.highlighted ? 0.5 : rect.size.height-0.5), 0);
+    
+    CGContextDrawLinearGradient(context,
+                                self.gradient,
+                                CGPointMake(0.0f, self.highlighted ? rect.size.height-0.5f : 0.5f),
+                                CGPointMake(0.0f, self.highlighted ? 0.5f : rect.size.height-0.5f), 0.0f);
+    
     CGContextRestoreGState(context);
     
-    if (!self.highlighted) {
-        ////// Rounded Rectangle Inner Shadow
+    if(!self.highlighted) {
+        // Rounded Rectangle Inner Shadow
         CGRect roundedRectangleBorderRect = CGRectInset([roundedRectanglePath bounds], -shadowBlurRadius, -shadowBlurRadius);
         roundedRectangleBorderRect = CGRectOffset(roundedRectangleBorderRect, -shadowOffset.width, -shadowOffset.height);
-        roundedRectangleBorderRect = CGRectInset(CGRectUnion(roundedRectangleBorderRect, [roundedRectanglePath bounds]), -1, -1);
+        roundedRectangleBorderRect = CGRectInset(CGRectUnion(roundedRectangleBorderRect, [roundedRectanglePath bounds]), -1.0f, -1.0f);
         
         UIBezierPath* roundedRectangleNegativePath = [UIBezierPath bezierPathWithRect: roundedRectangleBorderRect];
         [roundedRectangleNegativePath appendPath: roundedRectanglePath];
@@ -171,37 +205,55 @@
             CGFloat xOffset = shadowOffset.width + round(roundedRectangleBorderRect.size.width);
             CGFloat yOffset = shadowOffset.height;
             CGContextSetShadowWithColor(context,
-                                        CGSizeMake(xOffset + copysign(0.1, xOffset), yOffset + copysign(0.1, yOffset)),
+                                        CGSizeMake(xOffset + copysign(0.1f, xOffset), yOffset + copysign(0.1f, yOffset)),
                                         shadowBlurRadius,
                                         shadow.CGColor);
             
             [roundedRectanglePath addClip];
-            CGAffineTransform transform = CGAffineTransformMakeTranslation(-round(roundedRectangleBorderRect.size.width), 0);
+            CGAffineTransform transform = CGAffineTransformMakeTranslation(-round(roundedRectangleBorderRect.size.width), 0.0f);
             [roundedRectangleNegativePath applyTransform: transform];
             [[UIColor grayColor] setFill];
             [roundedRectangleNegativePath fill];
         }
         CGContextRestoreGState(context);
     }
-        
+    
     [border setStroke];
-    roundedRectanglePath.lineWidth = 1;
+    roundedRectanglePath.lineWidth = 1.0f;
     [roundedRectanglePath stroke];
 }
 
-- (UIColor *)lightenColor:(UIColor *)oldColor value:(float)value {
-    int   totalComponents = CGColorGetNumberOfComponents(oldColor.CGColor);
-    bool  isGreyscale     = totalComponents == 2 ? YES : NO;
+- (void)setGradientEnabled:(BOOL)enabled
+{
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    UIColor* topColor = [self lightenColor:self.color value:0.12f];
+    
+    if(!enabled) {
+        topColor = [self darkenColor:self.color value:0.12f];
+    }
+    
+    NSArray* newGradientColors = [NSArray arrayWithObjects:(id)topColor.CGColor, (id)self.color.CGColor, nil];
+    CGFloat newGradientLocations[] = {0.0f, 1.0f};
+    
+    self.gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)newGradientColors, newGradientLocations);
+    CGColorSpaceRelease(colorSpace);
+}
+
+- (UIColor *)lightenColor:(UIColor *)oldColor value:(float)value
+{
+    int totalComponents = CGColorGetNumberOfComponents(oldColor.CGColor);
+    bool isGreyscale = totalComponents == 2 ? YES : NO;
     
     CGFloat* oldComponents = (CGFloat *)CGColorGetComponents(oldColor.CGColor);
     CGFloat newComponents[4];
     
-    if (isGreyscale) {
+    if(isGreyscale) {
         newComponents[0] = oldComponents[0]+value > 1.0 ? 1.0 : oldComponents[0]+value;
         newComponents[1] = oldComponents[0]+value > 1.0 ? 1.0 : oldComponents[0]+value;
         newComponents[2] = oldComponents[0]+value > 1.0 ? 1.0 : oldComponents[0]+value;
         newComponents[3] = oldComponents[1];
-    } else {
+    }
+    else {
         newComponents[0] = oldComponents[0]+value > 1.0 ? 1.0 : oldComponents[0]+value;
         newComponents[1] = oldComponents[1]+value > 1.0 ? 1.0 : oldComponents[1]+value;
         newComponents[2] = oldComponents[2]+value > 1.0 ? 1.0 : oldComponents[2]+value;
@@ -218,9 +270,10 @@
     return retColor;
 }
 
-- (UIColor *)darkenColor:(UIColor *)oldColor value:(float)value {
-    int   totalComponents = CGColorGetNumberOfComponents(oldColor.CGColor);
-    bool  isGreyscale     = totalComponents == 2 ? YES : NO;
+- (UIColor *)darkenColor:(UIColor *)oldColor value:(float)value
+{
+    int totalComponents = CGColorGetNumberOfComponents(oldColor.CGColor);
+    bool isGreyscale = totalComponents == 2 ? YES : NO;
     
     CGFloat* oldComponents = (CGFloat *)CGColorGetComponents(oldColor.CGColor);
     CGFloat newComponents[4];
@@ -230,7 +283,8 @@
         newComponents[1] = oldComponents[0]-value < 0.0 ? 0.0 : oldComponents[0]-value;
         newComponents[2] = oldComponents[0]-value < 0.0 ? 0.0 : oldComponents[0]-value;
         newComponents[3] = oldComponents[1];
-    } else {
+    }
+    else {
         newComponents[0] = oldComponents[0]-value < 0.0 ? 0.0 : oldComponents[0]-value;
         newComponents[1] = oldComponents[1]-value < 0.0 ? 0.0 : oldComponents[1]-value;
         newComponents[2] = oldComponents[2]-value < 0.0 ? 0.0 : oldComponents[2]-value;
@@ -247,20 +301,22 @@
     return retColor;
 }
 
-- (BOOL) isLightColor:(UIColor *)color {
-    int   totalComponents = CGColorGetNumberOfComponents(color.CGColor);
-    bool  isGreyscale     = totalComponents == 2 ? YES : NO;
+- (BOOL)isLightColor:(UIColor *)color
+{
+    int totalComponents = CGColorGetNumberOfComponents(self.color.CGColor);
+    bool isGreyscale = totalComponents == 2 ? YES : NO;
     
-    CGFloat* components = (CGFloat *)CGColorGetComponents(color.CGColor);
+    CGFloat* components = (CGFloat *)CGColorGetComponents(self.color.CGColor);
     CGFloat sum;
     
     if (isGreyscale) {
         sum = components[0];
-    } else {
-        sum = (components[0]+components[1]+components[2])/3.0;
+    }
+    else {
+        sum = (components[0]+components[1]+components[2]) / 3.0f;
     }
     
-    return (sum > 0.8);
+    return (sum > 0.8f);
 }
 
 @end

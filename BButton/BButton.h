@@ -23,13 +23,15 @@ typedef enum {
     BSButtonTypeGray
 } BButtonType;
 
-@interface BButton : UIButton {
-    UIColor *_color;
-    CGGradientRef _gradient;
-}
 
-@property (nonatomic, assign) UIColor *color;
+@interface BButton : UIButton
 
-- (void)setType:(BButtonType)type;
+@property (strong, nonatomic) UIColor *color;
+@property (assign, nonatomic) CGGradientRef gradient;
+@property (assign, nonatomic) BButtonType type;
+@property (assign, nonatomic) BOOL shouldShowDisabled;
+
+- (id)initWithFrame:(CGRect)frame type:(BButtonType)pType;
+- (void)setType:(BButtonType)newType;
 
 @end
