@@ -49,6 +49,7 @@ Initialize with any of the following methods
 ##[BButton](https://github.com/mattlawer/BButton) License
 
 [BSD 3-Clause License](http://opensource.org/licenses/BSD-3-Clause)
+
 Copyright (c) 2012, Mathieu Bolard
 All rights reserved.
 
