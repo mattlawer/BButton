@@ -29,6 +29,10 @@
     if (_gradient != NULL) {
         CGGradientRelease(_gradient);
     }
+	
+#if !__has_feature(objc_arc)
+	[super dealloc];
+#endif
 }
 
 - (id) initWithFrame:(CGRect)frame {
@@ -60,7 +64,13 @@
 }
 
 - (void) setColor:(UIColor *)color {
-    _color = color;
+#if __has_feature(objc_arc)
+	_color = color;
+#else
+	if (_color)
+		[_color release];
+    _color = [color retain];
+#endif
     
     if ([self isLightColor:color]) {
         [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -79,9 +89,14 @@
     CGFloat newGradientLocations[] = {0.0, 1.0};
     
     CGGradientRelease(_gradient);
-    _gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)newGradientColors, newGradientLocations);
+	
+#if __has_feature(objc_arc)
+	_gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)newGradientColors, newGradientLocations);
+#else
+    _gradient = CGGradientCreateWithColors(colorSpace, (CFArrayRef)newGradientColors, newGradientLocations);
+#endif
+
     CGColorSpaceRelease(colorSpace);
-    
     [self setNeedsDisplay];
 }
 
