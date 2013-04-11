@@ -19,6 +19,12 @@ Includes [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsa
 
 ## Installation
 
+### From [CocoaPods](http://www.cocoapods.org)
+
+pod `BButton`
+
+### From source
+
 * Drag the `BButton/` folder to your project (make sure you copy all files/folders)
 * `#import "BButton.h"`
 * Add `Fonts provided by application` key to `Info.plist` and include `FontAwesome.ttf`
