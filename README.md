@@ -48,7 +48,7 @@ Initialize with any of the following methods
 
 ##[BButton](https://github.com/mattlawer/BButton) License
 
-Edited and refactored by Jesse Squires, 2013.
+Edited and refactored by Jesse Squires, April 2013.
 
 [BSD 3-Clause License](http://opensource.org/licenses/BSD-3-Clause)
 
