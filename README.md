@@ -21,7 +21,7 @@ Includes [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsa
 
 ### From [CocoaPods](http://www.cocoapods.org)
 
-pod `BButton`
+	pod `BButton`
 
 ### From source
 
@@ -30,6 +30,8 @@ pod `BButton`
 * Add `Fonts provided by application` key to `Info.plist` and include `FontAwesome.ttf`
 
 <img src="http://imageshack.us/a/img339/9596/bbuttonfontawesomexcode.png">
+
+## How To Use
 
 ### With Storyboards
 
