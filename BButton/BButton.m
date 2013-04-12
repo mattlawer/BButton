@@ -36,6 +36,7 @@
 //
 
 #import "BButton.h"
+#import <CoreGraphics/CoreGraphics.h>
 
 @interface BButton ()
 

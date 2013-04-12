@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		880EED34170B33B000462214 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880EED33170B33B000462214 /* UIKit.framework */; };
 		880EED36170B33B000462214 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880EED35170B33B000462214 /* Foundation.framework */; };
-		880EED38170B33B000462214 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880EED37170B33B000462214 /* CoreGraphics.framework */; };
 		880EED3E170B33B000462214 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 880EED3C170B33B000462214 /* InfoPlist.strings */; };
 		880EED40170B33B000462214 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EED3F170B33B000462214 /* main.m */; };
 		880EED44170B33B000462214 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EED43170B33B000462214 /* AppDelegate.m */; };
@@ -22,13 +21,13 @@
 		880EED9F170B357400462214 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 880EED9C170B357400462214 /* FontAwesome.ttf */; };
 		880EEDA2170B3EDB00462214 /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EEDA1170B3EDB00462214 /* UIColor+BButton.m */; };
 		880EEDA5170B6D2600462214 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EEDA4170B6D2600462214 /* NSString+FontAwesome.m */; };
+		8857FBFD1718B92B001C200D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8857FBFC1718B92B001C200D /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		880EED30170B33B000462214 /* BButtonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BButtonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		880EED33170B33B000462214 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		880EED35170B33B000462214 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		880EED37170B33B000462214 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		880EED3B170B33B000462214 /* BButtonDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BButtonDemo-Info.plist"; sourceTree = "<group>"; };
 		880EED3D170B33B000462214 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		880EED3F170B33B000462214 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		880EEDA1170B3EDB00462214 /* UIColor+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BButton.m"; sourceTree = "<group>"; };
 		880EEDA3170B6D2600462214 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
 		880EEDA4170B6D2600462214 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		8857FBFC1718B92B001C200D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,9 +55,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8857FBFD1718B92B001C200D /* CoreGraphics.framework in Frameworks */,
 				880EED34170B33B000462214 /* UIKit.framework in Frameworks */,
 				880EED36170B33B000462214 /* Foundation.framework in Frameworks */,
-				880EED38170B33B000462214 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,9 +85,9 @@
 		880EED32170B33B000462214 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8857FBFC1718B92B001C200D /* CoreGraphics.framework */,
 				880EED33170B33B000462214 /* UIKit.framework */,
 				880EED35170B33B000462214 /* Foundation.framework */,
-				880EED37170B33B000462214 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

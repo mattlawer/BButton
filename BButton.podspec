@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
   s.public_header_files = 'BButton'
   s.resource  = "BButton/resources/FontAwesome.ttf"
   s.requires_arc = true
-  s.framework = 'QuartzCore'
+  s.framework = 'CoreGraphics'
 end
