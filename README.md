@@ -41,14 +41,16 @@ Create a `UIButton` and change its class to `BButton`
 
 ### Create programmatically
 
-Initialize with any of the following methods
+Initialize with any of the following methods:
 
-* `- (id)initWithFrame:(CGRect)frame type:(BButtonType)type`
-* `- (id)initWithFrame:(CGRect)frame type:(BButtonType)type icon:(FAIcon)icon fontSize:(CGFloat)fontSize`
-* `- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor`
-* `- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor icon:(FAIcon)icon fontSize:(CGFloat)fontSize`
-* `+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon type:(BButtonType)type`
-* `+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon color:(UIColor *)color`
+````objective-c
+- (id)initWithFrame:(CGRect)frame type:(BButtonType)type
+- (id)initWithFrame:(CGRect)frame type:(BButtonType)type icon:(FAIcon)icon fontSize:(CGFloat)fontSize
+- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor
+- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor icon:(FAIcon)icon fontSize:(CGFloat)fontSize
++ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon type:(BButtonType)type
++ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon color:(UIColor *)color
+````
 
 **See the included demo project `BButtonDemo.xcodeproj`**
 
