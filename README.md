@@ -56,6 +56,16 @@ Initialize with any of the following methods:
 
 **See `FontAwesomeIcons.html` for list of icons**
 
+## Apps Using This Control
+
+[Hemoglobe](http://bit.ly/hemoglobeapp)
+
+[iPaint uPaint](http://bit.ly/ipupappstr)
+
+[Audiotrip](https://itunes.apple.com/us/app/audiotrip/id569634193?mt=8&ign-mpt=uo%3D4)
+
+*[Contact me](mailto:jesse.d.squires@gmail.com) to have your app listed here.*
+
 ##[BButton](https://github.com/mattlawer/BButton) License
 
 Edited and refactored by Jesse Squires, April 2013.
