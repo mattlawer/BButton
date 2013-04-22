@@ -98,8 +98,8 @@ THE SOFTWARE.
 * Attribution is no longer required in Font Awesome 3.0, but much appreciated:
 	* *"Font Awesome by Dave Gandy - http://fortawesome.github.com/Font-Awesome"*
 
-[img1]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-1.png
-[img2]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-2.png
+[img1]:https://raw.github.com/mattlawer/BButton/master/Screenshots/screenshot-1.png
+[img2]:https://raw.github.com/mattlawer/BButton/master/Screenshots/screenshot-2.png
 
 ##Contact
 
