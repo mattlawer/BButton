@@ -2,7 +2,7 @@
 
 BButton is a subclass of UIButton that looks like the [Twitter Bootstrap 2.3.1](http://twitter.github.com/bootstrap) buttons.
 
-Refactored by Jesse Squires, April 2013.
+Refactored by [@jessesquires](http://github.com/jessesquires), April 2013.
 
 Includes [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsaft/FontAwesome-for-iOS), fixed for iOS from the original [FontAwesome](http://fortawesome.github.com/Font-Awesome/).
 
