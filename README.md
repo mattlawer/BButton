@@ -39,6 +39,10 @@ Create a `UIButton` and change its class to `BButton`
 
 <img width=261 src="http://img827.imageshack.us/img827/6596/ibbbutton.png"/>
 
+Under 'User Defined Runtime Attributes' Define At Least Type to a integer of your choice. Other properties can be set this way for additional styling.
+
+<img width="516" height="206" src="http://i.imgur.com/NsarwUS.png"/>
+
 ### Create programmatically
 
 Initialize with any of the following methods:
