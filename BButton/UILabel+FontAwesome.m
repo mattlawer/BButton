@@ -11,8 +11,9 @@
 @implementation UILabel (FontAwesome)
 
 + (UILabel *)labelWithAwesomeIcon:(FAIcon)icon fontSize:(CGFloat)size {
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectZero];
-    label.font = [UIFont fontWithName:@"FontAwesome" size:size];
+    // make a square label for now
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0.0, 0.0, size, size)];
+    [label addAwesomeIcon:icon fontSize:size];
     return label;
 }
 
