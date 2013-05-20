@@ -29,15 +29,11 @@ Includes [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsa
 * `#import "BButton.h"`
 * Add `Fonts provided by application` key to `Info.plist` and include `FontAwesome.ttf`
 
-<img src="http://imageshack.us/a/img339/9596/bbuttonfontawesomexcode.png">
-
 ## How To Use
 
 ### With Storyboards
 
 Create a `UIButton` and change its class to `BButton`
-
-<img width=261 src="http://img827.imageshack.us/img827/6596/ibbbutton.png"/>
 
 ### Create programmatically
 
