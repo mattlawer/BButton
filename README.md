@@ -56,6 +56,8 @@ Initialize with any of the following methods:
 
 ## Apps Using This Control
 
+[Gitty for GitHub](https://itunes.apple.com/us/app/gitty-for-github/id645696309?mt=8)
+
 [Hemoglobe](http://bit.ly/hemoglobeapp)
 
 [iPaint uPaint](http://bit.ly/ipupappstr)
