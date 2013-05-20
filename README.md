@@ -29,6 +29,8 @@ Includes [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsa
 * `#import "BButton.h"`
 * Add `Fonts provided by application` key to `Info.plist` and include `FontAwesome.ttf`
 
+![plist][img3]
+
 ## How To Use
 
 ### With Storyboards
@@ -84,3 +86,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 [img1]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-1.png
 [img2]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-2.png
+[img3]:https://raw.github.com/jessesquires/BButton/master/Screenshots/plist.png
