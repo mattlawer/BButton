@@ -103,6 +103,7 @@
     self = [super initWithFrame:frame];
     if(self) {
         [self setup];
+        self.titleLabel.font = [UIFont boldSystemFontOfSize:17.0f];
     }
     return self;
 }
