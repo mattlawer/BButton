@@ -40,11 +40,8 @@
 
 @interface BButton ()
 
-@property (assign, nonatomic) CGGradientRef gradient;
-
 - (void)setup;
 + (UIColor *)colorForButtonType:(BButtonType)type;
-- (void)setGradientEnabled:(BOOL)enabled;
 
 @end
 
@@ -53,7 +50,6 @@
 @implementation BButton
 
 @synthesize color;
-@synthesize gradient;
 @synthesize shouldShowDisabled;
 
 #pragma mark - Initialization
@@ -150,10 +146,6 @@
 - (void)setEnabled:(BOOL)enabled
 {
     [super setEnabled:enabled];
-    
-    if(self.shouldShowDisabled)
-        [self setGradientEnabled:enabled];
-    
     [self setNeedsDisplay];
 }
 
@@ -176,11 +168,6 @@
         if(self.shouldShowDisabled)
             [self setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.5f] forState:UIControlStateDisabled];
     }
-    
-    if(self.shouldShowDisabled)
-        [self setGradientEnabled:self.enabled];
-    else
-        [self setGradientEnabled:YES];
     
     [self setNeedsDisplay];
 }
@@ -292,10 +279,22 @@
     
     [roundedRectanglePath addClip];
     
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    UIColor *topColor = (self.shouldShowDisabled && !self.enabled) ? [self.color darkenColorWithValue:0.12f] : [self.color lightenColorWithValue:0.12f];
+    
+    NSArray *newGradientColors = [NSArray arrayWithObjects:(id)topColor.CGColor, (id)self.color.CGColor, nil];
+    CGFloat newGradientLocations[] = {0.0f, 1.0f};
+    
+    CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)newGradientColors, newGradientLocations);
+    
+    CGColorSpaceRelease(colorSpace);
+    
     CGContextDrawLinearGradient(context,
-                                self.gradient,
+                                gradient,
                                 CGPointMake(0.0f, self.highlighted ? rect.size.height - 0.5f : 0.5f),
                                 CGPointMake(0.0f, self.highlighted ? 0.5f : rect.size.height - 0.5f), 0.0f);
+    
+    CGGradientRelease(gradient);
     
     CGContextRestoreGState(context);
     
@@ -330,18 +329,6 @@
     [border setStroke];
     roundedRectanglePath.lineWidth = 1.0f;
     [roundedRectanglePath stroke];
-}
-
-- (void)setGradientEnabled:(BOOL)enabled
-{
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    UIColor *topColor = enabled ? [self.color lightenColorWithValue:0.12f] : [self.color darkenColorWithValue:0.12f];
-    
-    NSArray *newGradientColors = [NSArray arrayWithObjects:(id)topColor.CGColor, (id)self.color.CGColor, nil];
-    CGFloat newGradientLocations[] = {0.0f, 1.0f};
-    
-    gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)newGradientColors, newGradientLocations);
-    CGColorSpaceRelease(colorSpace);
 }
 
 @end
