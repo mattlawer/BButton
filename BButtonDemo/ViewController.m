@@ -47,12 +47,19 @@
                 btn.frame = CGRectMake(frame.origin.x, frame.origin.y, btn.frame.size.width, btn.frame.size.width);
             }
             
+            [btn addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+            
             [self.view addSubview:btn];
         }
     }
 }
 
 #pragma mark - Utilities
+- (void)buttonPressed:(UIButton *)sender
+{
+    NSLog(@"Good jorb, you pressed a button: %@", sender.titleLabel.text);
+}
+
 - (NSString *)titleForType:(BButtonType)type
 {
     NSString *title = nil;
