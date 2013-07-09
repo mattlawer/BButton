@@ -1,6 +1,6 @@
 #BButton 2.0
 
-BButton is a subclass of UIButton that looks like the [Twitter Bootstrap 2.3.1](http://twitter.github.com/bootstrap) buttons.
+BButton is a subclass of UIButton that looks like the [Twitter Bootstrap 2.3](http://twitter.github.com/bootstrap) buttons.
 
 Forked from [@mattlawer / BButton](https://github.com/mattlawer/BButton) and refactored for more awesome.
 
