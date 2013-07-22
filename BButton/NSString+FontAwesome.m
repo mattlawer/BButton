@@ -50,9 +50,7 @@ static const NSArray *awesomeStrings;
 
 - (NSString *)trimWhitespace
 {
-    NSMutableString *str = [self mutableCopy];
-    CFStringTrimWhitespace((__bridge CFMutableStringRef)str);
-    return str;
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];;
 }
 
 - (BOOL)isEmpty
