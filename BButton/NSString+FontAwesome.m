@@ -50,7 +50,7 @@ static const NSArray *awesomeStrings;
 
 - (NSString *)trimWhitespace
 {
-    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];;
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
 - (BOOL)isEmpty
