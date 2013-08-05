@@ -62,7 +62,9 @@ Initialize with any of the following methods:
 
 [iPaint uPaint](http://bit.ly/ipupappstr)
 
-[Audiotrip](https://itunes.apple.com/us/app/audiotrip/id569634193?mt=8&ign-mpt=uo%3D4)
+[Audiotrip](https://itunes.apple.com/us/app/audiotrip/id569634193?mt=8)
+
+[iExplorer for DeviantART](https://itunes.apple.com/us/app/iexplorer-for-deviantart/id657212778?mt=8)
 
 *[Contact me](mailto:jesse.d.squires@gmail.com) to have your app listed here.*
 
