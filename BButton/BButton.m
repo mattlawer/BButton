@@ -41,6 +41,7 @@
 @interface BButton ()
 
 @property (assign, nonatomic) CGGradientRef gradient;
+@property (readonly, nonatomic) UILabel* fastTitleLabel;
 
 - (void)setup;
 + (UIColor *)colorForButtonType:(BButtonType)type;
@@ -60,8 +61,8 @@
 - (void)setup
 {
     self.backgroundColor = [UIColor clearColor];
-    self.titleLabel.shadowOffset = CGSizeMake(0.0f, -1.0f);
-    //self.titleLabel.font = [UIFont boldSystemFontOfSize:17.0f];
+    self.fastTitleLabel.shadowOffset = CGSizeMake(0.0f, -1.0f);
+    self.fastTitleLabel.font = [UIFont boldSystemFontOfSize:17.0f];
     self.shouldShowDisabled = NO;
     [self setType:BButtonTypeDefault];
 }
@@ -92,8 +93,8 @@
 {
     self = [self initWithFrame:frame color:aColor];
     if(self) {
-        self.titleLabel.font = [UIFont fontWithName:@"FontAwesome" size:fontSize];
-        self.titleLabel.textAlignment = NSTextAlignmentCenter;
+        self.fastTitleLabel.font = [UIFont fontWithName:@"FontAwesome" size:fontSize];
+        self.fastTitleLabel.textAlignment = NSTextAlignmentCenter;
         [self setTitle:[NSString stringFromAwesomeIcon:icon] forState:UIControlStateNormal];
     }
     return self;
@@ -212,16 +213,16 @@
 - (void)addAwesomeIcon:(FAIcon)icon beforeTitle:(BOOL)before
 {
     NSString *iconString = [NSString stringFromAwesomeIcon:icon];
-    self.titleLabel.font = [UIFont fontWithName:@"FontAwesome"
-                                           size:self.titleLabel.font.pointSize];
+    self.fastTitleLabel.font = [UIFont fontWithName:@"FontAwesome"
+                                           size:self.fastTitleLabel.font.pointSize];
     
     NSString *title = [NSString stringWithFormat:@"%@", iconString];
     
-    if(![self.titleLabel.text isEmpty]) {
+    if(![self.fastTitleLabel.text isEmpty]) {
         if(before)
-            title = [title stringByAppendingFormat:@" %@", self.titleLabel.text];
+            title = [title stringByAppendingFormat:@" %@", self.fastTitleLabel.text];
         else
-            title = [NSString stringWithFormat:@"%@  %@", self.titleLabel.text, iconString];
+            title = [NSString stringWithFormat:@"%@  %@", self.fastTitleLabel.text, iconString];
     }
     
     [self setTitle:title forState:UIControlStateNormal];
@@ -342,6 +343,16 @@
     
     gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)newGradientColors, newGradientLocations);
     CGColorSpaceRelease(colorSpace);
+}
+
+#pragma mark - performance
+
+- (UILabel*)fastTitleLabel
+{
+    if (self.subviews.count == 1)
+        return [self.subviews objectAtIndex:0];
+
+    return self.titleLabel;
 }
 
 @end
