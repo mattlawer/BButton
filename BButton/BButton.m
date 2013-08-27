@@ -61,7 +61,7 @@
 {
     self.backgroundColor = [UIColor clearColor];
     self.titleLabel.shadowOffset = CGSizeMake(0.0f, -1.0f);
-    self.titleLabel.font = [UIFont boldSystemFontOfSize:17.0f];
+    //self.titleLabel.font = [UIFont boldSystemFontOfSize:17.0f];
     self.shouldShowDisabled = NO;
     [self setType:BButtonTypeDefault];
 }
