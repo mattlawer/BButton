@@ -32,6 +32,9 @@
 + (UIColor *)colorForV2StyleButtonWithType:(BButtonType)type;
 + (UIColor *)colorForV3StyleButtonWithType:(BButtonType)type;
 
+- (void)drawRectForBButtonStyleV2:(CGRect)rect;
+- (void)drawRectForBButtonStyleV3:(CGRect)rect;
+
 @end
 
 
@@ -282,6 +285,19 @@
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
+    
+    switch (self.style) {
+        case BButtonStyleBootstrapV2:
+            [self drawRectForBButtonStyleV2:rect];
+            break;
+        case BButtonStyleBootstrapV3:
+            [self drawRectForBButtonStyleV3:rect];
+            break;
+    }
+}
+
+- (void)drawRectForBButtonStyleV2:(CGRect)rect
+{
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     UIColor *border = [self.color darkenColorWithValue:0.06f];
@@ -349,6 +365,11 @@
     [border setStroke];
     roundedRectanglePath.lineWidth = 1.0f;
     [roundedRectanglePath stroke];
+}
+
+- (void)drawRectForBButtonStyleV3:(CGRect)rect
+{
+    // TODO:
 }
 
 @end
