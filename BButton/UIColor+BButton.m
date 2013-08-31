@@ -29,9 +29,19 @@
     return [UIColor colorWithRed:0.85f green:0.85f blue:0.85f alpha:1.00f];
 }
 
++ (UIColor *)defaultColorV3
+{
+    return [UIColor colorWithHue:0.0f saturation:0.0f brightness:0.92f alpha:1.0f];
+}
+
 + (UIColor *)primaryColorV2
 {
     return [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f];
+}
+
++ (UIColor *)primaryColorV3
+{
+    return [UIColor colorWithHue:208.0f/360.0f saturation:0.72f brightness:0.69f alpha:1.0f];
 }
 
 + (UIColor *)infoColorV2
@@ -39,9 +49,19 @@
     return [UIColor colorWithRed:0.18f green:0.59f blue:0.71f alpha:1.00f];
 }
 
++ (UIColor *)infoColorV3
+{
+    return [UIColor colorWithHue:194.0f/360.0f saturation:0.59f brightness:0.87f alpha:1.0f];
+}
+
 + (UIColor *)successColorV2
 {
     return [UIColor colorWithRed:0.32f green:0.64f blue:0.32f alpha:1.00f];
+}
+
++ (UIColor *)successColorV3
+{
+    return [UIColor colorWithHue:120.0f/360.0f saturation:0.50f brightness:0.72f alpha:1.0f];
 }
 
 + (UIColor *)warningColorV2
@@ -49,14 +69,29 @@
     return [UIColor colorWithRed:0.97f green:0.58f blue:0.02f alpha:1.00f];
 }
 
++ (UIColor *)warningColorV3
+{
+    return [UIColor colorWithHue:35.0f/360.0f saturation:0.68f brightness:0.94f alpha:1.0f];
+}
+
 + (UIColor *)dangerColorV2
 {
     return [UIColor colorWithRed:0.74f green:0.21f blue:0.18f alpha:1.00f];
 }
 
++ (UIColor *)dangerColorV3
+{
+    return [UIColor colorWithHue:2.0f/360.0f saturation:0.64f brightness:0.85f alpha:1.0f];
+}
+
 + (UIColor *)inverseColorV2
 {
     return [UIColor colorWithRed:0.13f green:0.13f blue:0.13f alpha:1.00f];
+}
+
++ (UIColor *)inverseColorV3
+{
+    return [UIColor colorWithHue:0.0f saturation:0.0f brightness:0.60f alpha:1.0f];
 }
 
 + (UIColor *)twitterColor

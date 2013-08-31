@@ -278,7 +278,41 @@
 
 + (UIColor *)colorForV3StyleButtonWithType:(BButtonType)type
 {
-    return [BButton colorForV2StyleButtonWithType:type]; // TODO:
+    switch (type) {
+        case BButtonTypePrimary:
+            return [UIColor primaryColorV3];
+            
+        case BButtonTypeInfo:
+            return [UIColor infoColorV3];
+            
+        case BButtonTypeSuccess:
+            return [UIColor successColorV3];
+            
+        case BButtonTypeWarning:
+            return [UIColor warningColorV3];
+            
+        case BButtonTypeDanger:
+            return [UIColor dangerColorV3];
+            
+        case BButtonTypeInverse:
+            return [UIColor inverseColorV3];
+            
+        case BButtonTypeTwitter:
+            return [UIColor twitterColor];
+            
+        case BButtonTypeFacebook:
+            return [UIColor facebookColor];
+            
+        case BButtonTypePurple:
+            return [UIColor purpleBButtonColor];
+            
+        case BButtonTypeGray:
+            return [UIColor grayBButtonColor];
+            
+        case BButtonTypeDefault:
+        default:
+            return [UIColor defaultColorV3];
+    }
 }
 
 #pragma mark - Drawing

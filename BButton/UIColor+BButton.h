@@ -25,12 +25,25 @@
 
 #pragma mark - Custom colors
 + (UIColor *)defaultColorV2;
++ (UIColor *)defaultColorV3;
+
 + (UIColor *)primaryColorV2;
++ (UIColor *)primaryColorV3;
+
 + (UIColor *)infoColorV2;
++ (UIColor *)infoColorV3;
+
 + (UIColor *)successColorV2;
++ (UIColor *)successColorV3;
+
 + (UIColor *)warningColorV2;
++ (UIColor *)warningColorV3;
+
 + (UIColor *)dangerColorV2;
++ (UIColor *)dangerColorV3;
+
 + (UIColor *)inverseColorV2;
++ (UIColor *)inverseColorV3;
 
 + (UIColor *)twitterColor;
 + (UIColor *)facebookColor;

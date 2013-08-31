@@ -31,7 +31,7 @@
         
         for(int j = 0; j < 7; j++) {
             CGRect frame = CGRectMake(32.0f + (i * 144.0f), 20.0f + (j * 60.0f), 112.0f, 40.0f);
-            BButton *btn = [[BButton alloc] initWithFrame:frame type:type style:BButtonStyleBootstrapV2];
+            BButton *btn = [[BButton alloc] initWithFrame:frame type:type style:BButtonStyleBootstrapV3];
             [btn setTitle:[self titleForType:type] forState:UIControlStateNormal];
             
             if(type == BButtonTypeFacebook)
@@ -43,7 +43,7 @@
             if(type > BButtonTypeGray) {
                 btn = [BButton awesomeButtonWithOnlyIcon:arc4random() % 209
                                                     type:(type % 2) ? BButtonTypeInverse : BButtonTypeDefault
-                                                   style:BButtonStyleBootstrapV2];
+                                                   style:BButtonStyleBootstrapV3];
                 
                 btn.frame = CGRectMake(frame.origin.x, frame.origin.y, btn.frame.size.width, btn.frame.size.width);
             }
