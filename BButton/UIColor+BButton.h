@@ -23,6 +23,21 @@
 
 @interface UIColor (BButton)
 
+#pragma mark - Custom colors
++ (UIColor *)defaultColorV2;
++ (UIColor *)primaryColorV2;
++ (UIColor *)infoColorV2;
++ (UIColor *)successColorV2;
++ (UIColor *)warningColorV2;
++ (UIColor *)dangerColorV2;
++ (UIColor *)inverseColorV2;
+
++ (UIColor *)twitterColor;
++ (UIColor *)facebookColor;
++ (UIColor *)purpleBButtonColor;
++ (UIColor *)grayBButtonColor;
+
+#pragma mark - Utilities
 - (UIColor *)lightenColorWithValue:(CGFloat)value;
 - (UIColor *)darkenColorWithValue:(CGFloat)value;
 - (BOOL)isLightColor;

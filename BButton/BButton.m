@@ -238,38 +238,38 @@
 {
     switch (type) {
         case BButtonTypePrimary:
-            return [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f];
+            return [UIColor primaryColorV2];
             
         case BButtonTypeInfo:
-            return [UIColor colorWithRed:0.18f green:0.59f blue:0.71f alpha:1.00f];
+            return [UIColor infoColorV2];
             
         case BButtonTypeSuccess:
-            return [UIColor colorWithRed:0.32f green:0.64f blue:0.32f alpha:1.00f];
+            return [UIColor successColorV2];
             
         case BButtonTypeWarning:
-            return [UIColor colorWithRed:0.97f green:0.58f blue:0.02f alpha:1.00f];
+            return [UIColor warningColorV2];
             
         case BButtonTypeDanger:
-            return [UIColor colorWithRed:0.74f green:0.21f blue:0.18f alpha:1.00f];
+            return [UIColor dangerColorV2];
             
         case BButtonTypeInverse:
-            return [UIColor colorWithRed:0.13f green:0.13f blue:0.13f alpha:1.00f];
+            return [UIColor inverseColorV2];
             
         case BButtonTypeTwitter:
-            return [UIColor colorWithRed:0.25f green:0.60f blue:1.00f alpha:1.00f];
+            return [UIColor twitterColor];
             
         case BButtonTypeFacebook:
-            return [UIColor colorWithRed:0.23f green:0.35f blue:0.60f alpha:1.00f];
+            return [UIColor facebookColor];
             
         case BButtonTypePurple:
-            return [UIColor colorWithRed:0.45f green:0.30f blue:0.75f alpha:1.00f];
+            return [UIColor purpleBButtonColor];
             
         case BButtonTypeGray:
-            return [UIColor colorWithRed:0.60f green:0.60f blue:0.60f alpha:1.00f];
+            return [UIColor grayBButtonColor];
             
         case BButtonTypeDefault:
         default:
-            return [UIColor colorWithRed:0.85f green:0.85f blue:0.85f alpha:1.00f];
+            return [UIColor defaultColorV2];
     }
 }
 
