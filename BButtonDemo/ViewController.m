@@ -63,46 +63,41 @@
 
 - (NSString *)titleForType:(BButtonType)type
 {
-    NSString *title = nil;
-    
     switch (type) {
         case BButtonTypePrimary:
-            title = @"Primary";
-            break;
+            return @"Primary";
+        
         case BButtonTypeInfo:
-            title = @"Info";
-            break;
+            return @"Info";
+            
         case BButtonTypeSuccess:
-            title = @"Success";
-            break;
+            return @"Success";
+            
         case BButtonTypeWarning:
-            title = @"Warning";
-            break;
+            return @"Warning";
+            
         case BButtonTypeDanger:
-            title = @"Danger";
-            break;
+            return @"Danger";
+            
         case BButtonTypeInverse:
-            title = @"Inverse";
-            break;
+            return @"Inverse";
+            
         case BButtonTypeTwitter:
-            title = @"Twitter";
-            break;
+            return @"Twitter";
+        
         case BButtonTypeFacebook:
-            title = @"Facebook";
-            break;
+            return @"Facebook";
+            
         case BButtonTypePurple:
-            title = @"Purple";
-            break;
+            return @"Purple";
+            
         case BButtonTypeGray:
-            title = @"Gray";
-            break;
+            return @"Gray";
+            
         case BButtonTypeDefault:
         default:
-            title = @"Default";
-            break;
+            return @"Default";
     }
-    
-    return title;
 }
 
 @end
