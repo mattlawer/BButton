@@ -23,6 +23,13 @@
 #import "UIColor+BButton.h"
 #import "NSString+FontAwesome.h"
 
+
+typedef enum {
+    BButtonStyleBootstrapV2 = 0,
+    BButtonStyleBootstrapV3
+} BButtonStyle;
+
+
 typedef enum {
     BButtonTypeDefault = 0,
     BButtonTypePrimary,
@@ -44,14 +51,29 @@ typedef enum {
 @property (assign, nonatomic) BOOL shouldShowDisabled;
 
 #pragma mark - Initialization
-- (id)initWithFrame:(CGRect)frame type:(BButtonType)type;
-- (id)initWithFrame:(CGRect)frame type:(BButtonType)type icon:(FAIcon)icon fontSize:(CGFloat)fontSize;
+- (id)initWithFrame:(CGRect)frame type:(BButtonType)type style:(BButtonStyle)aStyle;
 
-- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor;
-- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor icon:(FAIcon)icon fontSize:(CGFloat)fontSize;
+- (id)initWithFrame:(CGRect)frame
+               type:(BButtonType)type
+              style:(BButtonStyle)aStyle
+               icon:(FAIcon)icon
+           fontSize:(CGFloat)fontSize;
 
-+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon type:(BButtonType)type;
-+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon color:(UIColor *)color;
+- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor style:(BButtonStyle)aStyle;
+
+- (id)initWithFrame:(CGRect)frame
+              color:(UIColor *)aColor
+              style:(BButtonStyle)aStyle
+               icon:(FAIcon)icon
+           fontSize:(CGFloat)fontSize;
+
++ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon
+                                  type:(BButtonType)type
+                                 style:(BButtonStyle)aStyle;
+
++ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon
+                                 color:(UIColor *)color
+                                 style:(BButtonStyle)aStyle;
 
 #pragma mark - BButton
 - (void)setType:(BButtonType)type;

@@ -24,8 +24,13 @@
 
 @interface BButton ()
 
+@property (assign, nonatomic) BButtonStyle style;
+
 - (void)setup;
-+ (UIColor *)colorForButtonType:(BButtonType)type;
+
++ (UIColor *)colorForButtonType:(BButtonType)type style:(BButtonStyle)style;
++ (UIColor *)colorForV2StyleButtonWithType:(BButtonType)type;
++ (UIColor *)colorForV3StyleButtonWithType:(BButtonType)type;
 
 @end
 
@@ -42,34 +47,47 @@
     self.backgroundColor = [UIColor clearColor];
     self.titleLabel.shadowOffset = CGSizeMake(0.0f, -1.0f);
     self.shouldShowDisabled = NO;
+    self.style = BButtonStyleBootstrapV3;
     [self setType:BButtonTypeDefault];
 }
 
-- (id)initWithFrame:(CGRect)frame type:(BButtonType)type
-{
-    return [self initWithFrame:frame color:[BButton colorForButtonType:type]];
-}
-
-- (id)initWithFrame:(CGRect)frame type:(BButtonType)type icon:(FAIcon)icon fontSize:(CGFloat)fontSize
+- (id)initWithFrame:(CGRect)frame type:(BButtonType)type style:(BButtonStyle)aStyle
 {
     return [self initWithFrame:frame
-                         color:[BButton colorForButtonType:type]
+                         color:[BButton colorForButtonType:type style:aStyle]
+                         style:aStyle];
+}
+
+- (id)initWithFrame:(CGRect)frame
+               type:(BButtonType)type
+              style:(BButtonStyle)aStyle
+               icon:(FAIcon)icon
+           fontSize:(CGFloat)fontSize
+{
+    return [self initWithFrame:frame
+                         color:[BButton colorForButtonType:type style:aStyle]
+                         style:aStyle
                           icon:icon
                       fontSize:fontSize];
 }
 
-- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor
+- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor style:(BButtonStyle)aStyle
 {
     self = [self initWithFrame:frame];
     if(self) {
         self.color = aColor;
+        self.style = aStyle;
     }
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor icon:(FAIcon)icon fontSize:(CGFloat)fontSize
+- (id)initWithFrame:(CGRect)frame
+              color:(UIColor *)aColor
+              style:(BButtonStyle)aStyle
+               icon:(FAIcon)icon
+           fontSize:(CGFloat)fontSize
 {
-    self = [self initWithFrame:frame color:aColor];
+    self = [self initWithFrame:frame color:aColor style:aStyle];
     if(self) {
         self.titleLabel.font = [UIFont fontWithName:@"FontAwesome" size:fontSize];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -106,16 +124,23 @@
     return self;
 }
 
-+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon type:(BButtonType)type
+#pragma mark - Class initialization
++ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon
+                                  type:(BButtonType)type
+                                 style:(BButtonStyle)aStyle
 {
     return [BButton awesomeButtonWithOnlyIcon:icon
-                                        color:[BButton colorForButtonType:type]];
+                                        color:[BButton colorForButtonType:type style:aStyle]
+                                        style:aStyle];
 }
 
-+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon color:(UIColor *)color
++ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon
+                                 color:(UIColor *)color
+                                 style:(BButtonStyle)aStyle
 {
     return [[BButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 40.0f, 40.0f)
                                     color:color
+                                    style:aStyle
                                      icon:icon
                                  fontSize:20.0f];
 }
@@ -177,7 +202,7 @@
 #pragma mark - BButton
 - (void)setType:(BButtonType)type
 {
-    self.color = [BButton colorForButtonType:type];
+    self.color = [BButton colorForButtonType:type style:self.style];
 }
 
 - (void)addAwesomeIcon:(FAIcon)icon beforeTitle:(BOOL)before
@@ -198,48 +223,59 @@
     [self setTitle:title forState:UIControlStateNormal];
 }
 
-+ (UIColor *)colorForButtonType:(BButtonType)type
++ (UIColor *)colorForButtonType:(BButtonType)type style:(BButtonStyle)style
 {
-    UIColor *newColor = nil;
-    
+    switch (style) {
+        case BButtonStyleBootstrapV2:
+            return [BButton colorForV2StyleButtonWithType:type];
+        case BButtonStyleBootstrapV3:
+        default:
+            return [BButton colorForV3StyleButtonWithType:type];
+    }
+}
+
++ (UIColor *)colorForV2StyleButtonWithType:(BButtonType)type
+{
     switch (type) {
         case BButtonTypePrimary:
-            newColor = [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f];
-            break;
+            return [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f];
+            
         case BButtonTypeInfo:
-            newColor = [UIColor colorWithRed:0.18f green:0.59f blue:0.71f alpha:1.00f];
-            break;
+            return [UIColor colorWithRed:0.18f green:0.59f blue:0.71f alpha:1.00f];
+            
         case BButtonTypeSuccess:
-            newColor = [UIColor colorWithRed:0.32f green:0.64f blue:0.32f alpha:1.00f];
-            break;
+            return [UIColor colorWithRed:0.32f green:0.64f blue:0.32f alpha:1.00f];
+            
         case BButtonTypeWarning:
-            newColor = [UIColor colorWithRed:0.97f green:0.58f blue:0.02f alpha:1.00f];
-            break;
+            return [UIColor colorWithRed:0.97f green:0.58f blue:0.02f alpha:1.00f];
+            
         case BButtonTypeDanger:
-            newColor = [UIColor colorWithRed:0.74f green:0.21f blue:0.18f alpha:1.00f];
-            break;
+            return [UIColor colorWithRed:0.74f green:0.21f blue:0.18f alpha:1.00f];
+            
         case BButtonTypeInverse:
-            newColor = [UIColor colorWithRed:0.13f green:0.13f blue:0.13f alpha:1.00f];
-            break;
+            return [UIColor colorWithRed:0.13f green:0.13f blue:0.13f alpha:1.00f];
+            
         case BButtonTypeTwitter:
-            newColor = [UIColor colorWithRed:0.25f green:0.60f blue:1.00f alpha:1.00f];
-            break;
+            return [UIColor colorWithRed:0.25f green:0.60f blue:1.00f alpha:1.00f];
+            
         case BButtonTypeFacebook:
-            newColor = [UIColor colorWithRed:0.23f green:0.35f blue:0.60f alpha:1.00f];
-            break;
+            return [UIColor colorWithRed:0.23f green:0.35f blue:0.60f alpha:1.00f];
+            
         case BButtonTypePurple:
-            newColor = [UIColor colorWithRed:0.45f green:0.30f blue:0.75f alpha:1.00f];
-            break;
+            return [UIColor colorWithRed:0.45f green:0.30f blue:0.75f alpha:1.00f];
+            
         case BButtonTypeGray:
-            newColor = [UIColor colorWithRed:0.60f green:0.60f blue:0.60f alpha:1.00f];
-            break;
+            return [UIColor colorWithRed:0.60f green:0.60f blue:0.60f alpha:1.00f];
+            
         case BButtonTypeDefault:
         default:
-            newColor = [UIColor colorWithRed:0.85f green:0.85f blue:0.85f alpha:1.00f];
-            break;
+            return [UIColor colorWithRed:0.85f green:0.85f blue:0.85f alpha:1.00f];
     }
-    
-    return newColor;
+}
+
++ (UIColor *)colorForV3StyleButtonWithType:(BButtonType)type
+{
+    return nil; // TODO:
 }
 
 #pragma mark - Drawing
