@@ -27,6 +27,7 @@
 @property (assign, nonatomic) BButtonStyle style;
 
 - (void)setup;
+- (void)setTextAttributesForStyle:(BButtonStyle)aStyle;
 
 + (UIColor *)colorForButtonType:(BButtonType)type style:(BButtonStyle)style;
 + (UIColor *)colorForV2StyleButtonWithType:(BButtonType)type;
@@ -48,10 +49,23 @@
 - (void)setup
 {
     self.backgroundColor = [UIColor clearColor];
-    self.titleLabel.shadowOffset = CGSizeMake(0.0f, -1.0f);
     self.shouldShowDisabled = NO;
     self.style = BButtonStyleBootstrapV3;
     [self setType:BButtonTypeDefault];
+}
+
+- (void)setTextAttributesForStyle:(BButtonStyle)aStyle
+{
+    switch (aStyle) {
+        case BButtonStyleBootstrapV2:
+            self.titleLabel.shadowOffset = CGSizeMake(0.0f, -1.0f);
+            self.titleLabel.font = [UIFont boldSystemFontOfSize:17.0f];
+            break;
+            
+        case BButtonStyleBootstrapV3:
+            self.titleLabel.font = [UIFont systemFontOfSize:17.0f];
+            break;
+    }
 }
 
 - (id)initWithFrame:(CGRect)frame type:(BButtonType)type style:(BButtonStyle)aStyle
@@ -80,6 +94,7 @@
     if(self) {
         self.color = aColor;
         self.style = aStyle;
+        [self setTextAttributesForStyle:aStyle];
     }
     return self;
 }
@@ -104,7 +119,7 @@
     self = [super initWithFrame:frame];
     if(self) {
         [self setup];
-        self.titleLabel.font = [UIFont boldSystemFontOfSize:17.0f];
+        [self setTextAttributesForStyle:self.style];
     }
     return self;
 }
