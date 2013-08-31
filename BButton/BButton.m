@@ -278,7 +278,7 @@
 
 + (UIColor *)colorForV3StyleButtonWithType:(BButtonType)type
 {
-    return nil; // TODO:
+    return [BButton colorForV2StyleButtonWithType:type]; // TODO:
 }
 
 #pragma mark - Drawing
@@ -369,7 +369,25 @@
 
 - (void)drawRectForBButtonStyleV3:(CGRect)rect
 {
-    // TODO:
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSaveGState(context);
+    
+    UIColor *fill = (!self.highlighted) ? self.color : [self.color darkenColorWithValue:0.06f];
+    CGContextSetFillColorWithColor(context, fill.CGColor);
+    
+    UIColor *border = (!self.highlighted) ? [self.color darkenColorWithValue:0.06f] : [self.color darkenColorWithValue:0.12f];
+    CGContextSetStrokeColorWithColor(context, border.CGColor);
+    
+    CGContextSetLineWidth(context, 1.0f);
+    
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0.5f, 0.5f, rect.size.width-1.0f, rect.size.height-1.0f)
+                                                    cornerRadius:4.0f];
+    
+    CGContextAddPath(context, path.CGPath);
+    CGContextDrawPath(context, kCGPathFillStroke);
+    
+    CGContextRestoreGState(context);
 }
 
 @end
