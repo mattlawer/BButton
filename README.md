@@ -88,6 +88,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * Attribution is no longer required in Font Awesome 3.0, but much appreciated:
 	* *"Font Awesome by Dave Gandy - http://fortawesome.github.com/Font-Awesome"*
 
-[img1]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-1.png
+[img1]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-0.png
 [img2]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-2.png
 [img3]:https://raw.github.com/jessesquires/BButton/master/Screenshots/plist.png
