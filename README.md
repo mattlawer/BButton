@@ -1,6 +1,6 @@
 #BButton 2.0
 
-BButton is a subclass of UIButton that looks like the [Twitter Bootstrap 2.3](http://twitter.github.com/bootstrap) buttons.
+BButton is a subclass of UIButton that looks like the [Twitter Bootstrap](http://twitter.github.com/bootstrap) buttons. (Bootstrap v2 or v3!)
 
 Forked from [@mattlawer / BButton](https://github.com/mattlawer/BButton) and refactored for more awesome.
 
@@ -8,14 +8,13 @@ Includes [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsa
 
 ![BButton Screenshot 1][img1] &nbsp;&nbsp;&nbsp;&nbsp; ![BButton Screenshot 2][img2]
 
-### Notable changes
+### Features
 
-* Up-to-date for iOS 5.0+, ARC, Storyboards
-* Custom initialization methods for easier creation
+* iOS 5.0+, ARC, Storyboards
+* Style like Bootstrap 2 or 3
 * Option to show button 'disabled' state
-* New button type options
-* FontAwesome already included
-* Refactored to be much cleaner, better organized
+* Button type options
+* FontAwesome included
 
 ## Installation
 
@@ -42,12 +41,24 @@ Create a `UIButton` and change its class to `BButton`
 Initialize with any of the following methods:
 
 ````objective-c
-- (id)initWithFrame:(CGRect)frame type:(BButtonType)type
-- (id)initWithFrame:(CGRect)frame type:(BButtonType)type icon:(FAIcon)icon fontSize:(CGFloat)fontSize
-- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor
-- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor icon:(FAIcon)icon fontSize:(CGFloat)fontSize
-+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon type:(BButtonType)type
-+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon color:(UIColor *)color
+- (id)initWithFrame:(CGRect)frame type:(BButtonType)type style:(BButtonStyle)aStyle
+- (id)initWithFrame:(CGRect)frame
+               type:(BButtonType)type
+              style:(BButtonStyle)aStyle
+               icon:(FAIcon)icon
+           fontSize:(CGFloat)fontSize
+- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor style:(BButtonStyle)aStyle
+- (id)initWithFrame:(CGRect)frame
+              color:(UIColor *)aColor
+              style:(BButtonStyle)aStyle
+               icon:(FAIcon)icon
+           fontSize:(CGFloat)fontSize
++ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon
+                                  type:(BButtonType)type
+                                 style:(BButtonStyle)aStyle
++ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon
+                                 color:(UIColor *)color
+                                 style:(BButtonStyle)aStyle
 ````
 
 **See the included demo project `BButtonDemo.xcodeproj`**
