@@ -115,6 +115,13 @@
 }
 
 #pragma mark - Utilities
+- (UIColor *)desaturatedColorToPercentSaturation:(CGFloat)percent
+{
+    CGFloat h, s, b, a;
+    [self getHue:&h saturation:&s brightness:&b alpha:&a];
+    return [UIColor colorWithHue:h saturation:s * percent brightness:b alpha:a];
+}
+
 - (UIColor *)lightenColorWithValue:(CGFloat)value
 {
     int totalComponents = CGColorGetNumberOfComponents(self.CGColor);

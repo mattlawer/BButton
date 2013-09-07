@@ -51,6 +51,7 @@
 + (UIColor *)grayBButtonColor;
 
 #pragma mark - Utilities
+- (UIColor *)desaturatedColorToPercentSaturation:(CGFloat)percent;
 - (UIColor *)lightenColorWithValue:(CGFloat)value;
 - (UIColor *)darkenColorWithValue:(CGFloat)value;
 - (BOOL)isLightColor;
