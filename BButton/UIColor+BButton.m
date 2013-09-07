@@ -31,7 +31,7 @@
 
 + (UIColor *)defaultColorV3
 {
-    return [UIColor colorWithHue:0.0f saturation:0.0f brightness:0.92f alpha:1.0f];
+    return [UIColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:1.0f];
 }
 
 + (UIColor *)primaryColorV2
@@ -91,7 +91,7 @@
 
 + (UIColor *)inverseColorV3
 {
-    return [UIColor colorWithHue:0.0f saturation:0.0f brightness:0.60f alpha:1.0f];
+    return [UIColor colorWithHue:0.0f saturation:0.0f brightness:0.75f alpha:1.0f];
 }
 
 + (UIColor *)twitterColor
@@ -192,7 +192,7 @@
         sum = (components[0] + components[1] + components[2]) / 3.0f;
     }
     
-    return (sum > 0.8f);
+    return (sum >= 0.75f);
 }
 
 @end
