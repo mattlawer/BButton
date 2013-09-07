@@ -1,4 +1,4 @@
-#BButton 2.0
+#BButton 3.0
 
 BButton is a subclass of UIButton that looks like the [Twitter Bootstrap](http://twitter.github.com/bootstrap) buttons. (Bootstrap v2 or v3!)
 
