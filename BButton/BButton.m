@@ -42,15 +42,12 @@
 
 @implementation BButton
 
-@synthesize color;
-@synthesize shouldShowDisabled;
-
 #pragma mark - Initialization
 - (void)setup
 {
     self.backgroundColor = [UIColor clearColor];
-    self.shouldShowDisabled = NO;
-    self.style = BButtonStyleBootstrapV3;
+    _shouldShowDisabled = NO;
+    _style = BButtonStyleBootstrapV3;
     [self setType:BButtonTypeDefault];
 }
 
@@ -92,8 +89,8 @@
 {
     self = [self initWithFrame:frame];
     if(self) {
-        self.color = aColor;
-        self.style = aStyle;
+        _style = aStyle;
+        [self setColor:aColor];
         [self setTextAttributesForStyle:aStyle];
     }
     return self;
@@ -107,7 +104,7 @@
 {
     self = [self initWithFrame:frame color:aColor style:aStyle];
     if(self) {
-        self.titleLabel.font = [UIFont fontWithName:@"FontAwesome" size:fontSize];
+        self.titleLabel.font = [UIFont fontWithName:kFontAwesomeFont size:fontSize];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         [self setTitle:[NSString stringFromAwesomeIcon:icon] forState:UIControlStateNormal];
     }
@@ -119,7 +116,7 @@
     self = [super initWithFrame:frame];
     if(self) {
         [self setup];
-        [self setTextAttributesForStyle:self.style];
+        [self setTextAttributesForStyle:_style];
     }
     return self;
 }
@@ -179,7 +176,7 @@
 #pragma mark - Setters
 - (void)setColor:(UIColor *)newColor
 {
-    color = newColor;
+    _color = newColor;
     
     if([newColor isLightColor]) {
         [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -201,7 +198,7 @@
 
 - (void)setShouldShowDisabled:(BOOL)show
 {
-    shouldShowDisabled = show;
+    _shouldShowDisabled = show;
     
     if(show) {
         if([self.color isLightColor])
@@ -226,7 +223,7 @@
 - (void)addAwesomeIcon:(FAIcon)icon beforeTitle:(BOOL)before
 {
     NSString *iconString = [NSString stringFromAwesomeIcon:icon];
-    self.titleLabel.font = [UIFont fontWithName:@"FontAwesome"
+    self.titleLabel.font = [UIFont fontWithName:kFontAwesomeFont
                                            size:self.titleLabel.font.pointSize];
     
     NSString *title = [NSString stringWithFormat:@"%@", iconString];
@@ -351,12 +348,10 @@
     
     UIColor *border = [self.color darkenColorWithValue:0.06f];
     
-    // Shadow Declarations
     UIColor *shadow = [self.color lightenColorWithValue:0.50f];
     CGSize shadowOffset = CGSizeMake(0.0f, 1.0f);
     CGFloat shadowBlurRadius = 2.0f;
     
-    // Rounded Rectangle Drawing
     UIBezierPath *roundedRectanglePath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0.5f, 0.5f, rect.size.width-1.0f, rect.size.height-1.0f)
                                                                     cornerRadius:6.0f];
     

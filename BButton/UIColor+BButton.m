@@ -124,15 +124,15 @@
     CGFloat newComponents[4];
     
     if(isGreyscale) {
-        newComponents[0] = oldComponents[0] + value > 1.0 ? 1.0 : oldComponents[0] + value;
-        newComponents[1] = oldComponents[0] + value > 1.0 ? 1.0 : oldComponents[0] + value;
-        newComponents[2] = oldComponents[0] + value > 1.0 ? 1.0 : oldComponents[0] + value;
+        newComponents[0] = oldComponents[0] + value > 1.0f ? 1.0f : oldComponents[0] + value;
+        newComponents[1] = oldComponents[0] + value > 1.0f ? 1.0f : oldComponents[0] + value;
+        newComponents[2] = oldComponents[0] + value > 1.0f ? 1.0f : oldComponents[0] + value;
         newComponents[3] = oldComponents[1];
     }
     else {
-        newComponents[0] = oldComponents[0] + value > 1.0 ? 1.0 : oldComponents[0] + value;
-        newComponents[1] = oldComponents[1] + value > 1.0 ? 1.0 : oldComponents[1] + value;
-        newComponents[2] = oldComponents[2] + value > 1.0 ? 1.0 : oldComponents[2] + value;
+        newComponents[0] = oldComponents[0] + value > 1.0f ? 1.0f : oldComponents[0] + value;
+        newComponents[1] = oldComponents[1] + value > 1.0f ? 1.0f : oldComponents[1] + value;
+        newComponents[2] = oldComponents[2] + value > 1.0f ? 1.0f : oldComponents[2] + value;
         newComponents[3] = oldComponents[3];
     }
     
@@ -155,15 +155,15 @@
     CGFloat newComponents[4];
     
     if(isGreyscale) {
-        newComponents[0] = oldComponents[0] - value < 0.0 ? 0.0 : oldComponents[0] - value;
-        newComponents[1] = oldComponents[0] - value < 0.0 ? 0.0 : oldComponents[0] - value;
-        newComponents[2] = oldComponents[0] - value < 0.0 ? 0.0 : oldComponents[0] - value;
+        newComponents[0] = oldComponents[0] - value < 0.0f ? 0.0f : oldComponents[0] - value;
+        newComponents[1] = oldComponents[0] - value < 0.0f ? 0.0f : oldComponents[0] - value;
+        newComponents[2] = oldComponents[0] - value < 0.0f ? 0.0f : oldComponents[0] - value;
         newComponents[3] = oldComponents[1];
     }
     else {
-        newComponents[0] = oldComponents[0] - value < 0.0 ? 0.0 : oldComponents[0] - value;
-        newComponents[1] = oldComponents[1] - value < 0.0 ? 0.0 : oldComponents[1] - value;
-        newComponents[2] = oldComponents[2] - value < 0.0 ? 0.0 : oldComponents[2] - value;
+        newComponents[0] = oldComponents[0] - value < 0.0f ? 0.0f : oldComponents[0] - value;
+        newComponents[1] = oldComponents[1] - value < 0.0f ? 0.0f : oldComponents[1] - value;
+        newComponents[2] = oldComponents[2] - value < 0.0f ? 0.0f : oldComponents[2] - value;
         newComponents[3] = oldComponents[3];
     }
     

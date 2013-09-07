@@ -34,6 +34,8 @@
 
 #import "NSString+FontAwesome.h"
 
+const NSString * kFontAwesomeFont = @"FontAwesome";
+
 static const NSArray *awesomeStrings;
 
 

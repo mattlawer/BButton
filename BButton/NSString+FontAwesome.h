@@ -34,6 +34,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * kFontAwesomeFont;
+
 typedef enum {
     FAIconGlass = 0,
     FAIconMusic,
