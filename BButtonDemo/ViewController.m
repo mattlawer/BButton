@@ -50,6 +50,11 @@
             
             [btn addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
             
+            // uncomment to show buttons as disabled
+            
+            // btn.shouldShowDisabled = YES;
+            // btn.enabled = NO;
+            
             [self.view addSubview:btn];
         }
     }
