@@ -21,6 +21,7 @@
 		880EED9F170B357400462214 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 880EED9C170B357400462214 /* FontAwesome.ttf */; };
 		880EEDA2170B3EDB00462214 /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EEDA1170B3EDB00462214 /* UIColor+BButton.m */; };
 		880EEDA5170B6D2600462214 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EEDA4170B6D2600462214 /* NSString+FontAwesome.m */; };
+		88136CAD17EE2050003362C6 /* NSString+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 88136CAC17EE2050003362C6 /* NSString+BButton.m */; };
 		8857FBFD1718B92B001C200D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8857FBFC1718B92B001C200D /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,8 @@
 		880EEDA1170B3EDB00462214 /* UIColor+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BButton.m"; sourceTree = "<group>"; };
 		880EEDA3170B6D2600462214 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
 		880EEDA4170B6D2600462214 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		88136CAB17EE2050003362C6 /* NSString+BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BButton.h"; sourceTree = "<group>"; };
+		88136CAC17EE2050003362C6 /* NSString+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BButton.m"; sourceTree = "<group>"; };
 		8857FBFC1718B92B001C200D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -124,11 +127,13 @@
 			children = (
 				880EED99170B357400462214 /* BButton.h */,
 				880EED9A170B357400462214 /* BButton.m */,
+				88136CAB17EE2050003362C6 /* NSString+BButton.h */,
+				88136CAC17EE2050003362C6 /* NSString+BButton.m */,
 				880EEDA3170B6D2600462214 /* NSString+FontAwesome.h */,
 				880EEDA4170B6D2600462214 /* NSString+FontAwesome.m */,
+				880EED9B170B357400462214 /* resources */,
 				880EEDA0170B3EDB00462214 /* UIColor+BButton.h */,
 				880EEDA1170B3EDB00462214 /* UIColor+BButton.m */,
-				880EED9B170B357400462214 /* resources */,
 			);
 			path = BButton;
 			sourceTree = "<group>";
@@ -169,6 +174,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Hexed Bits";
+				TargetAttributes = {
+					880EED2F170B33B000462214 = {
+						DevelopmentTeam = 5VRJU68BZ5;
+					};
+				};
 			};
 			buildConfigurationList = 880EED2B170B33B000462214 /* Build configuration list for PBXProject "BButtonDemo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -213,6 +223,7 @@
 				880EED53170B33B000462214 /* ViewController.m in Sources */,
 				880EED9E170B357400462214 /* BButton.m in Sources */,
 				880EEDA2170B3EDB00462214 /* UIColor+BButton.m in Sources */,
+				88136CAD17EE2050003362C6 /* NSString+BButton.m in Sources */,
 				880EEDA5170B6D2600462214 /* NSString+FontAwesome.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,15 +319,15 @@
 			buildSettings = {
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jesse Squires (64KYPKJ7RK)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jesse Squires (64KYPKJ7RK)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BButtonDemo/BButtonDemo-Prefix.pch";
 				INFOPLIST_FILE = "BButtonDemo/BButtonDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0D0EEA35-157A-4FFD-A4A2-5F4A52C12634";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0D0EEA35-157A-4FFD-A4A2-5F4A52C12634";
 				WRAPPER_EXTENSION = app;
 			};
@@ -327,15 +338,15 @@
 			buildSettings = {
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jesse Squires (64KYPKJ7RK)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jesse Squires (64KYPKJ7RK)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BButtonDemo/BButtonDemo-Prefix.pch";
 				INFOPLIST_FILE = "BButtonDemo/BButtonDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0D0EEA35-157A-4FFD-A4A2-5F4A52C12634";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0D0EEA35-157A-4FFD-A4A2-5F4A52C12634";
 				WRAPPER_EXTENSION = app;
 			};

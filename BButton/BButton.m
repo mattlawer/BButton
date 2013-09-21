@@ -20,14 +20,21 @@
 //
 
 #import "BButton.h"
+#import "NSString+BButton.h"
+
 #import <CoreGraphics/CoreGraphics.h>
 
 @interface BButton ()
 
 @property (assign, nonatomic) BButtonStyle style;
+@property (strong, nonatomic, readonly) NSArray *fontAwesomeStrings;
 
 - (void)setup;
 - (void)setTextAttributesForStyle:(BButtonStyle)aStyle;
+
+- (void)didRecieveMemoryWarningNotification:(NSNotification *)notification;
+
+- (NSString *)stringFromFontAwesomeIcon:(FAIcon)icon;
 
 + (UIColor *)colorForButtonType:(BButtonType)type style:(BButtonStyle)style;
 + (UIColor *)colorForV2StyleButtonWithType:(BButtonType)type;
@@ -43,12 +50,17 @@
 @implementation BButton
 
 #pragma mark - Initialization
+
 - (void)setup
 {
     self.backgroundColor = [UIColor clearColor];
     _shouldShowDisabled = NO;
     _style = BButtonStyleBootstrapV3;
     [self setType:BButtonTypeDefault];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didRecieveMemoryWarningNotification:)
+                                                 name:UIApplicationDidReceiveMemoryWarningNotification
+                                               object:nil];
 }
 
 - (void)setTextAttributesForStyle:(BButtonStyle)aStyle
@@ -106,7 +118,7 @@
     if(self) {
         self.titleLabel.font = [UIFont fontWithName:kFontAwesomeFont size:fontSize];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [self setTitle:[NSString stringFromAwesomeIcon:icon] forState:UIControlStateNormal];
+        [self setTitle:[self stringFromFontAwesomeIcon:icon] forState:UIControlStateNormal];
     }
     return self;
 }
@@ -140,6 +152,7 @@
 }
 
 #pragma mark - Class initialization
+
 + (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon
                                   type:(BButtonType)type
                                  style:(BButtonStyle)aStyle
@@ -161,6 +174,7 @@
 }
 
 #pragma mark - Parent overrides
+
 - (void)setHighlighted:(BOOL)highlighted
 {
     [super setHighlighted:highlighted];
@@ -174,6 +188,7 @@
 }
 
 #pragma mark - Setters
+
 - (void)setColor:(UIColor *)newColor
 {
     _color = newColor;
@@ -214,15 +229,25 @@
     }
 }
 
+#pragma mark - Notifications
+
+- (void)didRecieveMemoryWarningNotification:(NSNotification *)notification
+{
+    NSLog(@"%@ recieved %@", [BButton class], notification.name);
+    _fontAwesomeStrings = nil;
+}
+
 #pragma mark - BButton
+
 - (void)setType:(BButtonType)type
 {
-    self.color = [BButton colorForButtonType:type style:self.style];
+    [self setColor:[BButton colorForButtonType:type
+                                         style:_style]];
 }
 
 - (void)addAwesomeIcon:(FAIcon)icon beforeTitle:(BOOL)before
 {
-    NSString *iconString = [NSString stringFromAwesomeIcon:icon];
+    NSString *iconString = [self stringFromFontAwesomeIcon:icon];
     self.titleLabel.font = [UIFont fontWithName:kFontAwesomeFont
                                            size:self.titleLabel.font.pointSize];
     
@@ -236,6 +261,15 @@
     }
     
     [self setTitle:title forState:UIControlStateNormal];
+}
+
+- (NSString *)stringFromFontAwesomeIcon:(FAIcon)icon
+{
+    if(!_fontAwesomeStrings) {
+        _fontAwesomeStrings = [NSString allFontAwesomeStrings];
+    }
+    return [NSString stringFromFontAwesomeStrings:_fontAwesomeStrings
+                                          forIcon:icon];
 }
 
 + (UIColor *)colorForButtonType:(BButtonType)type style:(BButtonStyle)style
@@ -328,6 +362,7 @@
 }
 
 #pragma mark - Drawing
+
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];

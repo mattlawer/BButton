@@ -24,6 +24,7 @@
 @implementation UIColor (BButton)
 
 #pragma mark - Custom colors
+
 + (UIColor *)defaultColorV2
 {
     return [UIColor colorWithRed:0.85f green:0.85f blue:0.85f alpha:1.00f];
@@ -115,6 +116,7 @@
 }
 
 #pragma mark - Utilities
+
 - (UIColor *)desaturatedColorToPercentSaturation:(CGFloat)percent
 {
     CGFloat h, s, b, a;

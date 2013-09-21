@@ -24,14 +24,14 @@
 #import "NSString+FontAwesome.h"
 
 
-typedef enum {
-    BButtonStyleBootstrapV2 = 0,
+typedef NS_ENUM(NSUInteger, BButtonStyle) {
+    BButtonStyleBootstrapV2,
     BButtonStyleBootstrapV3
-} BButtonStyle;
+};
 
 
-typedef enum {
-    BButtonTypeDefault = 0,
+typedef NS_ENUM(NSUInteger, BButtonType) {
+    BButtonTypeDefault,
     BButtonTypePrimary,
     BButtonTypeInfo,
     BButtonTypeSuccess,
@@ -42,7 +42,7 @@ typedef enum {
     BButtonTypeFacebook,
     BButtonTypePurple,
     BButtonTypeGray
-} BButtonType;
+};
 
 
 @interface BButton : UIButton
@@ -51,6 +51,7 @@ typedef enum {
 @property (assign, nonatomic) BOOL shouldShowDisabled;
 
 #pragma mark - Initialization
+
 - (id)initWithFrame:(CGRect)frame type:(BButtonType)type style:(BButtonStyle)aStyle;
 
 - (id)initWithFrame:(CGRect)frame
@@ -76,6 +77,7 @@ typedef enum {
                                  style:(BButtonStyle)aStyle;
 
 #pragma mark - BButton
+
 - (void)setType:(BButtonType)type;
 - (void)addAwesomeIcon:(FAIcon)icon beforeTitle:(BOOL)before;
 

@@ -21,6 +21,7 @@
 @implementation ViewController
 
 #pragma mark - View lifecycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -60,6 +61,7 @@
 }
 
 #pragma mark - Utilities
+
 - (void)buttonPressed:(UIButton *)sender
 {
     NSLog(@"Good jorb, you pressed a button: %@", sender.titleLabel.text);

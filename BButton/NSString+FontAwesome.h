@@ -34,10 +34,10 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString * kFontAwesomeFont;
+extern NSString * const kFontAwesomeFont;
 
-typedef enum {
-    FAIconGlass = 0,
+typedef NS_ENUM(NSUInteger, FAIcon) {
+    FAIconGlass,
     FAIconMusic,
     FAIconSearch,
     FAIconEnvelope,
@@ -338,13 +338,13 @@ typedef enum {
     FAIconEditSign,
     FAIconExternalLinkSign,
     FAIconShareSign
-} FAIcon;
-
+};
 
 @interface NSString (FontAwesome)
 
-+ (NSString *)stringFromAwesomeIcon:(FAIcon)icon;
-- (NSString *)trimWhitespace;
-- (BOOL)isEmpty;
++ (NSArray *)allFontAwesomeStrings;
+
++ (NSString *)stringFromFontAwesomeStrings:(NSArray *)strings
+                                   forIcon:(FAIcon)icon;
 
 @end

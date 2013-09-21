@@ -24,6 +24,7 @@
 @interface UIColor (BButton)
 
 #pragma mark - Custom colors
+
 + (UIColor *)defaultColorV2;
 + (UIColor *)defaultColorV3;
 
@@ -51,6 +52,7 @@
 + (UIColor *)grayBButtonColor;
 
 #pragma mark - Utilities
+
 - (UIColor *)desaturatedColorToPercentSaturation:(CGFloat)percent;
 - (UIColor *)lightenColorWithValue:(CGFloat)value;
 - (UIColor *)darkenColorWithValue:(CGFloat)value;
