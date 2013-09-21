@@ -24,6 +24,10 @@
 
 #import <CoreGraphics/CoreGraphics.h>
 
+static CGFloat const kBButtonCornerRadiusV2 = 6.0f;
+static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
+
+
 @interface BButton ()
 
 @property (assign, nonatomic) BButtonStyle style;
@@ -39,6 +43,7 @@
 + (UIColor *)colorForButtonType:(BButtonType)type style:(BButtonStyle)style;
 + (UIColor *)colorForV2StyleButtonWithType:(BButtonType)type;
 + (UIColor *)colorForV3StyleButtonWithType:(BButtonType)type;
++ (NSNumber *)cornerRadiusForStyle:(BButtonStyle)aStyle;
 
 - (void)drawRectForBButtonStyleV2:(CGRect)rect;
 - (void)drawRectForBButtonStyleV3:(CGRect)rect;
@@ -185,6 +190,21 @@
 {
     [super setEnabled:enabled];
     [self setNeedsDisplay];
+}
+
+#pragma mark - UIAppearance getters
+
+- (NSNumber *)buttonCornerRadius
+{
+    if(!_buttonCornerRadius) {
+        _buttonCornerRadius = [[[self class] appearance] buttonCornerRadius];
+    }
+    
+    if(_buttonCornerRadius) {
+        return _buttonCornerRadius;
+    }
+    
+    return [BButton cornerRadiusForStyle:_style];
 }
 
 #pragma mark - Setters
@@ -361,6 +381,21 @@
     }
 }
 
++ (NSNumber *)cornerRadiusForStyle:(BButtonStyle)aStyle
+{
+    CGFloat r = 0.0f;
+    
+    switch (aStyle) {
+        case BButtonStyleBootstrapV2:
+            r = kBButtonCornerRadiusV2;
+            break;
+        case BButtonStyleBootstrapV3:
+            r = kBButtonCornerRadiusV3;
+            break;
+    }
+    return [NSNumber numberWithFloat:r];
+}
+
 #pragma mark - Drawing
 
 - (void)drawRect:(CGRect)rect
@@ -388,7 +423,7 @@
     CGFloat shadowBlurRadius = 2.0f;
     
     UIBezierPath *roundedRectanglePath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0.5f, 0.5f, rect.size.width-1.0f, rect.size.height-1.0f)
-                                                                    cornerRadius:6.0f];
+                                                                    cornerRadius:[self.buttonCornerRadius floatValue]];
     
     CGContextSaveGState(context);
     
@@ -467,7 +502,7 @@
     CGContextSetLineWidth(context, 1.0f);
     
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0.5f, 0.5f, rect.size.width-1.0f, rect.size.height-1.0f)
-                                                    cornerRadius:4.0f];
+                                                    cornerRadius:[self.buttonCornerRadius floatValue]];
     
     CGContextAddPath(context, path.CGPath);
     CGContextDrawPath(context, kCGPathFillStroke);

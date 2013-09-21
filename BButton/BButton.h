@@ -23,7 +23,6 @@
 #import "UIColor+BButton.h"
 #import "NSString+FontAwesome.h"
 
-
 typedef NS_ENUM(NSUInteger, BButtonStyle) {
     BButtonStyleBootstrapV2,
     BButtonStyleBootstrapV3
@@ -48,6 +47,7 @@ typedef NS_ENUM(NSUInteger, BButtonType) {
 @interface BButton : UIButton
 
 @property (strong, nonatomic) UIColor *color;
+@property (strong, nonatomic) NSNumber *buttonCornerRadius UI_APPEARANCE_SELECTOR;
 @property (assign, nonatomic) BOOL shouldShowDisabled;
 
 #pragma mark - Initialization
