@@ -114,5 +114,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [img1]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-0.png
 [img2]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-2.png
 [img3]:https://raw.github.com/jessesquires/BButton/master/Screenshots/plist.png
-[img4]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-3.png
-[img5]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-4.png
+[img4]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-4.png
+[img5]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-5.png
