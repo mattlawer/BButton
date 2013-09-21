@@ -35,7 +35,7 @@
     for(int i = 0; i < 2; i++) {
         
         for(int j = 0; j < 7; j++) {
-            CGRect frame = CGRectMake(32.0f + (i * 144.0f), 20.0f + (j * 60.0f), 112.0f, 40.0f);
+            CGRect frame = CGRectMake(32.0f + (i * 144.0f), 40.0f + (j * 60.0f), 112.0f, 40.0f);
             BButton *btn = [[BButton alloc] initWithFrame:frame type:type style:BButtonStyleBootstrapV3];
             [btn setTitle:[self titleForType:type] forState:UIControlStateNormal];
             
