@@ -12,10 +12,11 @@ Includes [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsa
 
 ### Features
 
-* iOS 5.0+, ARC, Storyboards
+* iOS 6.1+, ARC, Storyboards
 * Style like Bootstrap 2 or 3
+* Set corner radius via UIAppearance
 * Option to show button 'disabled' state
-* Button type options
+* Many button type (color) options
 * FontAwesome included
 
 ## Installation
@@ -63,6 +64,15 @@ Initialize with any of the following methods:
                                  style:(BButtonStyle)aStyle
 ````
 
+### UI Appearance
+
+Set corner radius for all buttons via UIAppearance
+
+````objective-c
+[[BButton appearance] setButtonCornerRadius:[NSNumber numberWithFloat:0.0f]];
+````
+![BButton Screenshot 3][img4] &nbsp;&nbsp;&nbsp;&nbsp; ![BButton Screenshot 4][img5]
+
 **See the included demo project `BButtonDemo.xcodeproj`**
 
 **See `FontAwesomeIcons.html` for list of icons**
@@ -79,7 +89,7 @@ Initialize with any of the following methods:
 
 [iExplorer for DeviantART](https://itunes.apple.com/us/app/iexplorer-for-deviantart/id657212778?mt=8)
 
-*[Contact me](mailto:jesse.d.squires@gmail.com) to have your app listed here.*
+*[Contact me](mailto:jesse.squires.developer@gmail.com) to have your app listed here.*
 
 ## [MIT License](http://opensource.org/licenses/MIT)
 
@@ -104,3 +114,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [img1]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-0.png
 [img2]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-2.png
 [img3]:https://raw.github.com/jessesquires/BButton/master/Screenshots/plist.png
+[img4]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-3.png
+[img5]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-4.png
