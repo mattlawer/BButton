@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.screenshots  = "https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-0.png"
   s.license      = 'MIT'
   s.author       = { "Jesse Squires" => "jesse.squires.developer@gmail.com" }
-  s.source       = { :git => "https://github.com/jessesquires/BButton.git", :tag => '3.1.0' }
+  s.source       = { :git => "https://github.com/jessesquires/BButton.git", :tag => s.version.to_s }
   s.platform     = :ios, '6.1'
   s.source_files = 'BButton'
   s.public_header_files = 'BButton'
