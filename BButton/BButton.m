@@ -30,6 +30,8 @@ static NSArray * kFontAwesomeStrings;
 
 @interface BButton ()
 
+@property (assign, nonatomic) BButtonStyle buttonStyle;
+
 - (void)setup;
 - (void)setTextAttributesForStyle:(BButtonStyle)aStyle;
 
@@ -57,7 +59,7 @@ static NSArray * kFontAwesomeStrings;
 {
     [self setBackgroundColor:[UIColor clearColor]];
     _shouldShowDisabled = YES;
-    _style = BButtonStyleBootstrapV3;
+    _buttonStyle = BButtonStyleBootstrapV3;
     [self setType:BButtonTypeDefault];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didRecieveMemoryWarningNotification:)
@@ -106,7 +108,7 @@ static NSArray * kFontAwesomeStrings;
 {
     self = [self initWithFrame:frame];
     if(self) {
-        _style = aStyle;
+        _buttonStyle = aStyle;
         [self setColor:aColor];
         [self setTextAttributesForStyle:aStyle];
     }
@@ -134,7 +136,7 @@ static NSArray * kFontAwesomeStrings;
     self = [super initWithFrame:frame];
     if(self) {
         [self setup];
-        [self setTextAttributesForStyle:_style];
+        [self setTextAttributesForStyle:_buttonStyle];
     }
     return self;
 }
@@ -203,7 +205,7 @@ static NSArray * kFontAwesomeStrings;
         return _buttonCornerRadius;
     }
     
-    return [BButton cornerRadiusForStyle:_style];
+    return [BButton cornerRadiusForStyle:_buttonStyle];
 }
 
 #pragma mark - Setters
@@ -261,7 +263,7 @@ static NSArray * kFontAwesomeStrings;
 - (void)setType:(BButtonType)type
 {
     [self setColor:[BButton colorForButtonType:type
-                                         style:_style]];
+                                         style:_buttonStyle]];
 }
 
 - (void)addAwesomeIcon:(FAIcon)icon beforeTitle:(BOOL)before
@@ -401,7 +403,7 @@ static NSArray * kFontAwesomeStrings;
 {
     [super drawRect:rect];
     
-    switch (self.style) {
+    switch (self.buttonStyle) {
         case BButtonStyleBootstrapV2:
             [self drawRectForBButtonStyleV2:rect];
             break;
