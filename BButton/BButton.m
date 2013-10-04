@@ -53,7 +53,7 @@ static NSArray * kFontAwesomeStrings;
 
 @implementation BButton
 
-#pragma mark - Initialization
+#pragma mark - Setup
 
 - (void)setup
 {
@@ -81,6 +81,8 @@ static NSArray * kFontAwesomeStrings;
             break;
     }
 }
+
+#pragma mark - Initialization
 
 - (id)initWithFrame:(CGRect)frame type:(BButtonType)type style:(BButtonStyle)aStyle
 {
