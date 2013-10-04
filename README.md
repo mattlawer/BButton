@@ -23,6 +23,12 @@ Includes [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsa
 
 ### From [CocoaPods](http://www.cocoapods.org)
 
+#### **This fork**
+	
+	pod 'BButton',  :git => 'git://github.com/jessesquires/BButton.git'
+
+#### Original repo
+
 	pod `BButton`
 
 ### From source
