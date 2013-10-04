@@ -10,17 +10,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
-
-- (NSString *)titleForType:(BButtonType)type;
-
-@end
-
-
-
 @implementation ViewController
-
-#pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
@@ -64,8 +54,6 @@
         }
     }
 }
-
-#pragma mark - Utilities
 
 - (void)buttonPressed:(UIButton *)sender
 {
