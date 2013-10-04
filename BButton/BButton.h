@@ -44,11 +44,11 @@ typedef NS_ENUM(NSUInteger, BButtonType) {
 };
 
 
-@interface BButton : UIButton
+@interface BButton : UIButton <UIAppearance>
 
 @property (assign, nonatomic) BButtonStyle style;
 @property (strong, nonatomic) UIColor *color;
-@property (strong, nonatomic) NSNumber *buttonCornerRadius UI_APPEARANCE_SELECTOR;
+@property (assign, nonatomic) CGFloat buttonCornerRadius UI_APPEARANCE_SELECTOR;
 @property (assign, nonatomic) BOOL shouldShowDisabled;
 
 #pragma mark - Initialization
