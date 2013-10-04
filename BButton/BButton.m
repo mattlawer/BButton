@@ -58,7 +58,7 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
 
 - (void)setup
 {
-    self.backgroundColor = [UIColor clearColor];
+    [self setBackgroundColor:[UIColor clearColor]];
     _shouldShowDisabled = NO;
     _style = BButtonStyleBootstrapV3;
     [self setType:BButtonTypeDefault];
@@ -72,12 +72,13 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
 {
     switch (aStyle) {
         case BButtonStyleBootstrapV2:
-            self.titleLabel.shadowOffset = CGSizeMake(0.0f, -1.0f);
-            self.titleLabel.font = [UIFont boldSystemFontOfSize:17.0f];
+            [[self titleLabel] setShadowOffset:CGSizeMake(0.0f, -1.0f)];
+            [[self titleLabel] setFont:[UIFont boldSystemFontOfSize:17.0f]];
             break;
             
         case BButtonStyleBootstrapV3:
-            self.titleLabel.font = [UIFont systemFontOfSize:17.0f];
+            [[self titleLabel] setShadowOffset:CGSizeMake(0.0f, 0.0f)];
+            [[self titleLabel] setFont:[UIFont systemFontOfSize:17.0f]];
             break;
     }
 }
@@ -121,9 +122,10 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
 {
     self = [self initWithFrame:frame color:aColor style:aStyle];
     if(self) {
-        self.titleLabel.font = [UIFont fontWithName:kFontAwesomeFont size:fontSize];
-        self.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [self setTitle:[self stringFromFontAwesomeIcon:icon] forState:UIControlStateNormal];
+        [[self titleLabel] setFont:[UIFont fontWithName:kFontAwesomeFont size:fontSize]];
+        [[self titleLabel] setTextAlignment:NSTextAlignmentCenter];
+        [self setTitle:[self stringFromFontAwesomeIcon:icon]
+              forState:UIControlStateNormal];
     }
     return self;
 }
