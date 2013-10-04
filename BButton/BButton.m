@@ -26,12 +26,11 @@
 
 static CGFloat const kBButtonCornerRadiusV2 = 6.0f;
 static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
-
+static NSArray * kFontAwesomeStrings;
 
 @interface BButton ()
 
 @property (assign, nonatomic) BButtonStyle style;
-@property (strong, nonatomic, readonly) NSArray *fontAwesomeStrings;
 
 - (void)setup;
 - (void)setTextAttributesForStyle:(BButtonStyle)aStyle;
@@ -158,6 +157,13 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
     return self;
 }
 
+- (void)dealloc
+{
+    _color = nil;
+    _buttonCornerRadius = nil;
+    kFontAwesomeStrings = nil;
+}
+
 #pragma mark - Class initialization
 
 + (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon
@@ -256,7 +262,7 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
 - (void)didRecieveMemoryWarningNotification:(NSNotification *)notification
 {
     NSLog(@"%@ recieved %@", [BButton class], notification.name);
-    _fontAwesomeStrings = nil;
+    kFontAwesomeStrings = nil;
 }
 
 #pragma mark - BButton
@@ -287,10 +293,10 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
 
 - (NSString *)stringFromFontAwesomeIcon:(FAIcon)icon
 {
-    if(!_fontAwesomeStrings) {
-        _fontAwesomeStrings = [NSString fa_allFontAwesomeStrings];
+    if(!kFontAwesomeStrings) {
+        kFontAwesomeStrings = [NSString fa_allFontAwesomeStrings];
     }
-    return [NSString fa_stringFromFontAwesomeStrings:_fontAwesomeStrings
+    return [NSString fa_stringFromFontAwesomeStrings:kFontAwesomeStrings
                                              forIcon:icon];
 }
 
