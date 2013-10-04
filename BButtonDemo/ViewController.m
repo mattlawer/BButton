@@ -18,7 +18,7 @@
     
 //    uncomment to set corner radius for all buttons
 //    
-//    [[BButton appearance] setButtonCornerRadius:[NSNumber numberWithFloat:0.0f]];
+//    [[BButton appearance] setButtonCornerRadius:@50.0f];
     
     BButtonType type = 0;
     

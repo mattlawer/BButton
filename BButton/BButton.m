@@ -56,7 +56,7 @@ static NSArray * kFontAwesomeStrings;
 - (void)setup
 {
     [self setBackgroundColor:[UIColor clearColor]];
-    _shouldShowDisabled = NO;
+    _shouldShowDisabled = YES;
     _style = BButtonStyleBootstrapV3;
     [self setType:BButtonTypeDefault];
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -160,6 +160,7 @@ static NSArray * kFontAwesomeStrings;
 - (void)dealloc
 {
     _color = nil;
+    _buttonCornerRadius = nil;
     kFontAwesomeStrings = nil;
 }
 
@@ -197,6 +198,21 @@ static NSArray * kFontAwesomeStrings;
 {
     [super setEnabled:enabled];
     [self setNeedsDisplay];
+}
+
+#pragma mark - UIAppearance getters
+
+- (NSNumber *)buttonCornerRadius
+{
+    if(!_buttonCornerRadius) {
+        _buttonCornerRadius = [[[self class] appearance] buttonCornerRadius];
+    }
+    
+    if(_buttonCornerRadius) {
+        return _buttonCornerRadius;
+    }
+    
+    return [BButton cornerRadiusForStyle:_style];
 }
 
 #pragma mark - Setters
@@ -415,7 +431,7 @@ static NSArray * kFontAwesomeStrings;
     CGFloat shadowBlurRadius = 2.0f;
     
     UIBezierPath *roundedRectanglePath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0.5f, 0.5f, rect.size.width-1.0f, rect.size.height-1.0f)
-                                                                    cornerRadius:self.buttonCornerRadius];
+                                                                    cornerRadius:[self.buttonCornerRadius floatValue]];
     
     CGContextSaveGState(context);
     
@@ -494,7 +510,7 @@ static NSArray * kFontAwesomeStrings;
     CGContextSetLineWidth(context, 1.0f);
     
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0.5f, 0.5f, rect.size.width-1.0f, rect.size.height-1.0f)
-                                                    cornerRadius:self.buttonCornerRadius];
+                                                    cornerRadius:[self.buttonCornerRadius floatValue]];
     
     CGContextAddPath(context, path.CGPath);
     CGContextDrawPath(context, kCGPathFillStroke);
