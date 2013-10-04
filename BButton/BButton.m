@@ -30,8 +30,6 @@ static NSArray * kFontAwesomeStrings;
 
 @interface BButton ()
 
-@property (assign, nonatomic) BButtonStyle style;
-
 - (void)setup;
 - (void)setTextAttributesForStyle:(BButtonStyle)aStyle;
 
