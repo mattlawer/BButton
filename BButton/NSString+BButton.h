@@ -23,7 +23,7 @@
 
 @interface NSString (BButton)
 
-- (NSString *)trimWhitespace;
-- (BOOL)isEmpty;
+- (NSString *)bb_trimWhitespace;
+- (BOOL)bb_isEmpty;
 
 @end

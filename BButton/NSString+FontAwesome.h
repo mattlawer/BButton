@@ -342,9 +342,9 @@ typedef NS_ENUM(NSUInteger, FAIcon) {
 
 @interface NSString (FontAwesome)
 
-+ (NSArray *)allFontAwesomeStrings;
++ (NSArray *)fa_allFontAwesomeStrings;
 
-+ (NSString *)stringFromFontAwesomeStrings:(NSArray *)strings
-                                   forIcon:(FAIcon)icon;
++ (NSString *)fa_stringFromFontAwesomeStrings:(NSArray *)strings
+                                      forIcon:(FAIcon)icon;
 
 @end

@@ -23,14 +23,14 @@
 
 @implementation NSString (BButton)
 
-- (NSString *)trimWhitespace
+- (NSString *)bb_trimWhitespace
 {
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
-- (BOOL)isEmpty
+- (BOOL)bb_isEmpty
 {
-    return [[self trimWhitespace] isEqualToString:@""];
+    return [[self bb_trimWhitespace] isEqualToString:@""];
 }
 
 @end

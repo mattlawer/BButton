@@ -25,37 +25,37 @@
 
 #pragma mark - Custom colors
 
-+ (UIColor *)defaultColorV2;
-+ (UIColor *)defaultColorV3;
++ (UIColor *)bb_defaultColorV2;
++ (UIColor *)bb_defaultColorV3;
 
-+ (UIColor *)primaryColorV2;
-+ (UIColor *)primaryColorV3;
++ (UIColor *)bb_primaryColorV2;
++ (UIColor *)bb_primaryColorV3;
 
-+ (UIColor *)infoColorV2;
-+ (UIColor *)infoColorV3;
++ (UIColor *)bb_infoColorV2;
++ (UIColor *)bb_infoColorV3;
 
-+ (UIColor *)successColorV2;
-+ (UIColor *)successColorV3;
++ (UIColor *)bb_successColorV2;
++ (UIColor *)bb_successColorV3;
 
-+ (UIColor *)warningColorV2;
-+ (UIColor *)warningColorV3;
++ (UIColor *)bb_warningColorV2;
++ (UIColor *)bb_warningColorV3;
 
-+ (UIColor *)dangerColorV2;
-+ (UIColor *)dangerColorV3;
++ (UIColor *)bb_dangerColorV2;
++ (UIColor *)bb_dangerColorV3;
 
-+ (UIColor *)inverseColorV2;
-+ (UIColor *)inverseColorV3;
++ (UIColor *)bb_inverseColorV2;
++ (UIColor *)bb_inverseColorV3;
 
-+ (UIColor *)twitterColor;
-+ (UIColor *)facebookColor;
-+ (UIColor *)purpleBButtonColor;
-+ (UIColor *)grayBButtonColor;
++ (UIColor *)bb_twitterColor;
++ (UIColor *)bb_facebookColor;
++ (UIColor *)bb_purpleBButtonColor;
++ (UIColor *)bb_grayBButtonColor;
 
 #pragma mark - Utilities
 
-- (UIColor *)desaturatedColorToPercentSaturation:(CGFloat)percent;
-- (UIColor *)lightenColorWithValue:(CGFloat)value;
-- (UIColor *)darkenColorWithValue:(CGFloat)value;
-- (BOOL)isLightColor;
+- (UIColor *)bb_desaturatedColorToPercentSaturation:(CGFloat)percent;
+- (UIColor *)bb_lightenColorWithValue:(CGFloat)value;
+- (UIColor *)bb_darkenColorWithValue:(CGFloat)value;
+- (BOOL)bb_isLightColor;
 
 @end

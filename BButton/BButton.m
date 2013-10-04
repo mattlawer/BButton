@@ -213,7 +213,7 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
 {
     _color = newColor;
     
-    if([newColor isLightColor]) {
+    if([newColor bb_isLightColor]) {
         [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self setTitleShadowColor:[[UIColor whiteColor] colorWithAlphaComponent:0.6f] forState:UIControlStateNormal];
         
@@ -236,13 +236,13 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
     _shouldShowDisabled = show;
     
     if(show) {
-        if([self.color isLightColor])
+        if([self.color bb_isLightColor])
             [self setTitleColor:[UIColor colorWithWhite:0.4f alpha:0.5f] forState:UIControlStateDisabled];
         else
             [self setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.5f] forState:UIControlStateDisabled];
     }
     else {
-        if([self.color isLightColor])
+        if([self.color bb_isLightColor])
             [self setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
         else
             [self setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
@@ -273,7 +273,7 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
     
     NSString *title = [NSString stringWithFormat:@"%@", iconString];
     
-    if(self.titleLabel.text && ![self.titleLabel.text isEmpty]) {
+    if(self.titleLabel.text && ![self.titleLabel.text bb_isEmpty]) {
         if(before)
             title = [title stringByAppendingFormat:@" %@", self.titleLabel.text];
         else
@@ -286,10 +286,10 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
 - (NSString *)stringFromFontAwesomeIcon:(FAIcon)icon
 {
     if(!_fontAwesomeStrings) {
-        _fontAwesomeStrings = [NSString allFontAwesomeStrings];
+        _fontAwesomeStrings = [NSString fa_allFontAwesomeStrings];
     }
-    return [NSString stringFromFontAwesomeStrings:_fontAwesomeStrings
-                                          forIcon:icon];
+    return [NSString fa_stringFromFontAwesomeStrings:_fontAwesomeStrings
+                                             forIcon:icon];
 }
 
 + (UIColor *)colorForButtonType:(BButtonType)type style:(BButtonStyle)style
@@ -307,38 +307,38 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
 {
     switch (type) {
         case BButtonTypePrimary:
-            return [UIColor primaryColorV2];
+            return [UIColor bb_primaryColorV2];
             
         case BButtonTypeInfo:
-            return [UIColor infoColorV2];
+            return [UIColor bb_infoColorV2];
             
         case BButtonTypeSuccess:
-            return [UIColor successColorV2];
+            return [UIColor bb_successColorV2];
             
         case BButtonTypeWarning:
-            return [UIColor warningColorV2];
+            return [UIColor bb_warningColorV2];
             
         case BButtonTypeDanger:
-            return [UIColor dangerColorV2];
+            return [UIColor bb_dangerColorV2];
             
         case BButtonTypeInverse:
-            return [UIColor inverseColorV2];
+            return [UIColor bb_inverseColorV2];
             
         case BButtonTypeTwitter:
-            return [UIColor twitterColor];
+            return [UIColor bb_twitterColor];
             
         case BButtonTypeFacebook:
-            return [UIColor facebookColor];
+            return [UIColor bb_facebookColor];
             
         case BButtonTypePurple:
-            return [UIColor purpleBButtonColor];
+            return [UIColor bb_purpleBButtonColor];
             
         case BButtonTypeGray:
-            return [UIColor grayBButtonColor];
+            return [UIColor bb_grayBButtonColor];
             
         case BButtonTypeDefault:
         default:
-            return [UIColor defaultColorV2];
+            return [UIColor bb_defaultColorV2];
     }
 }
 
@@ -346,38 +346,38 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
 {
     switch (type) {
         case BButtonTypePrimary:
-            return [UIColor primaryColorV3];
+            return [UIColor bb_primaryColorV3];
             
         case BButtonTypeInfo:
-            return [UIColor infoColorV3];
+            return [UIColor bb_infoColorV3];
             
         case BButtonTypeSuccess:
-            return [UIColor successColorV3];
+            return [UIColor bb_successColorV3];
             
         case BButtonTypeWarning:
-            return [UIColor warningColorV3];
+            return [UIColor bb_warningColorV3];
             
         case BButtonTypeDanger:
-            return [UIColor dangerColorV3];
+            return [UIColor bb_dangerColorV3];
             
         case BButtonTypeInverse:
-            return [UIColor inverseColorV3];
+            return [UIColor bb_inverseColorV3];
             
         case BButtonTypeTwitter:
-            return [UIColor twitterColor];
+            return [UIColor bb_twitterColor];
             
         case BButtonTypeFacebook:
-            return [UIColor facebookColor];
+            return [UIColor bb_facebookColor];
             
         case BButtonTypePurple:
-            return [UIColor purpleBButtonColor];
+            return [UIColor bb_purpleBButtonColor];
             
         case BButtonTypeGray:
-            return [UIColor grayBButtonColor];
+            return [UIColor bb_grayBButtonColor];
             
         case BButtonTypeDefault:
         default:
-            return [UIColor defaultColorV3];
+            return [UIColor bb_defaultColorV3];
     }
 }
 
@@ -416,9 +416,9 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    UIColor *border = [self.color darkenColorWithValue:0.06f];
+    UIColor *border = [self.color bb_darkenColorWithValue:0.06f];
     
-    UIColor *shadow = [self.color lightenColorWithValue:0.50f];
+    UIColor *shadow = [self.color bb_lightenColorWithValue:0.50f];
     CGSize shadowOffset = CGSizeMake(0.0f, 1.0f);
     CGFloat shadowBlurRadius = 2.0f;
     
@@ -430,7 +430,7 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
     [roundedRectanglePath addClip];
     
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    UIColor *topColor = (self.shouldShowDisabled && !self.enabled) ? [self.color darkenColorWithValue:0.12f] : [self.color lightenColorWithValue:0.12f];
+    UIColor *topColor = (self.shouldShowDisabled && !self.enabled) ? [self.color bb_darkenColorWithValue:0.12f] : [self.color bb_lightenColorWithValue:0.12f];
     
     NSArray *newGradientColors = [NSArray arrayWithObjects:(id)topColor.CGColor, (id)self.color.CGColor, nil];
     CGFloat newGradientLocations[] = {0.0f, 1.0f};
@@ -487,15 +487,15 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
     
     CGContextSaveGState(context);
     
-    UIColor *fill = (!self.highlighted) ? self.color : [self.color darkenColorWithValue:0.06f];
+    UIColor *fill = (!self.highlighted) ? self.color : [self.color bb_darkenColorWithValue:0.06f];
     if(!self.enabled)
-        [fill desaturatedColorToPercentSaturation:0.60f];
+        [fill bb_desaturatedColorToPercentSaturation:0.60f];
     
     CGContextSetFillColorWithColor(context, fill.CGColor);
     
-    UIColor *border = (!self.highlighted) ? [self.color darkenColorWithValue:0.06f] : [self.color darkenColorWithValue:0.12f];
+    UIColor *border = (!self.highlighted) ? [self.color bb_darkenColorWithValue:0.06f] : [self.color bb_darkenColorWithValue:0.12f];
     if(!self.enabled)
-        [border desaturatedColorToPercentSaturation:0.60f];
+        [border bb_desaturatedColorToPercentSaturation:0.60f];
     
     CGContextSetStrokeColorWithColor(context, border.CGColor);
     
