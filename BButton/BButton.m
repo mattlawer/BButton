@@ -148,15 +148,6 @@ static NSArray * kFontAwesomeStrings;
     return self;
 }
 
-- (id)init
-{
-    self = [super init];
-    if(self) {
-        [self setup];
-    }
-    return self;
-}
-
 - (void)dealloc
 {
     _color = nil;
