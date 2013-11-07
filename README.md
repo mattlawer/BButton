@@ -12,7 +12,7 @@ Includes [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsa
 
 ### Features
 
-* iOS 6.1+, ARC, Storyboards
+* iOS 6.0+, ARC, Storyboards
 * Style like Bootstrap 2 or 3
 * Set corner radius via UIAppearance
 * Option to show button 'disabled' state
