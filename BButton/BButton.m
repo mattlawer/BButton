@@ -260,6 +260,12 @@ static NSArray * kFontAwesomeStrings;
 
 #pragma mark - BButton
 
+- (void)setStyle:(BButtonStyle)style
+{
+    _buttonStyle = style;
+    [self setColor:_color];
+}
+
 - (void)setType:(BButtonType)type
 {
     [self setColor:[BButton colorForButtonType:type

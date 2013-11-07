@@ -25,7 +25,11 @@
     for(int i = 0; i < 2; i++) {
         
         for(int j = 0; j < 7; j++) {
-            CGRect frame = CGRectMake(32.0f + (i * 144.0f), 40.0f + (j * 60.0f), 112.0f, 40.0f);
+            CGRect frame = CGRectMake(32.0f + (i * 144.0f),
+                                      40.0f + (j * 60.0f),
+                                      112.0f,
+                                      44.0f);
+            
             BButton *btn = [[BButton alloc] initWithFrame:frame type:type style:BButtonStyleBootstrapV3];
             [btn setTitle:[self titleForType:type] forState:UIControlStateNormal];
             
@@ -36,7 +40,7 @@
             
             type++;
             if(type > BButtonTypeGray) {
-                btn = [BButton awesomeButtonWithOnlyIcon:arc4random() % 209
+                btn = [BButton awesomeButtonWithOnlyIcon:arc4random_uniform(300)
                                                     type:(type % 2) ? BButtonTypeInverse : BButtonTypeDefault
                                                    style:BButtonStyleBootstrapV3];
                 

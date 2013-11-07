@@ -78,7 +78,10 @@ typedef NS_ENUM(NSUInteger, BButtonType) {
 
 #pragma mark - BButton
 
+- (void)setStyle:(BButtonStyle)style;
+
 - (void)setType:(BButtonType)type;
+
 - (void)addAwesomeIcon:(FAIcon)icon beforeTitle:(BOOL)before;
 
 @end
