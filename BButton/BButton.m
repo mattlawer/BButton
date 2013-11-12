@@ -44,8 +44,8 @@ static NSArray * kFontAwesomeStrings;
 + (UIColor *)colorForV3StyleButtonWithType:(BButtonType)type;
 + (NSNumber *)cornerRadiusForStyle:(BButtonStyle)aStyle;
 
-- (void)drawRectForBButtonStyleV2:(CGRect)rect;
-- (void)drawRectForBButtonStyleV3:(CGRect)rect;
+- (void)drawBButtonStyleV2InRect:(CGRect)rect withContext:(CGContextRef *)context;
+- (void)drawBButtonStyleV3InRect:(CGRect)rect withContext:(CGContextRef *)context;
 
 @end
 
@@ -409,20 +409,20 @@ static NSArray * kFontAwesomeStrings;
 {
     [super drawRect:rect];
     
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
     switch (self.buttonStyle) {
         case BButtonStyleBootstrapV2:
-            [self drawRectForBButtonStyleV2:rect];
+            [self drawBButtonStyleV2InRect:rect withContext:&context];
             break;
         case BButtonStyleBootstrapV3:
-            [self drawRectForBButtonStyleV3:rect];
+            [self drawBButtonStyleV3InRect:rect withContext:&context];
             break;
     }
 }
 
-- (void)drawRectForBButtonStyleV2:(CGRect)rect
+- (void)drawBButtonStyleV2InRect:(CGRect)rect withContext:(CGContextRef *)context
 {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
     UIColor *border = [self.color bb_darkenColorWithValue:0.06f];
     
     UIColor *shadow = [self.color bb_lightenColorWithValue:0.50f];
@@ -432,7 +432,7 @@ static NSArray * kFontAwesomeStrings;
     UIBezierPath *roundedRectanglePath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0.5f, 0.5f, rect.size.width-1.0f, rect.size.height-1.0f)
                                                                     cornerRadius:[self.buttonCornerRadius floatValue]];
     
-    CGContextSaveGState(context);
+    CGContextSaveGState(*context);
     
     [roundedRectanglePath addClip];
     
@@ -446,14 +446,14 @@ static NSArray * kFontAwesomeStrings;
     
     CGColorSpaceRelease(colorSpace);
     
-    CGContextDrawLinearGradient(context,
+    CGContextDrawLinearGradient(*context,
                                 gradient,
                                 CGPointMake(0.0f, self.highlighted ? rect.size.height - 0.5f : 0.5f),
                                 CGPointMake(0.0f, self.highlighted ? 0.5f : rect.size.height - 0.5f), 0.0f);
     
     CGGradientRelease(gradient);
     
-    CGContextRestoreGState(context);
+    CGContextRestoreGState(*context);
     
     if(!self.highlighted) {
         // Rounded Rectangle Inner Shadow
@@ -465,11 +465,11 @@ static NSArray * kFontAwesomeStrings;
         [roundedRectangleNegativePath appendPath: roundedRectanglePath];
         roundedRectangleNegativePath.usesEvenOddFillRule = YES;
         
-        CGContextSaveGState(context);
+        CGContextSaveGState(*context);
         {
             CGFloat xOffset = shadowOffset.width + round(roundedRectangleBorderRect.size.width);
             CGFloat yOffset = shadowOffset.height;
-            CGContextSetShadowWithColor(context,
+            CGContextSetShadowWithColor(*context,
                                         CGSizeMake(xOffset + copysign(0.1f, xOffset), yOffset + copysign(0.1f, yOffset)),
                                         shadowBlurRadius,
                                         shadow.CGColor);
@@ -480,7 +480,7 @@ static NSArray * kFontAwesomeStrings;
             [[UIColor grayColor] setFill];
             [roundedRectangleNegativePath fill];
         }
-        CGContextRestoreGState(context);
+        CGContextRestoreGState(*context);
     }
     
     [border setStroke];
@@ -488,33 +488,31 @@ static NSArray * kFontAwesomeStrings;
     [roundedRectanglePath stroke];
 }
 
-- (void)drawRectForBButtonStyleV3:(CGRect)rect
+- (void)drawBButtonStyleV3InRect:(CGRect)rect withContext:(CGContextRef *)context
 {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSaveGState(context);
+    CGContextSaveGState(*context);
     
     UIColor *fill = (!self.highlighted) ? self.color : [self.color bb_darkenColorWithValue:0.06f];
     if(!self.enabled)
         [fill bb_desaturatedColorToPercentSaturation:0.60f];
     
-    CGContextSetFillColorWithColor(context, fill.CGColor);
+    CGContextSetFillColorWithColor(*context, fill.CGColor);
     
     UIColor *border = (!self.highlighted) ? [self.color bb_darkenColorWithValue:0.06f] : [self.color bb_darkenColorWithValue:0.12f];
     if(!self.enabled)
         [border bb_desaturatedColorToPercentSaturation:0.60f];
     
-    CGContextSetStrokeColorWithColor(context, border.CGColor);
+    CGContextSetStrokeColorWithColor(*context, border.CGColor);
     
-    CGContextSetLineWidth(context, 1.0f);
+    CGContextSetLineWidth(*context, 1.0f);
     
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0.5f, 0.5f, rect.size.width-1.0f, rect.size.height-1.0f)
                                                     cornerRadius:[self.buttonCornerRadius floatValue]];
     
-    CGContextAddPath(context, path.CGPath);
-    CGContextDrawPath(context, kCGPathFillStroke);
+    CGContextAddPath(*context, path.CGPath);
+    CGContextDrawPath(*context, kCGPathFillStroke);
     
-    CGContextRestoreGState(context);
+    CGContextRestoreGState(*context);
 }
 
 @end
