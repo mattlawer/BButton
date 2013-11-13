@@ -7,149 +7,221 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		880EED34170B33B000462214 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880EED33170B33B000462214 /* UIKit.framework */; };
-		880EED36170B33B000462214 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880EED35170B33B000462214 /* Foundation.framework */; };
-		880EED3E170B33B000462214 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 880EED3C170B33B000462214 /* InfoPlist.strings */; };
-		880EED40170B33B000462214 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EED3F170B33B000462214 /* main.m */; };
-		880EED44170B33B000462214 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EED43170B33B000462214 /* AppDelegate.m */; };
-		880EED4D170B33B000462214 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880EED4B170B33B000462214 /* MainStoryboard.storyboard */; };
-		880EED53170B33B000462214 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EED52170B33B000462214 /* ViewController.m */; };
-		880EED9E170B357400462214 /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EED9A170B357400462214 /* BButton.m */; };
-		880EED9F170B357400462214 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 880EED9C170B357400462214 /* FontAwesome.ttf */; };
-		880EEDA2170B3EDB00462214 /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EEDA1170B3EDB00462214 /* UIColor+BButton.m */; };
-		880EEDA5170B6D2600462214 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EEDA4170B6D2600462214 /* NSString+FontAwesome.m */; };
-		88136CAD17EE2050003362C6 /* NSString+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 88136CAC17EE2050003362C6 /* NSString+BButton.m */; };
-		8857FBFD1718B92B001C200D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8857FBFC1718B92B001C200D /* CoreGraphics.framework */; };
-		88745460182B44ED004ACF15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8874545F182B44ED004ACF15 /* Images.xcassets */; };
+		88F28F1B183336920044C99F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F28F1A183336920044C99F /* Foundation.framework */; };
+		88F28F1D183336920044C99F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F28F1C183336920044C99F /* CoreGraphics.framework */; };
+		88F28F1F183336920044C99F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F28F1E183336920044C99F /* UIKit.framework */; };
+		88F28F25183336920044C99F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88F28F23183336920044C99F /* InfoPlist.strings */; };
+		88F28F27183336920044C99F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F26183336920044C99F /* main.m */; };
+		88F28F2B183336920044C99F /* TWBSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F2A183336920044C99F /* TWBSAppDelegate.m */; };
+		88F28F2E183336920044C99F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F28F2C183336920044C99F /* Main.storyboard */; };
+		88F28F31183336920044C99F /* TWBSDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F30183336920044C99F /* TWBSDemoViewController.m */; };
+		88F28F33183336920044C99F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F28F32183336920044C99F /* Images.xcassets */; };
+		88F28F3A183336920044C99F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F28F39183336920044C99F /* XCTest.framework */; };
+		88F28F3B183336920044C99F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F28F1A183336920044C99F /* Foundation.framework */; };
+		88F28F3C183336920044C99F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F28F1E183336920044C99F /* UIKit.framework */; };
+		88F28F44183336920044C99F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88F28F42183336920044C99F /* InfoPlist.strings */; };
+		88F28F46183336920044C99F /* BButtonDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F45183336920044C99F /* BButtonDemoTests.m */; };
+		88F28F5B183337F40044C99F /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F52183337F40044C99F /* BButton.m */; };
+		88F28F5C183337F40044C99F /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F52183337F40044C99F /* BButton.m */; };
+		88F28F5D183337F40044C99F /* NSString+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F54183337F40044C99F /* NSString+BButton.m */; };
+		88F28F5E183337F40044C99F /* NSString+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F54183337F40044C99F /* NSString+BButton.m */; };
+		88F28F5F183337F40044C99F /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F56183337F40044C99F /* NSString+FontAwesome.m */; };
+		88F28F60183337F40044C99F /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F56183337F40044C99F /* NSString+FontAwesome.m */; };
+		88F28F61183337F40044C99F /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F58183337F40044C99F /* UIColor+BButton.m */; };
+		88F28F62183337F40044C99F /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F58183337F40044C99F /* UIColor+BButton.m */; };
+		88F28F63183337F40044C99F /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88F28F5A183337F40044C99F /* FontAwesome.ttf */; };
+		88F28F64183337F40044C99F /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88F28F5A183337F40044C99F /* FontAwesome.ttf */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		88F28F3D183336920044C99F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88F28F0F183336920044C99F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88F28F16183336920044C99F;
+			remoteInfo = BButtonDemo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		880EED30170B33B000462214 /* BButtonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BButtonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		880EED33170B33B000462214 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		880EED35170B33B000462214 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		880EED3B170B33B000462214 /* BButtonDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BButtonDemo-Info.plist"; sourceTree = "<group>"; };
-		880EED3D170B33B000462214 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		880EED3F170B33B000462214 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		880EED41170B33B000462214 /* BButtonDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BButtonDemo-Prefix.pch"; sourceTree = "<group>"; };
-		880EED42170B33B000462214 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		880EED43170B33B000462214 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		880EED4C170B33B000462214 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		880EED51170B33B000462214 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		880EED52170B33B000462214 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		880EED99170B357400462214 /* BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BButton.h; sourceTree = "<group>"; };
-		880EED9A170B357400462214 /* BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BButton.m; sourceTree = "<group>"; };
-		880EED9C170B357400462214 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
-		880EEDA0170B3EDB00462214 /* UIColor+BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BButton.h"; sourceTree = "<group>"; };
-		880EEDA1170B3EDB00462214 /* UIColor+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BButton.m"; sourceTree = "<group>"; };
-		880EEDA3170B6D2600462214 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
-		880EEDA4170B6D2600462214 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
-		88136CAB17EE2050003362C6 /* NSString+BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BButton.h"; sourceTree = "<group>"; };
-		88136CAC17EE2050003362C6 /* NSString+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BButton.m"; sourceTree = "<group>"; };
-		8857FBFC1718B92B001C200D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		8874545F182B44ED004ACF15 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		88F28F17183336920044C99F /* BButtonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BButtonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88F28F1A183336920044C99F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		88F28F1C183336920044C99F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		88F28F1E183336920044C99F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		88F28F22183336920044C99F /* BButtonDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BButtonDemo-Info.plist"; sourceTree = "<group>"; };
+		88F28F24183336920044C99F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		88F28F26183336920044C99F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		88F28F28183336920044C99F /* BButtonDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BButtonDemo-Prefix.pch"; sourceTree = "<group>"; };
+		88F28F29183336920044C99F /* TWBSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWBSAppDelegate.h; sourceTree = "<group>"; };
+		88F28F2A183336920044C99F /* TWBSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWBSAppDelegate.m; sourceTree = "<group>"; };
+		88F28F2D183336920044C99F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		88F28F2F183336920044C99F /* TWBSDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWBSDemoViewController.h; sourceTree = "<group>"; };
+		88F28F30183336920044C99F /* TWBSDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWBSDemoViewController.m; sourceTree = "<group>"; };
+		88F28F32183336920044C99F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		88F28F38183336920044C99F /* BButtonDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BButtonDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88F28F39183336920044C99F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		88F28F41183336920044C99F /* BButtonDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BButtonDemoTests-Info.plist"; sourceTree = "<group>"; };
+		88F28F43183336920044C99F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		88F28F45183336920044C99F /* BButtonDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BButtonDemoTests.m; sourceTree = "<group>"; };
+		88F28F51183337F40044C99F /* BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BButton.h; sourceTree = "<group>"; };
+		88F28F52183337F40044C99F /* BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BButton.m; sourceTree = "<group>"; };
+		88F28F53183337F40044C99F /* NSString+BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BButton.h"; sourceTree = "<group>"; };
+		88F28F54183337F40044C99F /* NSString+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BButton.m"; sourceTree = "<group>"; };
+		88F28F55183337F40044C99F /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		88F28F56183337F40044C99F /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		88F28F57183337F40044C99F /* UIColor+BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BButton.h"; sourceTree = "<group>"; };
+		88F28F58183337F40044C99F /* UIColor+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BButton.m"; sourceTree = "<group>"; };
+		88F28F5A183337F40044C99F /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		88F28F65183338210044C99F /* BButton.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BButton.podspec; sourceTree = "<group>"; };
+		88F28F66183338210044C99F /* FontAwesomeIcons.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = FontAwesomeIcons.html; sourceTree = "<group>"; };
+		88F28F67183338210044C99F /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		88F28F68183338210044C99F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		880EED2D170B33B000462214 /* Frameworks */ = {
+		88F28F14183336920044C99F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8857FBFD1718B92B001C200D /* CoreGraphics.framework in Frameworks */,
-				880EED34170B33B000462214 /* UIKit.framework in Frameworks */,
-				880EED36170B33B000462214 /* Foundation.framework in Frameworks */,
+				88F28F1D183336920044C99F /* CoreGraphics.framework in Frameworks */,
+				88F28F1F183336920044C99F /* UIKit.framework in Frameworks */,
+				88F28F1B183336920044C99F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88F28F35183336920044C99F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88F28F3A183336920044C99F /* XCTest.framework in Frameworks */,
+				88F28F3C183336920044C99F /* UIKit.framework in Frameworks */,
+				88F28F3B183336920044C99F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		880EED27170B33B000462214 = {
+		88F28F0E183336920044C99F = {
 			isa = PBXGroup;
 			children = (
-				880EED96170B357400462214 /* BButton */,
-				880EED39170B33B000462214 /* BButtonDemo */,
-				880EED32170B33B000462214 /* Frameworks */,
-				880EED31170B33B000462214 /* Products */,
+				88F28F4F183337F40044C99F /* BButton */,
+				88F28F65183338210044C99F /* BButton.podspec */,
+				88F28F67183338210044C99F /* LICENSE.txt */,
+				88F28F68183338210044C99F /* README.md */,
+				88F28F66183338210044C99F /* FontAwesomeIcons.html */,
+				88F28F20183336920044C99F /* BButtonDemo */,
+				88F28F3F183336920044C99F /* BButtonDemoTests */,
+				88F28F19183336920044C99F /* Frameworks */,
+				88F28F18183336920044C99F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		880EED31170B33B000462214 /* Products */ = {
+		88F28F18183336920044C99F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				880EED30170B33B000462214 /* BButtonDemo.app */,
+				88F28F17183336920044C99F /* BButtonDemo.app */,
+				88F28F38183336920044C99F /* BButtonDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		880EED32170B33B000462214 /* Frameworks */ = {
+		88F28F19183336920044C99F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8857FBFC1718B92B001C200D /* CoreGraphics.framework */,
-				880EED33170B33B000462214 /* UIKit.framework */,
-				880EED35170B33B000462214 /* Foundation.framework */,
+				88F28F1A183336920044C99F /* Foundation.framework */,
+				88F28F1C183336920044C99F /* CoreGraphics.framework */,
+				88F28F1E183336920044C99F /* UIKit.framework */,
+				88F28F39183336920044C99F /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		880EED39170B33B000462214 /* BButtonDemo */ = {
+		88F28F20183336920044C99F /* BButtonDemo */ = {
 			isa = PBXGroup;
 			children = (
-				880EED42170B33B000462214 /* AppDelegate.h */,
-				880EED43170B33B000462214 /* AppDelegate.m */,
-				880EED4B170B33B000462214 /* MainStoryboard.storyboard */,
-				880EED51170B33B000462214 /* ViewController.h */,
-				880EED52170B33B000462214 /* ViewController.m */,
-				8874545F182B44ED004ACF15 /* Images.xcassets */,
-				880EED3A170B33B000462214 /* Supporting Files */,
+				88F28F29183336920044C99F /* TWBSAppDelegate.h */,
+				88F28F2A183336920044C99F /* TWBSAppDelegate.m */,
+				88F28F2C183336920044C99F /* Main.storyboard */,
+				88F28F2F183336920044C99F /* TWBSDemoViewController.h */,
+				88F28F30183336920044C99F /* TWBSDemoViewController.m */,
+				88F28F32183336920044C99F /* Images.xcassets */,
+				88F28F21183336920044C99F /* Supporting Files */,
 			);
 			path = BButtonDemo;
 			sourceTree = "<group>";
 		};
-		880EED3A170B33B000462214 /* Supporting Files */ = {
+		88F28F21183336920044C99F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				880EED3B170B33B000462214 /* BButtonDemo-Info.plist */,
-				880EED3C170B33B000462214 /* InfoPlist.strings */,
-				880EED3F170B33B000462214 /* main.m */,
-				880EED41170B33B000462214 /* BButtonDemo-Prefix.pch */,
+				88F28F22183336920044C99F /* BButtonDemo-Info.plist */,
+				88F28F23183336920044C99F /* InfoPlist.strings */,
+				88F28F26183336920044C99F /* main.m */,
+				88F28F28183336920044C99F /* BButtonDemo-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		880EED96170B357400462214 /* BButton */ = {
+		88F28F3F183336920044C99F /* BButtonDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				880EED99170B357400462214 /* BButton.h */,
-				880EED9A170B357400462214 /* BButton.m */,
-				88136CAB17EE2050003362C6 /* NSString+BButton.h */,
-				88136CAC17EE2050003362C6 /* NSString+BButton.m */,
-				880EEDA3170B6D2600462214 /* NSString+FontAwesome.h */,
-				880EEDA4170B6D2600462214 /* NSString+FontAwesome.m */,
-				880EED9B170B357400462214 /* resources */,
-				880EEDA0170B3EDB00462214 /* UIColor+BButton.h */,
-				880EEDA1170B3EDB00462214 /* UIColor+BButton.m */,
+				88F28F45183336920044C99F /* BButtonDemoTests.m */,
+				88F28F40183336920044C99F /* Supporting Files */,
+			);
+			path = BButtonDemoTests;
+			sourceTree = "<group>";
+		};
+		88F28F40183336920044C99F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				88F28F41183336920044C99F /* BButtonDemoTests-Info.plist */,
+				88F28F42183336920044C99F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		88F28F4F183337F40044C99F /* BButton */ = {
+			isa = PBXGroup;
+			children = (
+				88F28F50183337F40044C99F /* Classes */,
+				88F28F59183337F40044C99F /* Resources */,
 			);
 			path = BButton;
 			sourceTree = "<group>";
 		};
-		880EED9B170B357400462214 /* resources */ = {
+		88F28F50183337F40044C99F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				880EED9C170B357400462214 /* FontAwesome.ttf */,
+				88F28F51183337F40044C99F /* BButton.h */,
+				88F28F52183337F40044C99F /* BButton.m */,
+				88F28F53183337F40044C99F /* NSString+BButton.h */,
+				88F28F54183337F40044C99F /* NSString+BButton.m */,
+				88F28F55183337F40044C99F /* NSString+FontAwesome.h */,
+				88F28F56183337F40044C99F /* NSString+FontAwesome.m */,
+				88F28F57183337F40044C99F /* UIColor+BButton.h */,
+				88F28F58183337F40044C99F /* UIColor+BButton.m */,
 			);
-			path = resources;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		88F28F59183337F40044C99F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				88F28F5A183337F40044C99F /* FontAwesome.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		880EED2F170B33B000462214 /* BButtonDemo */ = {
+		88F28F16183336920044C99F /* BButtonDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 880EED56170B33B000462214 /* Build configuration list for PBXNativeTarget "BButtonDemo" */;
+			buildConfigurationList = 88F28F49183336920044C99F /* Build configuration list for PBXNativeTarget "BButtonDemo" */;
 			buildPhases = (
-				880EED2C170B33B000462214 /* Sources */,
-				880EED2D170B33B000462214 /* Frameworks */,
-				880EED2E170B33B000462214 /* Resources */,
+				88F28F13183336920044C99F /* Sources */,
+				88F28F14183336920044C99F /* Frameworks */,
+				88F28F15183336920044C99F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -157,105 +229,167 @@
 			);
 			name = BButtonDemo;
 			productName = BButtonDemo;
-			productReference = 880EED30170B33B000462214 /* BButtonDemo.app */;
+			productReference = 88F28F17183336920044C99F /* BButtonDemo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		88F28F37183336920044C99F /* BButtonDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88F28F4C183336920044C99F /* Build configuration list for PBXNativeTarget "BButtonDemoTests" */;
+			buildPhases = (
+				88F28F34183336920044C99F /* Sources */,
+				88F28F35183336920044C99F /* Frameworks */,
+				88F28F36183336920044C99F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88F28F3E183336920044C99F /* PBXTargetDependency */,
+			);
+			name = BButtonDemoTests;
+			productName = BButtonDemoTests;
+			productReference = 88F28F38183336920044C99F /* BButtonDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		880EED28170B33B000462214 /* Project object */ = {
+		88F28F0F183336920044C99F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				CLASSPREFIX = TWBS;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Hexed Bits";
 				TargetAttributes = {
-					880EED2F170B33B000462214 = {
-						DevelopmentTeam = 5VRJU68BZ5;
+					88F28F37183336920044C99F = {
+						TestTargetID = 88F28F16183336920044C99F;
 					};
 				};
 			};
-			buildConfigurationList = 880EED2B170B33B000462214 /* Build configuration list for PBXProject "BButtonDemo" */;
+			buildConfigurationList = 88F28F12183336920044C99F /* Build configuration list for PBXProject "BButtonDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = 880EED27170B33B000462214;
-			productRefGroup = 880EED31170B33B000462214 /* Products */;
+			mainGroup = 88F28F0E183336920044C99F;
+			productRefGroup = 88F28F18183336920044C99F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				880EED2F170B33B000462214 /* BButtonDemo */,
+				88F28F16183336920044C99F /* BButtonDemo */,
+				88F28F37183336920044C99F /* BButtonDemoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		880EED2E170B33B000462214 /* Resources */ = {
+		88F28F15183336920044C99F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				880EED3E170B33B000462214 /* InfoPlist.strings in Resources */,
-				88745460182B44ED004ACF15 /* Images.xcassets in Resources */,
-				880EED4D170B33B000462214 /* MainStoryboard.storyboard in Resources */,
-				880EED9F170B357400462214 /* FontAwesome.ttf in Resources */,
+				88F28F33183336920044C99F /* Images.xcassets in Resources */,
+				88F28F25183336920044C99F /* InfoPlist.strings in Resources */,
+				88F28F2E183336920044C99F /* Main.storyboard in Resources */,
+				88F28F63183337F40044C99F /* FontAwesome.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88F28F36183336920044C99F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88F28F44183336920044C99F /* InfoPlist.strings in Resources */,
+				88F28F64183337F40044C99F /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		880EED2C170B33B000462214 /* Sources */ = {
+		88F28F13183336920044C99F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				880EED40170B33B000462214 /* main.m in Sources */,
-				880EED44170B33B000462214 /* AppDelegate.m in Sources */,
-				880EED53170B33B000462214 /* ViewController.m in Sources */,
-				880EED9E170B357400462214 /* BButton.m in Sources */,
-				880EEDA2170B3EDB00462214 /* UIColor+BButton.m in Sources */,
-				88136CAD17EE2050003362C6 /* NSString+BButton.m in Sources */,
-				880EEDA5170B6D2600462214 /* NSString+FontAwesome.m in Sources */,
+				88F28F2B183336920044C99F /* TWBSAppDelegate.m in Sources */,
+				88F28F27183336920044C99F /* main.m in Sources */,
+				88F28F61183337F40044C99F /* UIColor+BButton.m in Sources */,
+				88F28F5F183337F40044C99F /* NSString+FontAwesome.m in Sources */,
+				88F28F5B183337F40044C99F /* BButton.m in Sources */,
+				88F28F5D183337F40044C99F /* NSString+BButton.m in Sources */,
+				88F28F31183336920044C99F /* TWBSDemoViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88F28F34183336920044C99F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88F28F60183337F40044C99F /* NSString+FontAwesome.m in Sources */,
+				88F28F5C183337F40044C99F /* BButton.m in Sources */,
+				88F28F5E183337F40044C99F /* NSString+BButton.m in Sources */,
+				88F28F62183337F40044C99F /* UIColor+BButton.m in Sources */,
+				88F28F46183336920044C99F /* BButtonDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		88F28F3E183336920044C99F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88F28F16183336920044C99F /* BButtonDemo */;
+			targetProxy = 88F28F3D183336920044C99F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		880EED3C170B33B000462214 /* InfoPlist.strings */ = {
+		88F28F23183336920044C99F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				880EED3D170B33B000462214 /* en */,
+				88F28F24183336920044C99F /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		880EED4B170B33B000462214 /* MainStoryboard.storyboard */ = {
+		88F28F2C183336920044C99F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				880EED4C170B33B000462214 /* en */,
+				88F28F2D183336920044C99F /* Base */,
 			);
-			name = MainStoryboard.storyboard;
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		88F28F42183336920044C99F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88F28F43183336920044C99F /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		880EED54170B33B000462214 /* Debug */ = {
+		88F28F47183336920044C99F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jesse Squires (64KYPKJ7RK)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jesse Squires (64KYPKJ7RK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -265,111 +399,152 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "0D0EEA35-157A-4FFD-A4A2-5F4A52C12634";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0D0EEA35-157A-4FFD-A4A2-5F4A52C12634";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		880EED55170B33B000462214 /* Release */ = {
+		88F28F48183336920044C99F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jesse Squires (64KYPKJ7RK)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jesse Squires (64KYPKJ7RK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "0D0EEA35-157A-4FFD-A4A2-5F4A52C12634";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0D0EEA35-157A-4FFD-A4A2-5F4A52C12634";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		880EED57170B33B000462214 /* Debug */ = {
+		88F28F4A183336920044C99F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BButtonDemo/BButtonDemo-Prefix.pch";
 				INFOPLIST_FILE = "BButtonDemo/BButtonDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0D0EEA35-157A-4FFD-A4A2-5F4A52C12634";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		880EED58170B33B000462214 /* Release */ = {
+		88F28F4B183336920044C99F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BButtonDemo/BButtonDemo-Prefix.pch";
 				INFOPLIST_FILE = "BButtonDemo/BButtonDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0D0EEA35-157A-4FFD-A4A2-5F4A52C12634";
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		88F28F4D183336920044C99F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BButtonDemo.app/BButtonDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BButtonDemo/BButtonDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BButtonDemoTests/BButtonDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		88F28F4E183336920044C99F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BButtonDemo.app/BButtonDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BButtonDemo/BButtonDemo-Prefix.pch";
+				INFOPLIST_FILE = "BButtonDemoTests/BButtonDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		880EED2B170B33B000462214 /* Build configuration list for PBXProject "BButtonDemo" */ = {
+		88F28F12183336920044C99F /* Build configuration list for PBXProject "BButtonDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				880EED54170B33B000462214 /* Debug */,
-				880EED55170B33B000462214 /* Release */,
+				88F28F47183336920044C99F /* Debug */,
+				88F28F48183336920044C99F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		880EED56170B33B000462214 /* Build configuration list for PBXNativeTarget "BButtonDemo" */ = {
+		88F28F49183336920044C99F /* Build configuration list for PBXNativeTarget "BButtonDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				880EED57170B33B000462214 /* Debug */,
-				880EED58170B33B000462214 /* Release */,
+				88F28F4A183336920044C99F /* Debug */,
+				88F28F4B183336920044C99F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88F28F4C183336920044C99F /* Build configuration list for PBXNativeTarget "BButtonDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88F28F4D183336920044C99F /* Debug */,
+				88F28F4E183336920044C99F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 880EED28170B33B000462214 /* Project object */;
+	rootObject = 88F28F0F183336920044C99F /* Project object */;
 }

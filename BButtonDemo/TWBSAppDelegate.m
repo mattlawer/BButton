@@ -1,16 +1,13 @@
 //
-//  AppDelegate.m
 //  BButtonDemo
 //
-//  Created by Jesse Squires on 4/2/13.
+//  Created by Jesse Squires on 11/12/13.
 //  Copyright (c) 2013 Hexed Bits. All rights reserved.
 //
-//  http://hexedbits.com
-//
 
-#import "AppDelegate.h"
+#import "TWBSAppDelegate.h"
 
-@implementation AppDelegate
+@implementation TWBSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

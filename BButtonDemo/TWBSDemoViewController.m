@@ -1,24 +1,21 @@
 //
-//  ViewController.m
 //  BButtonDemo
 //
-//  Created by Jesse Squires on 4/2/13.
+//  Created by Jesse Squires on 11/12/13.
 //  Copyright (c) 2013 Hexed Bits. All rights reserved.
 //
-//  http://hexedbits.com
-//
 
-#import "ViewController.h"
+#import "TWBSDemoViewController.h"
 
-@implementation ViewController
+@implementation TWBSDemoViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-//    uncomment to set corner radius for all buttons
-//    
-//    [[BButton appearance] setButtonCornerRadius:@50.0f];
+    //    uncomment to set corner radius for all buttons
+    //
+    //    [[BButton appearance] setButtonCornerRadius:@50.0f];
     
     BButtonType type = 0;
     
@@ -49,10 +46,10 @@
             
             [btn addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
             
-//            uncomment to show buttons as disabled
-//            
-//            btn.shouldShowDisabled = YES;
-//            btn.enabled = NO;
+            //            uncomment to show buttons as disabled
+            //
+            //            btn.shouldShowDisabled = YES;
+            //            btn.enabled = NO;
             
             [self.view addSubview:btn];
         }
@@ -69,7 +66,7 @@
     switch (type) {
         case BButtonTypePrimary:
             return @"Primary";
-        
+            
         case BButtonTypeInfo:
             return @"Info";
             
@@ -87,7 +84,7 @@
             
         case BButtonTypeTwitter:
             return @"Twitter";
-        
+            
         case BButtonTypeFacebook:
             return @"Facebook";
             
