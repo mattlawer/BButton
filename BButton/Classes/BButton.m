@@ -85,44 +85,44 @@ static NSArray * kFontAwesomeStrings;
 
 #pragma mark - Initialization
 
-- (id)initWithFrame:(CGRect)frame type:(BButtonType)type style:(BButtonStyle)aStyle
+- (id)initWithFrame:(CGRect)frame type:(BButtonType)type style:(BButtonStyle)style
 {
     return [self initWithFrame:frame
-                         color:[BButton colorForButtonType:type style:aStyle]
-                         style:aStyle];
+                         color:[BButton colorForButtonType:type style:style]
+                         style:style];
 }
 
 - (id)initWithFrame:(CGRect)frame
                type:(BButtonType)type
-              style:(BButtonStyle)aStyle
+              style:(BButtonStyle)style
                icon:(FAIcon)icon
            fontSize:(CGFloat)fontSize
 {
     return [self initWithFrame:frame
-                         color:[BButton colorForButtonType:type style:aStyle]
-                         style:aStyle
+                         color:[BButton colorForButtonType:type style:style]
+                         style:style
                           icon:icon
                       fontSize:fontSize];
 }
 
-- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor style:(BButtonStyle)aStyle
+- (id)initWithFrame:(CGRect)frame color:(UIColor *)color style:(BButtonStyle)style
 {
     self = [self initWithFrame:frame];
     if(self) {
-        _buttonStyle = aStyle;
-        [self setColor:aColor];
-        [self setTextAttributesForStyle:aStyle];
+        _buttonStyle = style;
+        [self setColor:color];
+        [self setTextAttributesForStyle:style];
     }
     return self;
 }
 
 - (id)initWithFrame:(CGRect)frame
-              color:(UIColor *)aColor
-              style:(BButtonStyle)aStyle
+              color:(UIColor *)color
+              style:(BButtonStyle)style
                icon:(FAIcon)icon
            fontSize:(CGFloat)fontSize
 {
-    self = [self initWithFrame:frame color:aColor style:aStyle];
+    self = [self initWithFrame:frame color:color style:style];
     if(self) {
         [[self titleLabel] setFont:[UIFont fontWithName:kFontAwesomeFont size:fontSize]];
         [[self titleLabel] setTextAlignment:NSTextAlignmentCenter];
@@ -162,20 +162,20 @@ static NSArray * kFontAwesomeStrings;
 
 + (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon
                                   type:(BButtonType)type
-                                 style:(BButtonStyle)aStyle
+                                 style:(BButtonStyle)style
 {
     return [BButton awesomeButtonWithOnlyIcon:icon
-                                        color:[BButton colorForButtonType:type style:aStyle]
-                                        style:aStyle];
+                                        color:[BButton colorForButtonType:type style:style]
+                                        style:style];
 }
 
 + (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon
                                  color:(UIColor *)color
-                                 style:(BButtonStyle)aStyle
+                                 style:(BButtonStyle)style
 {
     return [[BButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 40.0f, 40.0f)
                                     color:color
-                                    style:aStyle
+                                    style:style
                                      icon:icon
                                  fontSize:20.0f];
 }
