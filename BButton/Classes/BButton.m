@@ -20,8 +20,6 @@
 //
 
 #import "BButton.h"
-#import "NSString+BButton.h"
-
 #import <CoreGraphics/CoreGraphics.h>
 
 static CGFloat const kBButtonCornerRadiusV2 = 6.0f;
@@ -43,6 +41,9 @@ static NSArray * kFontAwesomeStrings;
 + (UIColor *)colorForV2StyleButtonWithType:(BButtonType)type;
 + (UIColor *)colorForV3StyleButtonWithType:(BButtonType)type;
 + (NSNumber *)cornerRadiusForStyle:(BButtonStyle)aStyle;
+
+- (NSString *)stringByTrimingWhiteSpaceFromString:(NSString *)str;
+- (BOOL)isStringEmpty:(NSString *)str;
 
 - (void)drawBButtonStyleV2InRect:(CGRect)rect withContext:(CGContextRef *)context;
 - (void)drawBButtonStyleV3InRect:(CGRect)rect withContext:(CGContextRef *)context;
@@ -280,7 +281,7 @@ static NSArray * kFontAwesomeStrings;
     
     NSString *title = [NSString stringWithFormat:@"%@", iconString];
     
-    if(self.titleLabel.text && ![self.titleLabel.text bb_isEmpty]) {
+    if(self.titleLabel.text && ![self isStringEmpty:self.titleLabel.text]) {
         if(before)
             title = [title stringByAppendingFormat:@" %@", self.titleLabel.text];
         else
@@ -401,6 +402,18 @@ static NSArray * kFontAwesomeStrings;
             break;
     }
     return [NSNumber numberWithFloat:r];
+}
+
+#pragma mark - Utilities
+
+- (NSString *)stringByTrimingWhiteSpaceFromString:(NSString *)str
+{
+    return [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
+- (BOOL)isStringEmpty:(NSString *)str
+{
+    return [[self stringByTrimingWhiteSpaceFromString:str] isEqualToString:@""];
 }
 
 #pragma mark - Drawing

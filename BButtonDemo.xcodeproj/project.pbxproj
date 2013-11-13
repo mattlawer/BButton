@@ -23,8 +23,6 @@
 		88F28F46183336920044C99F /* BButtonDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F45183336920044C99F /* BButtonDemoTests.m */; };
 		88F28F5B183337F40044C99F /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F52183337F40044C99F /* BButton.m */; };
 		88F28F5C183337F40044C99F /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F52183337F40044C99F /* BButton.m */; };
-		88F28F5D183337F40044C99F /* NSString+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F54183337F40044C99F /* NSString+BButton.m */; };
-		88F28F5E183337F40044C99F /* NSString+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F54183337F40044C99F /* NSString+BButton.m */; };
 		88F28F5F183337F40044C99F /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F56183337F40044C99F /* NSString+FontAwesome.m */; };
 		88F28F60183337F40044C99F /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F56183337F40044C99F /* NSString+FontAwesome.m */; };
 		88F28F61183337F40044C99F /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F28F58183337F40044C99F /* UIColor+BButton.m */; };
@@ -65,8 +63,6 @@
 		88F28F45183336920044C99F /* BButtonDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BButtonDemoTests.m; sourceTree = "<group>"; };
 		88F28F51183337F40044C99F /* BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BButton.h; sourceTree = "<group>"; };
 		88F28F52183337F40044C99F /* BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BButton.m; sourceTree = "<group>"; };
-		88F28F53183337F40044C99F /* NSString+BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BButton.h"; sourceTree = "<group>"; };
-		88F28F54183337F40044C99F /* NSString+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BButton.m"; sourceTree = "<group>"; };
 		88F28F55183337F40044C99F /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
 		88F28F56183337F40044C99F /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
 		88F28F57183337F40044C99F /* UIColor+BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BButton.h"; sourceTree = "<group>"; };
@@ -194,8 +190,6 @@
 			children = (
 				88F28F51183337F40044C99F /* BButton.h */,
 				88F28F52183337F40044C99F /* BButton.m */,
-				88F28F53183337F40044C99F /* NSString+BButton.h */,
-				88F28F54183337F40044C99F /* NSString+BButton.m */,
 				88F28F55183337F40044C99F /* NSString+FontAwesome.h */,
 				88F28F56183337F40044C99F /* NSString+FontAwesome.m */,
 				88F28F57183337F40044C99F /* UIColor+BButton.h */,
@@ -317,7 +311,6 @@
 				88F28F61183337F40044C99F /* UIColor+BButton.m in Sources */,
 				88F28F5F183337F40044C99F /* NSString+FontAwesome.m in Sources */,
 				88F28F5B183337F40044C99F /* BButton.m in Sources */,
-				88F28F5D183337F40044C99F /* NSString+BButton.m in Sources */,
 				88F28F31183336920044C99F /* TWBSDemoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,7 +321,6 @@
 			files = (
 				88F28F60183337F40044C99F /* NSString+FontAwesome.m in Sources */,
 				88F28F5C183337F40044C99F /* BButton.m in Sources */,
-				88F28F5E183337F40044C99F /* NSString+BButton.m in Sources */,
 				88F28F62183337F40044C99F /* UIColor+BButton.m in Sources */,
 				88F28F46183336920044C99F /* BButtonDemoTests.m in Sources */,
 			);
