@@ -32,16 +32,16 @@
     
     BButton *btn = [[BButton alloc] initWithFrame:frame type:BButtonTypeDefault style:BButtonStyleBootstrapV2];
     XCTAssertNotNil(btn, @"Button should not be nil");
-    
-    
+    XCTAssert([btn.color isEqual:[UIColor bb_defaultColorV2]], @"Colors should be equal");
     
     btn = nil;
     btn = [[BButton alloc] initWithFrame:frame
-                                    type:BButtonTypeDefault
-                                   style:BButtonStyleBootstrapV2
+                                    type:BButtonTypeWarning
+                                   style:BButtonStyleBootstrapV3
                                     icon:FAIconAdjust
                                 fontSize:14.0f];
     XCTAssertNotNil(btn, @"Button should not be nil");
+    XCTAssert([btn.color isEqual:[UIColor bb_warningColorV3]], @"Colors should be equal");
     
     
     
@@ -69,7 +69,8 @@
 
 - (void)testButtonClassInitMethods
 {
-    BButton *btn = [BButton awesomeButtonWithOnlyIcon:FAIconUserMd type:BButtonTypeDefault style:BButtonStyleBootstrapV3];
+    BButton *btn = [BButton awesomeButtonWithOnlyIcon:FAIconUserMd type:BButtonTypeSuccess style:BButtonStyleBootstrapV3];
+    XCTAssert([btn.color isEqual:[UIColor bb_successColorV3]], @"Colors should be equal");
     XCTAssertNotNil(btn, @"Button should not be nil");
     XCTAssert([btn.titleLabel.text length] == 1, @"Button text should only include FAIcon");
     
@@ -98,8 +99,9 @@
     NSString *btnTitle = @"Button Title";
     FAIcon i = FAIconVolumeDown;
     BButton *btn = [[BButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 200.0f, 50.0f)
-                                             type:BButtonTypeDefault
-                                            style:BButtonStyleBootstrapV3];
+                                             type:BButtonTypeInverse
+                                            style:BButtonStyleBootstrapV2];
+    XCTAssert([btn.color isEqual:[UIColor bb_inverseColorV2]], @"Colors should be equal");
     
     [btn setTitle:btnTitle forState:UIControlStateNormal];
     XCTAssertEqual([btn.titleLabel.text length], [btnTitle length], @"Button title lengths should be equal");
