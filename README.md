@@ -1,87 +1,87 @@
-#BButton 3.0
+# BButton [![Build Status](https://secure.travis-ci.org/jessesquires/BButton.png)](http://travis-ci.org/jessesquires/BButton)
 
-BButton is a subclass of UIButton that looks like the [Twitter Bootstrap](http://getbootstrap.com) buttons. 
+[Twitter Bootstrap](http://getbootstrap.com) buttons for iOS.
 
-*New!* Use Bootstrap [version 2](http://getbootstrap.com/2.3.2/) or [version 3](http://getbootstrap.com) style!
-
-Forked from [@mattlawer / BButton](https://github.com/mattlawer/BButton) and refactored for more awesome.
-
-Includes [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsaft/FontAwesome-for-iOS), fixed for iOS from the original [FontAwesome](http://fortawesome.github.com/Font-Awesome/).
+`BButton` is a subclass of `UIButton` that is styled like the Twitter Bootstrap buttons, drawn entirely with `CoreGraphics`.
 
 ![BButton Screenshot 1][img1] &nbsp;&nbsp;&nbsp;&nbsp; ![BButton Screenshot 2][img2]
 
-### Features
+## Features
 
-* iOS 6.0+, ARC, Storyboards
-* Style like Bootstrap 2 or 3
-* Set corner radius via UIAppearance
-* Option to show button 'disabled' state
-* Many button type (color) options
-* FontAwesome included
+* Works just like `UIButton`, but sexier
+* Bootstrap [version 2](http://getbootstrap.com/2.3.2/) or [version 3](http://getbootstrap.com) styles
+* Highly customizable
+* Includes [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsaft/FontAwesome-for-iOS), fixed for iOS from the original [FontAwesome](http://fortawesome.github.com/Font-Awesome/)
+
+## Requirements
+
+* iOS 6.0+ 
+* ARC
 
 ## Installation
 
-### From [CocoaPods](http://www.cocoapods.org)
+#### From [CocoaPods](http://www.cocoapods.org)
 
-#### **This fork**
-	
-	pod 'BButton',  :git => 'https://github.com/jessesquires/BButton.git'
+`pod 'BButton'`
 
-#### Original repo
+#### From source
 
-	pod `BButton`
-
-### From source
-
-* Drag the `BButton/` folder to your project (make sure you copy all files/folders)
-* `#import "BButton.h"`
-* Add `Fonts provided by application` key to `Info.plist` and include `FontAwesome.ttf`
+* Drag the `BButton/` folder to your project.
+* Add the `Fonts provided by application` key to `Info.plist` and include `FontAwesome.ttf`
 
 ![plist][img3]
 
-## How To Use
+#### Too cool for [ARC](https://developer.apple.com/library/mac/releasenotes/ObjectiveC/RN-TransitioningToARC/Introduction/Introduction.html)?
 
-### With Storyboards
+* Add the `-fobjc-arc` compiler flag to all source files in your project in Target Settings > Build Phases > Compile Sources.
 
-Create a `UIButton` and change its class to `BButton`
+## Getting Started
 
-### Create programmatically
+1. Create programmatically via one of the `init` methods
+2. Create via Storyboards
+  * Drag a `UIButton` to your view
+  * Set its class to `BButton`
+3. Be a badass [programming-motherfucker](http://programming-motherfucker.com) and read the fucking documentation. (Yes, there's documentation! [Seriously](http://www.nrcc.org/wp-content/uploads/2013/05/Moonwalk.gif)!)
+4. See the included demo project: `BButtonDemo.xcodeproj`
+5. See `FontAwesomeIcons.html` for list of icons
 
-Initialize with any of the following methods:
+## Documentation
 
-````objective-c
-- (id)initWithFrame:(CGRect)frame type:(BButtonType)type style:(BButtonStyle)aStyle
-- (id)initWithFrame:(CGRect)frame
-               type:(BButtonType)type
-              style:(BButtonStyle)aStyle
-               icon:(FAIcon)icon
-           fontSize:(CGFloat)fontSize
-- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor style:(BButtonStyle)aStyle
-- (id)initWithFrame:(CGRect)frame
-              color:(UIColor *)aColor
-              style:(BButtonStyle)aStyle
-               icon:(FAIcon)icon
-           fontSize:(CGFloat)fontSize
-+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon
-                                  type:(BButtonType)type
-                                 style:(BButtonStyle)aStyle
-+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon
-                                 color:(UIColor *)color
-                                 style:(BButtonStyle)aStyle
-````
+Documentation is [available here](http://cocoadocs.org/docsets/BButton/3.2.0) via [CocoaDocs](http://cocoadocs.org). Thanks [@CocoaDocs](https://twitter.com/CocoaDocs)!
 
-### UI Appearance
+## Customization
 
-Set corner radius for all buttons via UIAppearance
+* Set corner radius for all buttons via `UIAppearance`
 
 ````objective-c
 [[BButton appearance] setButtonCornerRadius:[NSNumber numberWithFloat:0.0f]];
 ````
+
 ![BButton Screenshot 3][img4] &nbsp;&nbsp;&nbsp;&nbsp; ![BButton Screenshot 4][img5]
 
-**See the included demo project `BButtonDemo.xcodeproj`**
+* *More tips coming soon!*
 
-**See `FontAwesomeIcons.html` for list of icons**
+## How To Contribute
+
+1. [Find an issue](https://github.com/jessesquires/BButton/issues?sort=created&state=open) to work on, or create a new one.
+2. Fork me.
+3. Create a new branch with a sweet fucking name: `git checkout -b issue_<##>_<featureOrFix>`.
+4. Do some motherfucking programming
+5. Write Unit Tests, if you can
+6. Keep your code nice and clean by adhering to Google's [Objective-C Style Guide](http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml) and Apple's [Coding Guidelines for Cocoa](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html).
+7. Don't break shit, especially `master`.
+8. Update the documentation header comments.
+9. Update the pod spec and project version numbers, adhering to the [semantic versioning](http://semver.org) specification.
+10. Submit a pull request.
+11. See step 1.
+
+## Credits
+
+Created by [@Mathieu Bolard](https://twitter.com/mattlawer) (Original project here: [@mattlawer / BButton](https://github.com/mattlawer/BButton)).
+
+Forked, refactored, updated, maintained by [@Jesse Squires](https://twitter.com/jesse_squires), a [programming-motherfucker](http://programming-motherfucker.com).
+
+FontAwesome-for-iOS by Pit Garbe, [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsaft/FontAwesome-for-iOS).
 
 ## Apps Using This Control
 
@@ -99,9 +99,7 @@ Set corner radius for all buttons via UIAppearance
 
 ## [MIT License](http://opensource.org/licenses/MIT)
 
-Copyright &copy; 2012, Mathieu Bolard. All rights reserved.
-
-Refactored by Jesse Squires, April 2013.
+Copyright &copy; 2012, Mathieu Bolard, Jesse Squires. All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
