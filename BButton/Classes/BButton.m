@@ -282,10 +282,12 @@ static NSArray * kFontAwesomeStrings;
     NSString *title = [NSString stringWithFormat:@"%@", iconString];
     
     if(self.titleLabel.text && ![self isStringEmpty:self.titleLabel.text]) {
-        if(before)
+        if(before) {
             title = [title stringByAppendingFormat:@" %@", self.titleLabel.text];
-        else
-            title = [NSString stringWithFormat:@"%@  %@", self.titleLabel.text, iconString];
+        }
+        else {
+            title = [NSString stringWithFormat:@"%@ %@", self.titleLabel.text, iconString];
+        }
     }
     
     [self setTitle:title forState:UIControlStateNormal];
