@@ -1,5 +1,9 @@
 language: objective-c
 
+xcode_project: BButtonDemo.xcodeproj
+
+xcode_scheme: BButtonDemo
+
 branches:
 only:
 - master
