@@ -1,8 +1,10 @@
 language: objective-c
 
-xcode_project: BButtonDemo.xcodeproj
-
-xcode_scheme: BButtonDemo
+before_install:
+    - brew update
+    - brew install xctool
+    
+script: xctool -project BButtonDemo.xcodeproj -scheme BButtonDemo test
 
 branches:
 only:
