@@ -1,6 +1,8 @@
 language: objective-c
 
-script: xctool -project BButtonDemo.xcodeproj -scheme BButtonDemo test
+xcode_project: BButtonDemo.xcodeproj
+
+xcode_scheme: BButtonDemo
 
 branches:
 only:
