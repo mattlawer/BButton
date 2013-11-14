@@ -156,6 +156,9 @@ static NSArray * kFontAwesomeStrings;
     _color = nil;
     _buttonCornerRadius = nil;
     kFontAwesomeStrings = nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIApplicationDidReceiveMemoryWarningNotification
+                                                  object:nil];
 }
 
 #pragma mark - Class initialization
