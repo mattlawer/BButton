@@ -47,7 +47,7 @@
 
 ## Documentation
 
-Documentation is [available here](http://cocoadocs.org/docsets/BButton) via [CocoaDocs](http://cocoadocs.org). Thanks [@CocoaDocs](https://twitter.com/CocoaDocs)!
+Documentation is [available here](http://cocoadocs.org/docsets/BButton/3.2.2) via [CocoaDocs](http://cocoadocs.org). Thanks [@CocoaDocs](https://twitter.com/CocoaDocs)!
 
 ## Customization
 
