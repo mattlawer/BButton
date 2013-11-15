@@ -487,6 +487,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "BButtonDemoTests/BButtonDemoTests-Info.plist";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
