@@ -47,7 +47,7 @@
 
 ## Documentation
 
-Documentation is [available here](http://cocoadocs.org/docsets/BButton/3.2.0) via [CocoaDocs](http://cocoadocs.org). Thanks [@CocoaDocs](https://twitter.com/CocoaDocs)!
+Documentation is [available here](http://cocoadocs.org/docsets/BButton) via [CocoaDocs](http://cocoadocs.org). Thanks [@CocoaDocs](https://twitter.com/CocoaDocs)!
 
 ## Customization
 
@@ -82,6 +82,8 @@ Created by [@Mathieu Bolard](https://twitter.com/mattlawer) (Original project he
 Forked, refactored, updated, maintained by [@Jesse Squires](https://twitter.com/jesse_squires), a [programming-motherfucker](http://programming-motherfucker.com).
 
 FontAwesome-for-iOS by Pit Garbe, [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsaft/FontAwesome-for-iOS).
+
+Many thanks to [the contributors](https://github.com/jessesquires/BButton/graphs/contributors) of this project.
 
 ## Apps Using This Control
 
