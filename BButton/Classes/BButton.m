@@ -429,6 +429,9 @@ static NSArray * kFontAwesomeStrings;
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
+    if(!context)
+        return;
+    
     switch (self.buttonStyle) {
         case BButtonStyleBootstrapV2:
             [self drawBButtonStyleV2InRect:rect withContext:&context];
@@ -484,20 +487,20 @@ static NSArray * kFontAwesomeStrings;
         roundedRectangleNegativePath.usesEvenOddFillRule = YES;
         
         CGContextSaveGState(*context);
-        {
-            CGFloat xOffset = shadowOffset.width + round(roundedRectangleBorderRect.size.width);
-            CGFloat yOffset = shadowOffset.height;
-            CGContextSetShadowWithColor(*context,
-                                        CGSizeMake(xOffset + copysign(0.1f, xOffset), yOffset + copysign(0.1f, yOffset)),
-                                        shadowBlurRadius,
-                                        shadow.CGColor);
-            
-            [roundedRectanglePath addClip];
-            CGAffineTransform transform = CGAffineTransformMakeTranslation(-round(roundedRectangleBorderRect.size.width), 0.0f);
-            [roundedRectangleNegativePath applyTransform: transform];
-            [[UIColor grayColor] setFill];
-            [roundedRectangleNegativePath fill];
-        }
+        
+        CGFloat xOffset = shadowOffset.width + round(roundedRectangleBorderRect.size.width);
+        CGFloat yOffset = shadowOffset.height;
+        CGContextSetShadowWithColor(*context,
+                                    CGSizeMake(xOffset + copysign(0.1f, xOffset), yOffset + copysign(0.1f, yOffset)),
+                                    shadowBlurRadius,
+                                    shadow.CGColor);
+        
+        [roundedRectanglePath addClip];
+        CGAffineTransform transform = CGAffineTransformMakeTranslation(-round(roundedRectangleBorderRect.size.width), 0.0f);
+        [roundedRectangleNegativePath applyTransform: transform];
+        [[UIColor grayColor] setFill];
+        [roundedRectangleNegativePath fill];
+        
         CGContextRestoreGState(*context);
     }
     
