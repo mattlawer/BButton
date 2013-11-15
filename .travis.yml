@@ -1,8 +1,8 @@
 language: objective-c
 
 script: 
-- xctool -project BButtonDemo.xcodeproj -scheme BButtonDemo -sdk iphonesimulator -arch i386 ONLY_ACTIVE_ARCH=NO build test
-- xctool -project BButtonDemo.xcodeproj -scheme BButtonDemoTests -sdk iphonesimulator -arch i386 ONLY_ACTIVE_ARCH=NO build test
+- xctool -project BButtonDemo.xcodeproj -scheme BButtonDemo -sdk iphonesimulator -arch i386 ONLY_ACTIVE_ARCH=NO build
+- xctool -project BButtonDemo.xcodeproj -scheme BButtonDemoTests -sdk iphonesimulator -arch i386 ONLY_ACTIVE_ARCH=NO test
 
 branches:
 only:
