@@ -1,4 +1,4 @@
-# BButton [![Build Status](https://secure.travis-ci.org/jessesquires/BButton.png)](http://travis-ci.org/jessesquires/BButton) [![Version Status](https://cocoapod-badges.herokuapp.com/v/BButton/badge.png)](http://cocoadocs.org/docsets/BButton)
+# BButton [![Build Status](https://secure.travis-ci.org/jessesquires/BButton.png)](http://travis-ci.org/jessesquires/BButton) [![Version Status](https://cocoapod-badges.herokuapp.com/v/BButton/badge.png)](http://cocoadocs.org/docsets/BButton/3.2.2)
 
 [Twitter Bootstrap](http://getbootstrap.com) buttons for iOS.
 
