@@ -1,4 +1,4 @@
-# BButton [![Build Status](https://secure.travis-ci.org/jessesquires/BButton.png)](http://travis-ci.org/jessesquires/BButton) [![Version Status](https://cocoapod-badges.herokuapp.com/v/BButton/badge.png)](http://cocoadocs.org/docsets/BButton/3.2.2)
+# BButton [![Build Status](https://secure.travis-ci.org/jessesquires/BButton.png)](http://travis-ci.org/jessesquires/BButton) [![Version Status](https://cocoapod-badges.herokuapp.com/v/BButton/badge.png)][docsLink]
 
 [Twitter Bootstrap](http://getbootstrap.com) buttons for iOS.
 
@@ -47,7 +47,7 @@
 
 ## Documentation
 
-Documentation is [available here](http://cocoadocs.org/docsets/BButton/3.2.2) via [CocoaDocs](http://cocoadocs.org). Thanks [@CocoaDocs](https://twitter.com/CocoaDocs)!
+Documentation is [available here][docsLink] via [CocoaDocs](http://cocoadocs.org). Thanks [@CocoaDocs](https://twitter.com/CocoaDocs)!
 
 ## Customization
 
@@ -116,6 +116,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * The Font Awesome pictograms are licensed under the [CC BY 3.0 License](http://creativecommons.org/licenses/by/3.0)
 * Attribution is no longer required in Font Awesome 3.0, but much appreciated:
 	* *"Font Awesome by Dave Gandy - http://fortawesome.github.com/Font-Awesome"*
+
+[docsLink]:http://cocoadocs.org/docsets/BButton/3.2.2
 
 [img1]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-0.png
 [img2]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-2.png
