@@ -1,6 +1,10 @@
 language: objective-c
+
 xcode_project: BButtonDemo.xcodeproj
-xcode_scheme: BButtonDemoTests
+
+xcode_scheme: 
+- BButtonDemo
+- BButtonDemoTests
 
 branches:
 only:
