@@ -1,7 +1,6 @@
 language: objective-c
-
-script: 
-- xctool -project BButtonDemo.xcodeproj -scheme BButtonDemo -sdk iphonesimulator -arch i386 ONLY_ACTIVE_ARCH=NO build test
+xcode_project: BButtonDemo.xcodeproj
+xcode_scheme: BButtonDemoTests
 
 branches:
 only:
