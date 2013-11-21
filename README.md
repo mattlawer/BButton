@@ -2,7 +2,7 @@
 
 [Twitter Bootstrap](http://getbootstrap.com) buttons for iOS.
 
-`BButton` is a subclass of `UIButton` that is styled like the Twitter Bootstrap buttons, drawn entirely with `CoreGraphics`.
+`BButton` is a subclass of `UIButton` that is styled like the Twitter Bootstrap buttons, and is drawn entirely with `CoreGraphics`.
 
 ![BButton Screenshot 1][img1] &nbsp;&nbsp;&nbsp;&nbsp; ![BButton Screenshot 2][img2]
 
