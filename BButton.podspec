@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name			= 'BButton'
-	s.version		= '3.2.2'
+	s.version		= '3.2.3'
 	s.summary		= 'Twitter Bootstrap buttons for iOS'
 	s.homepage		= 'https://github.com/jessesquires/BButton'
 	s.license		= 'MIT License'
