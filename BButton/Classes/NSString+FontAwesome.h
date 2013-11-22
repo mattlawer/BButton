@@ -34,8 +34,14 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  A string constant for the Font Awesome font family name.
+ */
 extern NSString * const kFontAwesomeFont;
 
+/**
+ *  A constant describing the available Font Awesome Icons.
+ */
 typedef NS_ENUM(NSUInteger, FAIcon) {
     FAIconGlass,
     FAIconMusic,
@@ -342,8 +348,19 @@ typedef NS_ENUM(NSUInteger, FAIcon) {
 
 @interface NSString (FontAwesome)
 
+/**
+ *
+ *  @return An array of all the font awesome icon strings.
+ */
 + (NSArray *)fa_allFontAwesomeStrings;
 
+/**
+ *
+ *  @param strings An array of all the font awesome icon strings.
+ *  @param icon    A constant describing a font awesome icon.
+ *
+ *  @return The font awesome icon string associated with the given icon.
+ */
 + (NSString *)fa_stringFromFontAwesomeStrings:(NSArray *)strings
                                       forIcon:(FAIcon)icon;
 
