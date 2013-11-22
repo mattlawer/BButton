@@ -1,8 +1,8 @@
 language: objective-c
 
 script: 
-- xctool -project BButtonDemo.xcodeproj -scheme BButtonDemo -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO clean build
-- xctool -project BButtonDemo.xcodeproj -scheme BButtonDemoTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO clean build run-tests
+- xctool -project BButtonDemo.xcodeproj -scheme BButtonDemo -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO clean build test
+- xctool -project BButtonDemo.xcodeproj -scheme BButtonDemoTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO clean build run-tests -freshSimulator -freshInstall
 
 branches:
 only:
