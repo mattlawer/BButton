@@ -136,3 +136,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [img3]:https://raw.github.com/jessesquires/BButton/master/Screenshots/plist.png
 [img4]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-4.png
 [img5]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-5.png
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jessesquires/bbutton/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
