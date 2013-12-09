@@ -97,6 +97,18 @@ Many thanks to [the contributors](https://github.com/jessesquires/BButton/graphs
 
 [iExplorer for DeviantART](https://itunes.apple.com/us/app/iexplorer-for-deviantart/id657212778?mt=8)
 
+[Travel Delay NYC](https://itunes.apple.com/us/app/train-delay-nyc-subway-status/id384027573?mt=8)
+
+[Libraries for Developers](https://itunes.apple.com/us/app/libraries-for-developers/id653427112?mt=8)
+
+[CPU Monitor](https://itunes.apple.com/us/app/cpumonitor/id680137811?mt=8)
+
+[OpenWatch](https://itunes.apple.com/us/app/openwatch-free-video-streaming/id642680756?mt=8)
+
+[VSNotes](https://itunes.apple.com/us/app/vsnotes/id695433001?mt=8)
+
+[Crew Scout](https://itunes.apple.com/us/app/crew-scout/id721124938?mt=8)
+
 *[Contact me](mailto:jesse.squires.developer@gmail.com) to have your app listed here.*
 
 ## [MIT License](http://opensource.org/licenses/MIT)
