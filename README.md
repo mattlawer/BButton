@@ -1,4 +1,4 @@
-# BButton [![Build Status](https://secure.travis-ci.org/jessesquires/BButton.png)](http://travis-ci.org/jessesquires/BButton) [![Version Status](https://cocoapod-badges.herokuapp.com/v/BButton/badge.png)][docsLink]
+# BButton [![Build Status](https://secure.travis-ci.org/jessesquires/BButton.png)](http://travis-ci.org/jessesquires/BButton) [![Version Status](https://cocoapod-badges.herokuapp.com/v/BButton/badge.png)][docsLink] [![license MIT](http://b.repl.ca/v1/license-MIT-blue.png)][mitLink]
 
 [Twitter Bootstrap](http://getbootstrap.com) buttons for iOS.
 
@@ -63,17 +63,18 @@ Documentation is [available here][docsLink] via [CocoaDocs](http://cocoadocs.org
 
 ## How To Contribute
 
-1. [Find an issue](https://github.com/jessesquires/BButton/issues?sort=created&state=open) to work on, or create a new one.
-2. Fork me.
-3. Create a new branch with a sweet fucking name: `git checkout -b issue_<##>_<featureOrFix>`.
+1. [Find an issue](https://github.com/jessesquires/BButton/issues?sort=created&state=open) to work on, or create a new one
+2. Fork me
+3. Create a new branch with a sweet fucking name: `git checkout -b issue_<##>_<featureOrFix>`
 4. Do some motherfucking programming
-5. Write Unit Tests, if you can
-6. Keep your code nice and clean by adhering to Google's [Objective-C Style Guide](http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml) and Apple's [Coding Guidelines for Cocoa](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html).
-7. Don't break shit, especially `master`.
-8. Update the documentation header comments.
-9. Update the pod spec and project version numbers, adhering to the [semantic versioning](http://semver.org) specification.
-10. Submit a pull request.
-11. See step 1.
+5. Write [unit tests](http://nshipster.com/unit-testing), if possible
+6. Keep your code nice and clean by adhering to the following standards: 
+    * Google's [Objective-C Style Guide](http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml)
+    * Apple's [Coding Guidelines for Cocoa](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)
+7. Don't break shit, like unit tests
+8. Update the documentation header comments, if needed
+9. Merge the latest from `develop` and **resolve any conflicts** (*before submitting a pull request!*)
+10. Submit a pull request to the `develop` **[branch](https://github.com/jessesquires/BButton/tree/develop)**
 
 ## Credits
 
@@ -111,7 +112,7 @@ Many thanks to [the contributors](https://github.com/jessesquires/BButton/graphs
 
 *[Contact me](mailto:jesse.squires.developer@gmail.com) to have your app listed here.*
 
-## [MIT License](http://opensource.org/licenses/MIT)
+## [MIT License][mitLink]
 
 Copyright &copy; 2012, Mathieu Bolard, Jesse Squires. All rights reserved.
 
@@ -130,6 +131,7 @@ Copyright &copy; 2012, Mathieu Bolard, Jesse Squires. All rights reserved.
 	* *"Font Awesome by Dave Gandy - http://fortawesome.github.com/Font-Awesome"*
 
 [docsLink]:http://cocoadocs.org/docsets/BButton/3.2.3
+[mitLink]:http://opensource.org/licenses/MIT
 
 [img1]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-0.png
 [img2]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-2.png
