@@ -78,9 +78,9 @@ Documentation is [available here][docsLink] via [CocoaDocs](http://cocoadocs.org
 
 ## Credits
 
-Created by [@Mathieu Bolard](https://twitter.com/mattlawer) (Original project here: [@mattlawer / BButton](https://github.com/mattlawer/BButton)).
+Created by [@mattlawer](https://twitter.com/mattlawer) (Original project here: [@mattlawer / BButton](https://github.com/mattlawer/BButton)).
 
-Forked, refactored, updated, maintained by [@Jesse Squires](https://twitter.com/jesse_squires), a [programming-motherfucker](http://programming-motherfucker.com).
+Forked, refactored, updated, maintained by [@jesse_squires](https://twitter.com/jesse_squires), a [programming-motherfucker](http://programming-motherfucker.com).
 
 FontAwesome-for-iOS by Pit Garbe, [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsaft/FontAwesome-for-iOS).
 
