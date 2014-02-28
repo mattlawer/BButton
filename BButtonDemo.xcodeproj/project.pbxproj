@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40CA32B217335139005E8B67 /* UILabel+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CA32B117335139005E8B67 /* UILabel+FontAwesome.m */; };
+		40CAF662173482960069676E /* UIImage+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CAF661173482960069676E /* UIImage+FontAwesome.m */; };
 		880EED34170B33B000462214 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880EED33170B33B000462214 /* UIKit.framework */; };
 		880EED36170B33B000462214 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880EED35170B33B000462214 /* Foundation.framework */; };
 		880EED3E170B33B000462214 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 880EED3C170B33B000462214 /* InfoPlist.strings */; };
@@ -25,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40CA32B017335139005E8B67 /* UILabel+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+FontAwesome.h"; sourceTree = "<group>"; };
+		40CA32B117335139005E8B67 /* UILabel+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+FontAwesome.m"; sourceTree = "<group>"; };
+		40CAF660173482960069676E /* UIImage+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FontAwesome.h"; sourceTree = "<group>"; };
+		40CAF661173482960069676E /* UIImage+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FontAwesome.m"; sourceTree = "<group>"; };
 		880EED30170B33B000462214 /* BButtonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BButtonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		880EED33170B33B000462214 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		880EED35170B33B000462214 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -122,6 +128,10 @@
 		880EED96170B357400462214 /* BButton */ = {
 			isa = PBXGroup;
 			children = (
+				40CA32B017335139005E8B67 /* UILabel+FontAwesome.h */,
+				40CA32B117335139005E8B67 /* UILabel+FontAwesome.m */,
+				40CAF660173482960069676E /* UIImage+FontAwesome.h */,
+				40CAF661173482960069676E /* UIImage+FontAwesome.m */,
 				880EED99170B357400462214 /* BButton.h */,
 				880EED9A170B357400462214 /* BButton.m */,
 				880EEDA3170B6D2600462214 /* NSString+FontAwesome.h */,
@@ -214,6 +224,8 @@
 				880EED9E170B357400462214 /* BButton.m in Sources */,
 				880EEDA2170B3EDB00462214 /* UIColor+BButton.m in Sources */,
 				880EEDA5170B6D2600462214 /* NSString+FontAwesome.m in Sources */,
+				40CA32B217335139005E8B67 /* UILabel+FontAwesome.m in Sources */,
+				40CAF662173482960069676E /* UIImage+FontAwesome.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
