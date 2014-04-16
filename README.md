@@ -127,5 +127,3 @@ Copyright &copy; 2012, Mathieu Bolard, Jesse Squires. All rights reserved.
 [img3]:https://raw.github.com/jessesquires/BButton/master/Screenshots/plist.png
 [img4]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-4.png
 [img5]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-5.png
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jessesquires/bbutton/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
