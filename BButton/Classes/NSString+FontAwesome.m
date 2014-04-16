@@ -1,6 +1,4 @@
 //
-//  NSString+FontAwesome.m
-//
 //  Created by Pit Garbe on 27.09.12.
 //  Updated to Font Awesome 3.1.1 on 17.05.2013.
 //  Copyright (c) 2012 Pit Garbe. All rights reserved.

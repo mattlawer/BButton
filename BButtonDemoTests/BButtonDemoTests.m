@@ -1,9 +1,20 @@
 //
-//  BButtonDemoTests.m
-//  BButtonDemoTests
+//  Created by Mathieu Bolard on 31/07/12.
+//  Copyright (c) 2012 Mathieu Bolard. All rights reserved.
 //
-//  Created by Jesse Squires on 11/12/13.
-//  Copyright (c) 2013 Hexed Bits. All rights reserved.
+//  https://github.com/mattlawer/BButton
+//
+//
+//  BButton is licensed under the MIT license
+//  http://opensource.org/licenses/MIT
+//
+//
+//  -----------------------------------------
+//  Edited and refactored by Jesse Squires on 2 April, 2013.
+//
+//  http://github.com/jessesquires/BButton
+//
+//  http://hexedbits.com
 //
 
 #import <XCTest/XCTest.h>
@@ -15,16 +26,6 @@
 
 
 @implementation BButtonDemoTests
-
-- (void)setUp
-{
-    [super setUp];
-}
-
-- (void)tearDown
-{
-    [super tearDown];
-}
 
 - (void)testButtonInitMethods
 {
