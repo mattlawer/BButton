@@ -20,6 +20,20 @@
                ReferencedContainer = "container:BButtonDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "88F28F37183336920044C99F"
+               BuildableName = "BButtonDemoTests.xctest"
+               BlueprintName = "BButtonDemoTests"
+               ReferencedContainer = "container:BButtonDemo.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -28,6 +42,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "88F28F37183336920044C99F"
+               BuildableName = "BButtonDemoTests.xctest"
+               BlueprintName = "BButtonDemoTests"
+               ReferencedContainer = "container:BButtonDemo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

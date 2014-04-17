@@ -10,13 +10,13 @@
             buildForTesting = "YES"
             buildForRunning = "YES"
             buildForProfiling = "YES"
-            buildForArchiving = "NO"
+            buildForArchiving = "YES"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "88F28F37183336920044C99F"
-               BuildableName = "BButtonDemoTests.xctest"
-               BlueprintName = "BButtonDemoTests"
+               BlueprintIdentifier = "88F28F16183336920044C99F"
+               BuildableName = "BButtonDemo.app"
+               BlueprintName = "BButtonDemo"
                ReferencedContainer = "container:BButtonDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,9 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "88F28F16183336920044C99F"
-               BuildableName = "BButtonDemo.app"
-               BlueprintName = "BButtonDemo"
+               BlueprintIdentifier = "88F28F37183336920044C99F"
+               BuildableName = "BButtonDemoTests.xctest"
+               BlueprintName = "BButtonDemoTests"
                ReferencedContainer = "container:BButtonDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
