@@ -1,5 +1,9 @@
 language: objective-c
 
-script: 
-- xctool -project BButtonDemo.xcodeproj -scheme BButtonDemo -sdk iphonesimulator7.0 clean build
-- xctool -project BButtonDemo.xcodeproj -scheme BButtonDemoTests -sdk iphonesimulator7.0 clean build run-tests -freshSimulator -freshInstall
+xcode_project: BButtonDemo.xcodeproj
+xcode_sdk: iphonesimulator7.0
+xcode_scheme: BButtonDemoTests
+
+# script: 
+# - xctool -project BButtonDemo.xcodeproj -scheme BButtonDemo -sdk iphonesimulator7.0 clean build
+# - xctool -project BButtonDemo.xcodeproj -scheme BButtonDemoTests -sdk iphonesimulator7.0 clean build run-tests
