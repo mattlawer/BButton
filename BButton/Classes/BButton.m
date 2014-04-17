@@ -22,7 +22,6 @@
 
 static CGFloat const kBButtonCornerRadiusV2 = 6.0f;
 static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
-static NSArray * kFontAwesomeStrings;
 
 @interface BButton ()
 
@@ -153,7 +152,6 @@ static NSArray * kFontAwesomeStrings;
 {
     _color = nil;
     _buttonCornerRadius = nil;
-    kFontAwesomeStrings = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIApplicationDidReceiveMemoryWarningNotification
                                                   object:nil];
@@ -257,7 +255,6 @@ static NSArray * kFontAwesomeStrings;
 - (void)didRecieveMemoryWarningNotification:(NSNotification *)notification
 {
     NSLog(@"%@ recieved %@", [BButton class], notification.name);
-    kFontAwesomeStrings = nil;
 }
 
 #pragma mark - BButton
@@ -296,11 +293,7 @@ static NSArray * kFontAwesomeStrings;
 
 - (NSString *)stringFromFontAwesomeIcon:(FAIcon)icon
 {
-    if (!kFontAwesomeStrings) {
-        kFontAwesomeStrings = [NSString fa_allFontAwesomeStrings];
-    }
-    return [NSString fa_stringFromFontAwesomeStrings:kFontAwesomeStrings
-                                             forIcon:icon];
+    return [NSString fa_stringFromFontAwesomeForIcon:icon];
 }
 
 + (UIColor *)colorForButtonType:(BButtonType)type style:(BButtonStyle)style
