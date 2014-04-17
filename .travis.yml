@@ -1,5 +1,5 @@
 language: objective-c
 
 script: 
-- xctool -project BButtonDemo.xcodeproj -scheme BButtonDemo -sdk iphonesimulator7.0 clean build
-- xctool -project BButtonDemo.xcodeproj -scheme BButtonDemoTests -sdk iphonesimulator7.0 clean build run-tests
+- xctool -project BButtonDemo.xcodeproj -scheme BButtonDemo -sdk iphonesimulator7.0 -arch i386 clean build
+- xctool -project BButtonDemo.xcodeproj -scheme BButtonDemoTests -sdk iphonesimulator7.0 -arch i386 clean build run-tests
