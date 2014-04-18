@@ -1,5 +1,10 @@
 language: objective-c
 
+before_install: 
+- brew update
+- brew unlink xctool
+- brew install xctool
+
 script: 
 - xctool -project BButtonDemo.xcodeproj -scheme BButtonDemo -sdk iphonesimulator7.0 clean build
 - xctool -project BButtonDemo.xcodeproj -scheme BButtonDemoTests -sdk iphonesimulator7.0 clean build run-tests
