@@ -30,8 +30,6 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
 - (void)setup;
 - (void)setTextAttributesForStyle:(BButtonStyle)aStyle;
 
-- (void)didRecieveMemoryWarningNotification:(NSNotification *)notification;
-
 - (NSString *)stringFromFontAwesomeIcon:(FAIcon)icon;
 
 + (UIColor *)colorForButtonType:(BButtonType)type style:(BButtonStyle)style;
@@ -59,10 +57,6 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
     _shouldShowDisabled = YES;
     _buttonStyle = BButtonStyleBootstrapV3;
     [self setType:BButtonTypeDefault];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didRecieveMemoryWarningNotification:)
-                                                 name:UIApplicationDidReceiveMemoryWarningNotification
-                                               object:nil];
 }
 
 - (void)setTextAttributesForStyle:(BButtonStyle)aStyle
@@ -152,9 +146,6 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
 {
     _color = nil;
     _buttonCornerRadius = nil;
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIApplicationDidReceiveMemoryWarningNotification
-                                                  object:nil];
 }
 
 #pragma mark - Class initialization
@@ -248,13 +239,6 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
         else
             [self setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
     }
-}
-
-#pragma mark - Notifications
-
-- (void)didRecieveMemoryWarningNotification:(NSNotification *)notification
-{
-    NSLog(@"%@ recieved %@", [BButton class], notification.name);
 }
 
 #pragma mark - BButton
