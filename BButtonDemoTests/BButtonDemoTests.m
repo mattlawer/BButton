@@ -85,17 +85,8 @@
 
 - (void)testFontAwesome
 {
-    NSArray *allIcons = [NSString fa_allFontAwesomeStrings];
-    XCTAssertNotNil(allIcons, @"Array should not be nil");
-    XCTAssert([allIcons count] != 0, @"Array should not be empty");
-    
-    NSString *icon = [NSString fa_stringFromFontAwesomeStrings:allIcons
-                                                       forIcon:FAIconWarningSign];
+    NSString *icon = [NSString fa_stringFromFontAwesomeForIcon:FAIconWarningSign];
     XCTAssertNotNil(icon, @"Icon should not be nil");
-    XCTAssert([allIcons containsObject:icon], @"Icon should be contained in icon list");
-    XCTAssertEqual([allIcons indexOfObject:icon], FAIconWarningSign, @"Array index should equal FAIcon ENUM");
-    
-    
     
     NSString *btnTitle = @"Button Title";
     FAIcon i = FAIconVolumeDown;
@@ -110,17 +101,15 @@
     [btn addAwesomeIcon:i beforeTitle:NO];
     XCTAssertEqual([btn.titleLabel.text length], [btnTitle length] + 2, @"Button title length should be 2 characters longer after adding icon");
     
-    icon = [NSString fa_stringFromFontAwesomeStrings:allIcons forIcon:i];
+    icon = [NSString fa_stringFromFontAwesomeForIcon:i];
     NSString *btnIcon = [btn.titleLabel.text substringFromIndex:[btn.titleLabel.text length] - 1];
     XCTAssert([btnIcon isEqualToString:icon], @"Last character in button title should equal FA icon");
-    
-    
     
     i = FAIconTerminal;
     [btn addAwesomeIcon:i beforeTitle:YES];
     XCTAssertEqual([btn.titleLabel.text length], [btnTitle length] + 4, @"Button title length should be 4 characters longer after adding 2 icons");
     
-    icon = [NSString fa_stringFromFontAwesomeStrings:allIcons forIcon:i];
+    icon = [NSString fa_stringFromFontAwesomeForIcon:i];
     btnIcon = [btn.titleLabel.text substringToIndex:1];
     XCTAssert([btnIcon isEqualToString:icon], @"First character in button title should equal FA icon");
 }
