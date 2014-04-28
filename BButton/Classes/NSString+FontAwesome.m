@@ -36,17 +36,6 @@ NSString * const kFontAwesomeFont = @"FontAwesome";
 
 @implementation NSString (FontAwesome)
 
-+ (NSArray *)fa_allFontAwesomeStrings
-{
-    return nil;
-}
-
-+ (NSString *)fa_stringFromFontAwesomeStrings:(NSArray *)strings
-                                      forIcon:(FAIcon)icon
-{
-    return [self fa_stringFromFontAwesomeForIcon:icon];
-}
-
 + (NSString *)fa_stringFromFontAwesomeForIcon:(FAIcon)icon{
     return [NSString stringWithFormat:@"%C", (unsigned short)icon ];
 }

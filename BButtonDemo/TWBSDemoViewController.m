@@ -19,10 +19,6 @@
     
     BButtonType type = 0;
     
-    // This is to get a random icon from the Enum. Since we cannot get a random enum in Objective-C, we need to create an array of them to get a random value from a subset of the whole enum.
-    NSUInteger arrayOfIcons[] = {FASortAlphaAsc, FASortAlphaDesc, FASortAmountAsc, FASortAmountDesc, FASortNumericAsc, FASortNumericDesc, FAThumbsUp, FAThumbsDown, FAYoutubeSquare, FAYoutube, FAXing, FAXingSquare, FAYoutubePlay, FADropbox, FAStackOverflow, FAInstagram, FAFlickr, FAAdn, FABitbucket, FABitbucketSquare, FATumblr, FATumblrSquare, FALongArrowDown, FALongArrowUp, FALongArrowLeft, FALongArrowRight, FAApple, FAWindows, FAAndroid, FALinux, FADribbble, FASkype, FAFoursquare, FATrello, FAFemale, FAMale, FAGittip, FASunO, FAMoonO, FAArchive, FABug, FAVk, FAWeibo, FARenren, FAPagelines, FAStackExchange, FAArrowCircleORight, FAArrowCircleOLeft, FAToggleLeft, FACaretSquareOLeft, FADotCircleO, FAWheelchair, FAVimeoSquare, FATurkishLira, FATry, FAPlusSquareO};
-    int sizeOfIconsArray = sizeof(arrayOfIcons)/sizeof(arrayOfIcons[0]);
-    
     for(int i = 0; i < 2; i++) {
         
         for(int j = 0; j < 7; j++) {
@@ -41,7 +37,7 @@
             
             type++;
             if(type > BButtonTypeGray) {
-                btn = [BButton awesomeButtonWithOnlyIcon:arrayOfIcons[arc4random_uniform(sizeOfIconsArray)]
+                btn = [BButton awesomeButtonWithOnlyIcon:(arc4random_uniform(0xf196-0xf000)+0xf000)
                                                     type:(type % 2) ? BButtonTypeInverse : BButtonTypeDefault
                                                    style:BButtonStyleBootstrapV3];
                 

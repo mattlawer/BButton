@@ -755,10 +755,6 @@ typedef NS_ENUM(NSUInteger, FAIcon){
 
 @interface NSString (FontAwesome)
 
-+ (NSArray *)fa_allFontAwesomeStrings __attribute__((deprecated("No needed anymore. Use Method fa_stringFromFontAwesomeForIcon:(FAIcon)icon instead.")));
-
-+ (NSString *)fa_stringFromFontAwesomeStrings:(NSArray *)strings forIcon:(FAIcon)icon __attribute__((deprecated("Use Method fa_stringFromFontAwesomeForIcon:(FAIcon)icon instead.")));
-
 + (NSString *)fa_stringFromFontAwesomeForIcon:(FAIcon)icon;
 
 @end
