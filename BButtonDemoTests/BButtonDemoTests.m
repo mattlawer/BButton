@@ -39,7 +39,7 @@
     btn = [[BButton alloc] initWithFrame:frame
                                     type:BButtonTypeWarning
                                    style:BButtonStyleBootstrapV3
-                                    icon:FAIconAdjust
+                                    icon:FAAdjust
                                 fontSize:14.0f];
     XCTAssertNotNil(btn, @"Button should not be nil");
     XCTAssert([btn.color isEqual:[UIColor bb_warningColorV3]], @"Colors should be equal");
@@ -56,21 +56,21 @@
     btn = [[BButton alloc] initWithFrame:frame
                                    color:[UIColor blackColor]
                                    style:BButtonStyleBootstrapV3
-                                    icon:FAIconZoomOut
+                                    icon:FASearchMinus
                                 fontSize:16.0f];
     XCTAssertNotNil(btn, @"Button should not be nil");
     
     
     
     btn = nil;
-    btn = [BButton awesomeButtonWithOnlyIcon:FAIconZoomIn color:[UIColor blueColor] style:BButtonStyleBootstrapV2];
+    btn = [BButton awesomeButtonWithOnlyIcon:FASearchPlus color:[UIColor blueColor] style:BButtonStyleBootstrapV2];
     XCTAssertNotNil(btn, @"Button should not be nil");
     XCTAssert([btn.titleLabel.text length] == 1, @"Button text should only include FAIcon");
 }
 
 - (void)testButtonClassInitMethods
 {
-    BButton *btn = [BButton awesomeButtonWithOnlyIcon:FAIconUserMd type:BButtonTypeSuccess style:BButtonStyleBootstrapV3];
+    BButton *btn = [BButton awesomeButtonWithOnlyIcon:FAUserMd type:BButtonTypeSuccess style:BButtonStyleBootstrapV3];
     XCTAssert([btn.color isEqual:[UIColor bb_successColorV3]], @"Colors should be equal");
     XCTAssertNotNil(btn, @"Button should not be nil");
     XCTAssert([btn.titleLabel.text length] == 1, @"Button text should only include FAIcon");
@@ -78,18 +78,18 @@
     
     
     btn = nil;
-    btn = [BButton awesomeButtonWithOnlyIcon:FAIconZoomIn color:[UIColor blueColor] style:BButtonStyleBootstrapV2];
+    btn = [BButton awesomeButtonWithOnlyIcon:FASearchPlus color:[UIColor blueColor] style:BButtonStyleBootstrapV2];
     XCTAssertNotNil(btn, @"Button should not be nil");
     XCTAssert([btn.titleLabel.text length] == 1, @"Button text should only include FAIcon");
 }
 
 - (void)testFontAwesome
 {
-    NSString *icon = [NSString fa_stringFromFontAwesomeForIcon:FAIconWarningSign];
+    NSString *icon = [NSString fa_stringFromFontAwesomeForIcon:FAWarning];
     XCTAssertNotNil(icon, @"Icon should not be nil");
     
     NSString *btnTitle = @"Button Title";
-    FAIcon i = FAIconVolumeDown;
+    FAIcon i = FAVolumeDown;
     BButton *btn = [[BButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 200.0f, 50.0f)
                                              type:BButtonTypeInverse
                                             style:BButtonStyleBootstrapV2];
@@ -105,7 +105,7 @@
     NSString *btnIcon = [btn.titleLabel.text substringFromIndex:[btn.titleLabel.text length] - 1];
     XCTAssert([btnIcon isEqualToString:icon], @"Last character in button title should equal FA icon");
     
-    i = FAIconTerminal;
+    i = FATerminal;
     [btn addAwesomeIcon:i beforeTitle:YES];
     XCTAssertEqual([btn.titleLabel.text length], [btnTitle length] + 4, @"Button title length should be 4 characters longer after adding 2 icons");
     
