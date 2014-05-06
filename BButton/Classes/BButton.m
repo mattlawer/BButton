@@ -22,7 +22,6 @@
 
 static CGFloat const kBButtonCornerRadiusV2 = 6.0f;
 static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
-static NSArray * kFontAwesomeStrings;
 
 @interface BButton ()
 
@@ -30,8 +29,6 @@ static NSArray * kFontAwesomeStrings;
 
 - (void)setup;
 - (void)setTextAttributesForStyle:(BButtonStyle)aStyle;
-
-- (void)didRecieveMemoryWarningNotification:(NSNotification *)notification;
 
 - (NSString *)stringFromFontAwesomeIcon:(FAIcon)icon;
 
@@ -60,10 +57,6 @@ static NSArray * kFontAwesomeStrings;
     _shouldShowDisabled = YES;
     _buttonStyle = BButtonStyleBootstrapV3;
     [self setType:BButtonTypeDefault];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didRecieveMemoryWarningNotification:)
-                                                 name:UIApplicationDidReceiveMemoryWarningNotification
-                                               object:nil];
 }
 
 - (void)setTextAttributesForStyle:(BButtonStyle)aStyle
@@ -153,10 +146,6 @@ static NSArray * kFontAwesomeStrings;
 {
     _color = nil;
     _buttonCornerRadius = nil;
-    kFontAwesomeStrings = nil;
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIApplicationDidReceiveMemoryWarningNotification
-                                                  object:nil];
 }
 
 #pragma mark - Class initialization
@@ -252,14 +241,6 @@ static NSArray * kFontAwesomeStrings;
     }
 }
 
-#pragma mark - Notifications
-
-- (void)didRecieveMemoryWarningNotification:(NSNotification *)notification
-{
-    NSLog(@"%@ recieved %@", [BButton class], notification.name);
-    kFontAwesomeStrings = nil;
-}
-
 #pragma mark - BButton
 
 - (void)setStyle:(BButtonStyle)style
@@ -296,11 +277,7 @@ static NSArray * kFontAwesomeStrings;
 
 - (NSString *)stringFromFontAwesomeIcon:(FAIcon)icon
 {
-    if (!kFontAwesomeStrings) {
-        kFontAwesomeStrings = [NSString fa_allFontAwesomeStrings];
-    }
-    return [NSString fa_stringFromFontAwesomeStrings:kFontAwesomeStrings
-                                             forIcon:icon];
+    return [NSString fa_stringFromFontAwesomeForIcon:icon];
 }
 
 + (UIColor *)colorForButtonType:(BButtonType)type style:(BButtonStyle)style
