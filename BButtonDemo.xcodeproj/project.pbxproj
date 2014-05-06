@@ -69,8 +69,6 @@
 		88F28F58183337F40044C99F /* UIColor+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BButton.m"; sourceTree = "<group>"; };
 		88F28F5A183337F40044C99F /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		88F28F65183338210044C99F /* BButton.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BButton.podspec; sourceTree = "<group>"; };
-		88F28F66183338210044C99F /* FontAwesomeIcons.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = FontAwesomeIcons.html; sourceTree = "<group>"; };
-		88F28F67183338210044C99F /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		88F28F68183338210044C99F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,9 +101,7 @@
 			children = (
 				88F28F4F183337F40044C99F /* BButton */,
 				88F28F65183338210044C99F /* BButton.podspec */,
-				88F28F67183338210044C99F /* LICENSE.txt */,
 				88F28F68183338210044C99F /* README.md */,
-				88F28F66183338210044C99F /* FontAwesomeIcons.html */,
 				88F28F20183336920044C99F /* BButtonDemo */,
 				88F28F3F183336920044C99F /* BButtonDemoTests */,
 				88F28F19183336920044C99F /* Frameworks */,

@@ -30,8 +30,6 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
 - (void)setup;
 - (void)setTextAttributesForStyle:(BButtonStyle)aStyle;
 
-- (NSString *)stringFromFontAwesomeIcon:(FAIcon)icon;
-
 + (UIColor *)colorForButtonType:(BButtonType)type style:(BButtonStyle)style;
 + (UIColor *)colorForV2StyleButtonWithType:(BButtonType)type;
 + (UIColor *)colorForV3StyleButtonWithType:(BButtonType)type;
@@ -117,7 +115,7 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
     if (self) {
         [[self titleLabel] setFont:[UIFont fontWithName:kFontAwesomeFont size:fontSize]];
         [[self titleLabel] setTextAlignment:NSTextAlignmentCenter];
-        [self setTitle:[self stringFromFontAwesomeIcon:icon]
+        [self setTitle:[NSString fa_stringForFontAwesomeIcon:icon]
               forState:UIControlStateNormal];
     }
     return self;
@@ -205,7 +203,7 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
 {
     _color = newColor;
     
-    if([newColor bb_isLightColor]) {
+    if ([newColor bb_isLightColor]) {
         [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self setTitleShadowColor:[[UIColor whiteColor] colorWithAlphaComponent:0.6f] forState:UIControlStateNormal];
         
@@ -257,7 +255,7 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
 
 - (void)addAwesomeIcon:(FAIcon)icon beforeTitle:(BOOL)before
 {
-    NSString *iconString = [self stringFromFontAwesomeIcon:icon];
+    NSString *iconString = [NSString fa_stringForFontAwesomeIcon:icon];
     self.titleLabel.font = [UIFont fontWithName:kFontAwesomeFont
                                            size:self.titleLabel.font.pointSize];
     
@@ -273,11 +271,6 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
     }
     
     [self setTitle:title forState:UIControlStateNormal];
-}
-
-- (NSString *)stringFromFontAwesomeIcon:(FAIcon)icon
-{
-    return [NSString fa_stringFromFontAwesomeForIcon:icon];
 }
 
 + (UIColor *)colorForButtonType:(BButtonType)type style:(BButtonStyle)style

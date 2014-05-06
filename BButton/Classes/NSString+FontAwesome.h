@@ -1,16 +1,9 @@
 //
-//  Created by Pit Garbe on 27.09.12.
-//  Updated to Font Awesome 3.1.1 on 17.05.2013.
-//  Copyright (c) 2012 Pit Garbe. All rights reserved.
-//
-//  https://github.com/leberwurstsaft/FontAwesome-for-iOS
-//
-//
 //  * The Font Awesome font is licensed under the SIL Open Font License
 //  http://scripts.sil.org/OFL
 //
 //
-// * Font Awesome CSS, LESS, and SASS files are licensed under the MIT License
+//  * Font Awesome CSS, LESS, and SASS files are licensed under the MIT License
 //  http://opensource.org/licenses/mit-license.html
 //
 //
@@ -35,12 +28,12 @@
 /**
  *  A string constant for the Font Awesome font family name.
  */
-extern NSString * const kFontAwesomeFont;
+FOUNDATION_EXPORT NSString * const kFontAwesomeFont;
 
 /**
  *  A constant describing the available Font Awesome Icons.
  */
-typedef NS_ENUM(NSUInteger, FAIcon){
+typedef NS_ENUM(unsigned short, FAIcon) {
     FAGlass = 0xf000,
     FAMusic = 0xf001,
     FASearch = 0xf002,
@@ -454,6 +447,6 @@ typedef NS_ENUM(NSUInteger, FAIcon){
 
 @interface NSString (FontAwesome)
 
-+ (NSString *)fa_stringFromFontAwesomeForIcon:(FAIcon)icon;
++ (NSString *)fa_stringForFontAwesomeIcon:(FAIcon)icon;
 
 @end

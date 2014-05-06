@@ -85,7 +85,7 @@
 
 - (void)testFontAwesome
 {
-    NSString *icon = [NSString fa_stringFromFontAwesomeForIcon:FAWarning];
+    NSString *icon = [NSString fa_stringForFontAwesomeIcon:FAWarning];
     XCTAssertNotNil(icon, @"Icon should not be nil");
     
     NSString *btnTitle = @"Button Title";
@@ -101,7 +101,7 @@
     [btn addAwesomeIcon:i beforeTitle:NO];
     XCTAssertEqual([btn.titleLabel.text length], [btnTitle length] + 2, @"Button title length should be 2 characters longer after adding icon");
     
-    icon = [NSString fa_stringFromFontAwesomeForIcon:i];
+    icon = [NSString fa_stringForFontAwesomeIcon:i];
     NSString *btnIcon = [btn.titleLabel.text substringFromIndex:[btn.titleLabel.text length] - 1];
     XCTAssert([btnIcon isEqualToString:icon], @"Last character in button title should equal FA icon");
     
@@ -109,7 +109,7 @@
     [btn addAwesomeIcon:i beforeTitle:YES];
     XCTAssertEqual([btn.titleLabel.text length], [btnTitle length] + 4, @"Button title length should be 4 characters longer after adding 2 icons");
     
-    icon = [NSString fa_stringFromFontAwesomeForIcon:i];
+    icon = [NSString fa_stringForFontAwesomeIcon:i];
     btnIcon = [btn.titleLabel.text substringToIndex:1];
     XCTAssert([btnIcon isEqualToString:icon], @"First character in button title should equal FA icon");
 }
