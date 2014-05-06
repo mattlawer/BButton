@@ -5,4 +5,4 @@ before_install:
 - brew upgrade xctool
 
 script: 
-- xctool -project BButtonDemo.xcodeproj -scheme BButtonDemo -sdk iphonesimulator7.0 ONLY_ACTIVE_ARCH=NO clean build test 
+- xctool clean build test -project BButtonDemo.xcodeproj -scheme BButtonDemo -sdk iphonesimulator7.0 ONLY_ACTIVE_ARCH=NO
