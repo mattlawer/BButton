@@ -83,7 +83,7 @@ Many thanks to [the contributors](https://github.com/jessesquires/BButton/graphs
 > * Attribution is no longer required in Font Awesome 3.0, but much appreciated:
 	* *"Font Awesome by Dave Gandy - http://fortawesome.github.com/Font-Awesome"*
 
-[docsLink]:http://cocoadocs.org/docsets/BButton/3.2.3
+[docsLink]:http://cocoadocs.org/docsets/BButton/4.0.0
 [mitLink]:http://opensource.org/licenses/MIT
 
 [img1]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-0.png
