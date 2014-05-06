@@ -26,9 +26,9 @@ Otherwise, drag the `BButton/` folder to your project and add the `Fonts provide
 2. Create via Storyboards
   * Drag a `UIButton` to your view
   * Set its class to `BButton`
-3. Be a badass [programming-motherfucker](http://programming-motherfucker.com) and read the fucking documentation. (Yes, there's documentation! [Seriously](http://www.nrcc.org/wp-content/uploads/2013/05/Moonwalk.gif)!)
+3. Be a badass [programming-motherfucker](http://programming-motherfucker.com) and read the fucking documentation.
 4. See the included demo project: `BButtonDemo.xcodeproj`
-5. See `FontAwesomeIcons.html` for list of icons
+5. See [FontAwesome](http://fontawesome.io) for list of icons
 
 ## Documentation
 
@@ -71,7 +71,7 @@ Many thanks to [the contributors](https://github.com/jessesquires/BButton/graphs
 
 ## License
 
-`BButton` is released under an [MIT License][mitLink]. See `LICENSE.txt` for details.
+`BButton` is released under an [MIT License][mitLink]. See `LICENSE` for details.
 
 >Copyright &copy; 2012, Mathieu Bolard, Jesse Squires. All rights reserved.
 
