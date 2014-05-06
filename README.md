@@ -2,16 +2,9 @@
 
 [Twitter Bootstrap](http://getbootstrap.com) buttons for iOS.
 
-`BButton` is a subclass of `UIButton` that is styled like the Twitter Bootstrap buttons, and is drawn entirely with `CoreGraphics`.
+`BButton` is a subclass of `UIButton` that is styled like the Twitter Bootstrap buttons, and is drawn entirely with `CoreGraphics`. Buttons can be styled as Bootstrap [version 2](http://getbootstrap.com/2.3.2/) or [version 3](http://getbootstrap.com).
 
 ![BButton Screenshot 1][img1] &nbsp;&nbsp;&nbsp;&nbsp; ![BButton Screenshot 2][img2]
-
-## Features
-
-* Works just like `UIButton`, but sexier
-* Bootstrap [version 2](http://getbootstrap.com/2.3.2/) or [version 3](http://getbootstrap.com) styles
-* Highly customizable
-* Includes [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsaft/FontAwesome-for-iOS), fixed for iOS from the original [FontAwesome](http://fortawesome.github.com/Font-Awesome/)
 
 ## Requirements
 
@@ -20,20 +13,12 @@
 
 ## Installation
 
-#### From [CocoaPods](http://www.cocoapods.org)
-
-`pod 'BButton'`
-
-#### From source
-
-* Drag the `BButton/` folder to your project.
-* Add the `Fonts provided by application` key to `Info.plist` and include `FontAwesome.ttf`
+````
+pod 'BButton'
+````
+Otherwise, drag the `BButton/` folder to your project and add the `Fonts provided by application` key to `Info.plist` and include `FontAwesome.ttf`
 
 ![plist][img3]
-
-#### Too cool for [ARC](https://developer.apple.com/library/mac/releasenotes/ObjectiveC/RN-TransitioningToARC/Introduction/Introduction.html)?
-
-* Add the `-fobjc-arc` compiler flag to all source files in your project in Target Settings > Build Phases > Compile Sources.
 
 ## Getting Started
 
@@ -59,8 +44,6 @@ Documentation is [available here][docsLink] via [CocoaDocs](http://cocoadocs.org
 
 ![BButton Screenshot 3][img4] &nbsp;&nbsp;&nbsp;&nbsp; ![BButton Screenshot 4][img5]
 
-* *More tips coming soon!*
-
 ## How To Contribute
 
 Please follow these sweet [contribution guidelines](https://github.com/jessesquires/HowToContribute).
@@ -71,52 +54,33 @@ Created by [@mattlawer](https://twitter.com/mattlawer) (Original project here: [
 
 Forked, refactored, updated, maintained by [@jesse_squires](https://twitter.com/jesse_squires), a [programming-motherfucker](http://programming-motherfucker.com).
 
-FontAwesome-for-iOS by Pit Garbe, [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsaft/FontAwesome-for-iOS).
-
 Many thanks to [the contributors](https://github.com/jessesquires/BButton/graphs/contributors) of this project.
 
 ## Apps Using This Control
 
-[Gitty for GitHub](https://itunes.apple.com/us/app/gitty-for-github/id645696309?mt=8)
+* [Gitty for GitHub](https://itunes.apple.com/us/app/gitty-for-github/id645696309?mt=8)
+* [Hemoglobe](http://bit.ly/hemoglobeapp)
+* [Audiotrip](https://itunes.apple.com/us/app/audiotrip/id569634193?mt=8)
+* [iExplorer for DeviantART](https://itunes.apple.com/us/app/iexplorer-for-deviantart/id657212778?mt=8)
+* [Travel Delay NYC](https://itunes.apple.com/us/app/train-delay-nyc-subway-status/id384027573?mt=8)
+* [Libraries for Developers](https://itunes.apple.com/us/app/libraries-for-developers/id653427112?mt=8)
+* [CPU Monitor](https://itunes.apple.com/us/app/cpumonitor/id680137811?mt=8)
+* [OpenWatch](https://itunes.apple.com/us/app/openwatch-free-video-streaming/id642680756?mt=8)
+* [VSNotes](https://itunes.apple.com/us/app/vsnotes/id695433001?mt=8)
+* [Crew Scout](https://itunes.apple.com/us/app/crew-scout/id721124938?mt=8)
 
-[Hemoglobe](http://bit.ly/hemoglobeapp)
+## License
 
-[iPaint uPaint](http://bit.ly/ipupappstr)
+`BButton` is released under an [MIT License][mitLink]. See `LICENSE.txt` for details.
 
-[Audiotrip](https://itunes.apple.com/us/app/audiotrip/id569634193?mt=8)
+>Copyright &copy; 2012, Mathieu Bolard, Jesse Squires. All rights reserved.
 
-[iExplorer for DeviantART](https://itunes.apple.com/us/app/iexplorer-for-deviantart/id657212778?mt=8)
+## [FontAwesome](https://github.com/FortAwesome/Font-Awesome) License
 
-[Travel Delay NYC](https://itunes.apple.com/us/app/train-delay-nyc-subway-status/id384027573?mt=8)
-
-[Libraries for Developers](https://itunes.apple.com/us/app/libraries-for-developers/id653427112?mt=8)
-
-[CPU Monitor](https://itunes.apple.com/us/app/cpumonitor/id680137811?mt=8)
-
-[OpenWatch](https://itunes.apple.com/us/app/openwatch-free-video-streaming/id642680756?mt=8)
-
-[VSNotes](https://itunes.apple.com/us/app/vsnotes/id695433001?mt=8)
-
-[Crew Scout](https://itunes.apple.com/us/app/crew-scout/id721124938?mt=8)
-
-*[Contact me](mailto:jesse.squires.developer@gmail.com) to have your app listed here.*
-
-## [MIT License][mitLink]
-
-Copyright &copy; 2012, Mathieu Bolard, Jesse Squires. All rights reserved.
-
->Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
->The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
->THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-##[FontAwesome](https://github.com/FortAwesome/Font-Awesome) License
-
-* The Font Awesome font is licensed under the [SIL Open Font License](http://scripts.sil.org/OFL)
-* Font Awesome CSS, LESS, and SASS files are licensed under the [MIT License](http://opensource.org/licenses/mit-license.html)
-* The Font Awesome pictograms are licensed under the [CC BY 3.0 License](http://creativecommons.org/licenses/by/3.0)
-* Attribution is no longer required in Font Awesome 3.0, but much appreciated:
+> * The Font Awesome font is licensed under the [SIL Open Font License](http://scripts.sil.org/OFL)
+> * Font Awesome CSS, LESS, and SASS files are licensed under the [MIT > License](http://opensource.org/licenses/mit-license.html)
+> * The Font Awesome pictograms are licensed under the [CC BY 3.0 License](http://creativecommons.org/licenses/by/3.0)
+> * Attribution is no longer required in Font Awesome 3.0, but much appreciated:
 	* *"Font Awesome by Dave Gandy - http://fortawesome.github.com/Font-Awesome"*
 
 [docsLink]:http://cocoadocs.org/docsets/BButton/3.2.3
