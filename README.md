@@ -71,10 +71,12 @@ Many thanks to [the contributors](https://github.com/jessesquires/BButton/graphs
 
 > Copyright &copy; 2012, Mathieu Bolard, Jesse Squires. All rights reserved.
 
-### [Font Awesome](http://fortawesome.github.com/Font-Awesome) by Dave Gandy 
+## [Font Awesome](http://fortawesome.github.com/Font-Awesome) by Dave Gandy 
 
 > The Font Awesome font is licensed under the [SIL Open Font License](http://scripts.sil.org/OFL)
+>
 > Font Awesome CSS, LESS, and SASS files are licensed under the [MIT License][mitLink]
+>
 > The Font Awesome pictograms are licensed under the [CC BY 3.0 License](http://creativecommons.org/licenses/by/3.0)
 
 [docsLink]:http://cocoadocs.org/docsets/BButton
