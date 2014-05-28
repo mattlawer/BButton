@@ -1,6 +1,6 @@
 # BButton [![Build Status](https://secure.travis-ci.org/jessesquires/BButton.svg)](http://travis-ci.org/jessesquires/BButton) [![Version Status](https://cocoapod-badges.herokuapp.com/v/BButton/badge.png)][docsLink] [![license MIT](http://b.repl.ca/v1/license-MIT-blue.png)][mitLink]
 
-[Twitter Bootstrap](http://getbootstrap.com) buttons for iOS.
+[Twitter Bootstrap](http://getbootstrap.com) buttons for iOS
 
 `BButton` is a subclass of `UIButton` that is styled like the Twitter Bootstrap buttons, and is drawn entirely with `CoreGraphics`. Buttons can be styled as Bootstrap [version 2](http://getbootstrap.com/2.3.2/) or [version 3](http://getbootstrap.com).
 
@@ -16,19 +16,15 @@
 ````
 pod 'BButton'
 ````
-Otherwise, drag the `BButton/` folder to your project and add the `Fonts provided by application` key to `Info.plist` and include `FontAwesome.ttf`
+Otherwise, drag the `BButton/` folder to your project. 
+
+Then add the `Fonts provided by application` key to `Info.plist` and include `FontAwesome.ttf`
 
 ![plist][img3]
 
 ## Getting Started
 
-1. Create programmatically via one of the `init` methods
-2. Create via Storyboards
-  * Drag a `UIButton` to your view
-  * Set its class to `BButton`
-3. Be a badass [programming-motherfucker](http://programming-motherfucker.com) and read the fucking documentation.
-4. See the included demo project: `BButtonDemo.xcodeproj`
-5. See [FontAwesome](http://fontawesome.io) for list of icons
+See the demo project (`BButtonDemo.xcodeproj`) and [FontAwesome](http://fontawesome.io) for list of icons.
 
 ## Documentation
 
@@ -52,7 +48,7 @@ Please follow these sweet [contribution guidelines](https://github.com/jessesqui
 
 Created by [@mattlawer](https://twitter.com/mattlawer) (Original project here: [@mattlawer / BButton](https://github.com/mattlawer/BButton)).
 
-Forked, refactored, updated, maintained by [@jesse_squires](https://twitter.com/jesse_squires), a [programming-motherfucker](http://programming-motherfucker.com).
+Forked, refactored, updated, maintained by [@jesse_squires](https://twitter.com/jesse_squires).
 
 Many thanks to [the contributors](https://github.com/jessesquires/BButton/graphs/contributors) of this project.
 
