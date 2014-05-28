@@ -1,8 +1,4 @@
-BButton
--------
-MIT License : http://opensource.org/licenses/MIT
-
-Copyright (c) 2012, Mathieu Bolard, Jesse Squires. All rights reserved.
+BButton - copyright (c) 2012, Mathieu Bolard, Jesse Squires. All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
 associated documentation files (the "Software"), to deal in the Software without restriction, including
@@ -21,12 +17,10 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 
-FontAwesome
------------
-* The Font Awesome font is licensed under the SIL Open Font License: http://scripts.sil.org/OFL
+Font Awesome by Dave Gandy - http://fortawesome.github.com/Font-Awesome
 
-* Font Awesome CSS, LESS, and SASS files are licensed under the MIT License: http://opensource.org/licenses/mit-license.html
+The Font Awesome font is licensed under the SIL Open Font License: http://scripts.sil.org/OFL
 
-* The Font Awesome pictograms are licensed under the CC BY 3.0 License: http://creativecommons.org/licenses/by/3.0
+Font Awesome CSS, LESS, and SASS files are licensed under the MIT License: http://opensource.org/licenses/mit-license.html
 
-* Attribution is no longer required in Font Awesome 3.0, but much appreciated: "Font Awesome by Dave Gandy - http://fortawesome.github.com/Font-Awesome"
+The Font Awesome pictograms are licensed under the CC BY 3.0 License: http://creativecommons.org/licenses/by/3.0

@@ -82,8 +82,10 @@ Many thanks to [the contributors](https://github.com/jessesquires/BButton/graphs
 [docsLink]:http://cocoadocs.org/docsets/BButton/4.0.0
 [mitLink]:http://opensource.org/licenses/MIT
 
-[img1]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-0.png
-[img2]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-2.png
-[img3]:https://raw.github.com/jessesquires/BButton/master/Screenshots/plist.png
-[img4]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-4.png
-[img5]:https://raw.github.com/jessesquires/BButton/master/Screenshots/screenshot-5.png
+[img1]:https://raw.githubusercontent.com/jessesquires/BButton/master/Screenshots/screenshot0.png
+[img2]:https://raw.githubusercontent.com/jessesquires/BButton/master/Screenshots/screenshot1.png
+
+[img3]:https://raw.githubusercontent.com/jessesquires/BButton/master/Screenshots/plistfont.png
+
+[img4]:https://raw.githubusercontent.com/jessesquires/BButton/master/Screenshots/screenshot2.png
+[img5]:https://raw.githubusercontent.com/jessesquires/BButton/master/Screenshots/screenshot3.png
