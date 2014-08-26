@@ -218,11 +218,15 @@
     
     NSString *title = [NSString stringWithFormat:@"%@", iconString];
     
-    if(![self.fastTitleLabel.text isEmpty]) {
-        if(before)
-            title = [title stringByAppendingFormat:@" %@", self.fastTitleLabel.text];
-        else
-            title = [NSString stringWithFormat:@"%@  %@", self.fastTitleLabel.text, iconString];
+    // Need to get current title as like this, because self.fastTitleLabel.text does not always give us the current title
+    NSString * currentTitle = ![self.titleLabel.text isEmpty] ? self.titleLabel.text : self.fastTitleLabel.text;
+    if(![currentTitle isEmpty]) {
+        if(before) {
+            title = [NSString stringWithFormat:@"%@  %@", iconString, currentTitle];
+        }
+        else {
+            title = [NSString stringWithFormat:@"%@  %@", currentTitle, iconString];
+        }
     }
     
     [self setTitle:title forState:UIControlStateNormal];
@@ -349,10 +353,7 @@
 
 - (UILabel*)fastTitleLabel
 {
-    if (self.subviews.count == 1)
-        return [self.subviews objectAtIndex:0];
-
-    return self.titleLabel;
+    return (self.subviews.count == 1) ? self.subviews[0] : self.titleLabel;
 }
 
 @end
