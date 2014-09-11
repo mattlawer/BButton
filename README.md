@@ -21,7 +21,7 @@ Includes [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsa
 
 ### From [CocoaPods](http://www.cocoapods.org)
 
-	pod `BButton`
+	pod 'BButton'
 
 ### From source
 
