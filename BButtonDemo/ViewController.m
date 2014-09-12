@@ -25,7 +25,7 @@
 {
     [super viewDidLoad];
     
-    BButtonType type = 0;
+    BButtonType type = BButtonTypeDefault;
     
     for(int i = 0; i < 2; i++) {
         
