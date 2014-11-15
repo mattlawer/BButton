@@ -31,7 +31,7 @@
             [btn setTitle:[self titleForType:type] forState:UIControlStateNormal];
             
             if(type == BButtonTypeFacebook)
-                [btn addAwesomeIcon:FASortAsc beforeTitle:YES];
+                [btn addAwesomeIcon:FAFacebook beforeTitle:YES];
             else if(type == BButtonTypeTwitter)
                 [btn addAwesomeIcon:FATwitter beforeTitle:NO];
             
