@@ -96,6 +96,8 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
 
 - (instancetype)initWithFrame:(CGRect)frame color:(UIColor *)color style:(BButtonStyle)style
 {
+    NSParameterAssert(color != nil);
+    
     self = [self initWithFrame:frame];
     if (self) {
         _buttonStyle = style;
@@ -397,8 +399,11 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    if(!context)
+    if (!context) {
         return;
+    }
+    
+    NSAssert(self.color != nil, @"Error! Attempting to draw button with nil color. %s", __PRETTY_FUNCTION__);
     
     switch (self.buttonStyle) {
         case BButtonStyleBootstrapV2:
@@ -444,7 +449,7 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
     
     CGContextRestoreGState(*context);
     
-    if(!self.highlighted) {
+    if (!self.highlighted) {
         // Rounded Rectangle Inner Shadow
         CGRect roundedRectangleBorderRect = CGRectInset([roundedRectanglePath bounds], -shadowBlurRadius, -shadowBlurRadius);
         roundedRectangleBorderRect = CGRectOffset(roundedRectangleBorderRect, -shadowOffset.width, -shadowOffset.height);
@@ -482,14 +487,16 @@ static CGFloat const kBButtonCornerRadiusV3 = 4.0f;
     CGContextSaveGState(*context);
     
     UIColor *fill = (!self.highlighted) ? self.color : [self.color bb_darkenColorWithValue:0.06f];
-    if(!self.enabled)
+    if (!self.enabled) {
         [fill bb_desaturatedColorToPercentSaturation:0.60f];
+    }
     
     CGContextSetFillColorWithColor(*context, fill.CGColor);
     
     UIColor *border = (!self.highlighted) ? [self.color bb_darkenColorWithValue:0.06f] : [self.color bb_darkenColorWithValue:0.12f];
-    if(!self.enabled)
+    if (!self.enabled) {
         [border bb_desaturatedColorToPercentSaturation:0.60f];
+    }
     
     CGContextSetStrokeColorWithColor(*context, border.CGColor);
     
