@@ -37,7 +37,7 @@
             
             type++;
             if(type > BButtonTypeGray) {
-                btn = [BButton awesomeButtonWithOnlyIcon:(arc4random_uniform(0xf196-0xf000)+0xf000)
+                btn = [BButton awesomeButtonWithOnlyIcon:(arc4random_uniform(0xf20c-0xf000)+0xf000)
                                                     type:(type % 2) ? BButtonTypeInverse : BButtonTypeDefault
                                                    style:BButtonStyleBootstrapV3];
                 
