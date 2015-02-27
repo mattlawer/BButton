@@ -64,6 +64,8 @@ Many thanks to [the contributors](https://github.com/jessesquires/BButton/graphs
 * [OpenWatch](https://itunes.apple.com/us/app/openwatch-free-video-streaming/id642680756?mt=8)
 * [VSNotes](https://itunes.apple.com/us/app/vsnotes/id695433001?mt=8)
 * [Crew Scout](https://itunes.apple.com/us/app/crew-scout/id721124938?mt=8)
+* [Chronorea](https://itunes.apple.com/us/app/chronorea-interventions-manager/id813086719?mt=8)
+* [MA Mobile](https://itunes.apple.com/us/app/ma-mobile/id447421885?mt=8)
 
 ## License
 
