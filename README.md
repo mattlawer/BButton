@@ -54,6 +54,7 @@ Many thanks to [the contributors](https://github.com/jessesquires/BButton/graphs
 
 ## Apps Using This Control
 
+* [Idealyzer](https://itunes.apple.com/us/app/idealyzer-research-keywords/id991571238?ls=1&mt=8)
 * [Gitty for GitHub](https://itunes.apple.com/us/app/gitty-for-github/id645696309?mt=8)
 * [Hemoglobe](http://bit.ly/hemoglobeapp)
 * [Audiotrip](https://itunes.apple.com/us/app/audiotrip/id569634193?mt=8)
